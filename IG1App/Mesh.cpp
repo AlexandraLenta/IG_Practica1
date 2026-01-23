@@ -114,16 +114,20 @@ Mesh::createRGBAxes(GLdouble l)
 
 Mesh* 
 Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
+	// Calculate necessary angles in radians
 	float angleToSum = 360.0 / (float)(num);
 	float angleInRadians = radians(angleToSum);
 	float currentAngle = radians(90.0);
 
+	// Create mesh
 	Mesh* mesh = new Mesh();
 	mesh->mPrimitive = GL_LINE_LOOP;
 
+	// Set vertices
 	mesh->mNumVertices = num;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
+	// Create vertices
 	for (int i = 0; i < num; i++) {
 		float x = r * cos(currentAngle);
 		float y = r * sin(currentAngle);
