@@ -111,3 +111,11 @@ Mesh::createRGBAxes(GLdouble l)
 
 	return mesh;
 }
+
+Mesh* 
+Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
+	float angleToSum = 360 / num;
+	for (int i = 0; i < num; i++) {
+
+	}
+}
