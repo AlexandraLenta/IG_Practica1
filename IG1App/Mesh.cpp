@@ -114,7 +114,7 @@ Mesh::createRGBAxes(GLdouble l)
 
 Mesh* 
 Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
-	float angleToSum = (float)(360 / num);
+	float angleToSum = 360.0 / (float)(num);
 	float angleInRadians = radians(angleToSum);
 	float currentAngle = radians(90.0);
 
@@ -125,12 +125,12 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
 	for (int i = 0; i < num; i++) {
-		float x = r * cos(angleInRadians);
-		float y = r * sin(angleInRadians);
+		float x = r * cos(currentAngle);
+		float y = r * sin(currentAngle);
 
 		mesh->vVertices.emplace_back(x, y, 0.0);
 
-		currentAngle += angleToSum;
+		currentAngle += angleInRadians;
 	}
 
 	return mesh;
