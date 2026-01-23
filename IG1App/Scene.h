@@ -6,6 +6,7 @@
 
 #include "Camera.h"
 #include "Entity.h"
+#include "RegularPolygon.h"
 
 #include <vector>
 
