@@ -144,3 +144,36 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 
 	return mesh;
 }
+
+Mesh*
+Mesh::generateRGBRectangle(GLdouble r) {
+	// Calculate necessary angles in radians
+	float angleToSum = 360.0 / (float)(3);
+	float angleInRadians = radians(angleToSum);
+	float currentAngle = radians(90.0);
+
+	// Create mesh
+	Mesh* mesh = new Mesh();
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	// Set vertices
+	mesh->mNumVertices = 3;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+
+	mesh->vColors.reserve(mesh->mNumVertices);
+	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
+	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
+	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
+
+	// Create vertices
+	for (int i = 0; i < 3; i++) {
+		float x = r * cos(currentAngle);
+		float y = r * sin(currentAngle);
+
+		mesh->vVertices.emplace_back(x, y, 0.0);
+
+		currentAngle += angleInRadians;
+	}
+
+	return mesh;
+}
