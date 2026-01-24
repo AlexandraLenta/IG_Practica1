@@ -1,8 +1,9 @@
 #pragma once
 #include "Entity.h"
+
 class RGBTriangle : public EntityWithColors
 {
 public:
-	RGBTriangle();
+	RGBTriangle(GLdouble r);
 };
 

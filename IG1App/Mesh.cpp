@@ -127,6 +127,11 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	mesh->mNumVertices = num;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
+	//mesh->vColors.reserve(mesh->mNumVertices);
+	//mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
+	//mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
+	//mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
+
 	// Create vertices
 	for (int i = 0; i < num; i++) {
 		float x = r * cos(currentAngle);

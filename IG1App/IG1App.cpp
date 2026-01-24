@@ -57,6 +57,7 @@ IG1App::init()
 	mCamera = new Camera(mViewPort);
 	mScenes.push_back(new Scene);
 	mScenes.push_back(new Scene1);
+	mScenes.push_back(new Scene2);
 
 	mCamera->set2D();
 	for (auto& scene : mScenes) scene->init();

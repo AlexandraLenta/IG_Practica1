@@ -1,6 +1,6 @@
 #include "RGBTriangle.h"
 
-RGBTriangle::RGBTriangle() : EntityWithColors() {
-	// create regular polygon
-	// change vertices color to RGB
+RGBTriangle::RGBTriangle(GLdouble r) : EntityWithColors() {
+	// crea una malla triangular
+	mMesh = Mesh::generateRegularPolygon(3, r);
 }
