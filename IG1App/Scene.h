@@ -8,6 +8,7 @@
 #include "Entity.h"
 #include "RegularPolygon.h"
 #include "RGBTriangle.h"
+#include "RGBRectangle.h"
 
 #include <vector>
 

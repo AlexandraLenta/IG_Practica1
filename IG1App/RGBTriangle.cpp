@@ -2,5 +2,5 @@
 
 RGBTriangle::RGBTriangle(GLdouble r) : EntityWithColors() {
 	// crea una malla triangular
-	mMesh = Mesh::generateRGBRectangle(r);
+	mMesh = Mesh::generateRGBTriangle(r);
 }
