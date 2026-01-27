@@ -226,6 +226,5 @@ Mesh::generateRGBRectangle(GLdouble w, GLdouble h) {
 	mesh->vVertices.emplace_back(x, y, 0.0);
 	mesh->vVertices.emplace_back(-x, y, 0.0);
 
-
 	return mesh;
 }
