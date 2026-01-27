@@ -29,6 +29,11 @@ Abs_Entity::unload()
 	mMesh->unload();
 }
 
+void
+Abs_Entity::update(const glm::mat4& modelMat) {
+	mModelMat = modelMat;
+}
+
 EntityWithColors::EntityWithColors()
 {
 	mShader = Shader::get("vcolors");

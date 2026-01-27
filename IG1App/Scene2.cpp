@@ -16,6 +16,6 @@ void Scene2::init() {
 	gObjects.push_back(new RGBAxes(400.0));
 
 	gObjects.push_back(new RGBRectangle(200 * sqrt(2), 200*sqrt(2)));
-	gObjects.push_back(new RGBTriangle(50));
+	gObjects.push_back(new RGBTriangle(50, 200));
 	gObjects.push_back(new RegularPolygon(100, 200, {1.0, 0.0, 1.0, 1.0}));
 }
