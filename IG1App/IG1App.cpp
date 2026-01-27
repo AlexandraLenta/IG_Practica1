@@ -165,6 +165,8 @@ IG1App::key(unsigned int key)
 		case 'o':
 			mCamera->set2D();
 			break;
+		case 'u':
+			mScenes[mCurrentScene]->update();
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

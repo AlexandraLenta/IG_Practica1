@@ -30,9 +30,7 @@ Abs_Entity::unload()
 }
 
 void
-Abs_Entity::update(const glm::mat4& modelMat) {
-	mModelMat = modelMat;
-}
+Abs_Entity::update() {}
 
 EntityWithColors::EntityWithColors()
 {

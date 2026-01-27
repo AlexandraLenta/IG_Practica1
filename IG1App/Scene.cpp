@@ -2,6 +2,7 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 
 using namespace glm;
 
@@ -69,4 +70,10 @@ Scene::render(Camera const& cam) const
 
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
+}
+
+void
+Scene::update() {
+	for (auto& obj : gObjects)
+		obj->update();
 }
