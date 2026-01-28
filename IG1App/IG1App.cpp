@@ -167,6 +167,7 @@ IG1App::key(unsigned int key)
 			break;
 		case 'u':
 			mScenes[mCurrentScene]->update();
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
@@ -175,9 +176,8 @@ IG1App::key(unsigned int key)
 			need_redisplay = false;
 			break;
 	} // switch
-
-	if (need_redisplay)
-		mNeedsRedisplay = true;
+	
+	mNeedsRedisplay = need_redisplay;
 }
 
 void
