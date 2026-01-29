@@ -208,3 +208,33 @@ Mesh::generateRGBRectangle(GLdouble w, GLdouble h) {
 
 	return mesh;
 }
+
+Mesh*
+Mesh::generateCube(GLdouble length)
+{
+	Mesh* mesh = new Mesh();
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	GLdouble l = length / 2.0;
+
+	glm::vec3 v0(-l, -l, l);
+	glm::vec3 v1(l, -l, l);
+	glm::vec3 v2(l, l, l);
+	glm::vec3 v3(-l, l, l);
+	glm::vec3 v4(-l, -l, -l);
+	glm::vec3 v5(l, -l, -l);
+	glm::vec3 v6(l, l, -l);
+	glm::vec3 v7(-l, l, -l);
+
+	mesh->vVertices = {v0, v1, v2,  v0, v2, v3,//delante
+		v1, v5, v6,  v1, v6, v2,//der
+		v5, v4, v7,  v5, v7, v6,//detras
+		v4, v0, v3,  v4, v3, v7,//izq
+		v3, v2, v6,  v3, v6, v7,//top
+		v4, v5, v1,  v4, v1, v0 //abajp
+	};
+
+	mesh->mNumVertices = static_cast<GLuint>(mesh->vVertices.size());
+
+	return mesh;
+}
