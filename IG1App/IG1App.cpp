@@ -30,16 +30,34 @@ IG1App::run() // enters the main event processing loop
 	if (mWindow == 0) // if not intilialized
 		init();
 
+	mNextUpdate = glfwGetTime() + FRAME_DURATION;
+	//mNextUpdate = glfwGetTime();
+
 	// IG1App main loop
 	while (!glfwWindowShouldClose(mWindow)) {
+
+		double currentTime = glfwGetTime();
+		if (mUpdateEnabled && currentTime >= mNextUpdate) {
+			mScenes[mCurrentScene]->update();
+			mNeedsRedisplay = true;
+			mNextUpdate += FRAME_DURATION;
+		}
 		// Redisplay the window if needed
 		if (mNeedsRedisplay) {
 			display();
 			mNeedsRedisplay = false;
 		}
 
-		// Stop and wait for new events
-		glfwWaitEvents();
+		if (mUpdateEnabled) {
+			double timeout = mNextUpdate - glfwGetTime();
+			if (timeout < 0.0) timeout = 0.0;
+			glfwWaitEventsTimeout(timeout);
+		}
+		else {
+			// Stop and wait for new events
+			glfwWaitEvents();
+		}
+
 	}
 
 	destroy();
@@ -166,8 +184,16 @@ IG1App::key(unsigned int key)
 			mCamera->set2D();
 			break;
 		case 'u':
-			mScenes[mCurrentScene]->update();
-			break;
+			mUpdateEnabled = !mUpdateEnabled;
+			if (mUpdateEnabled)
+			{
+				cout << "Enable continuous update \n";
+				mNextUpdate = glfwGetTime() + FRAME_DURATION;
+			}
+			else {
+				cout << "Disable continuous update\n";
+			}
+				break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
