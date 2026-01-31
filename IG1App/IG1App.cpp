@@ -31,12 +31,14 @@ IG1App::run() // enters the main event processing loop
 		init();
 
 	mNextUpdate = glfwGetTime() + FRAME_DURATION;
-	//mNextUpdate = glfwGetTime();
+	double currentTime = glfwGetTime();
 
 	// IG1App main loop
 	while (!glfwWindowShouldClose(mWindow)) {
 
-		double currentTime = glfwGetTime();
+		currentTime = glfwGetTime();
+
+		// if update enabled and its time to update again
 		if (mUpdateEnabled && currentTime >= mNextUpdate) {
 			mScenes[mCurrentScene]->update();
 			mNeedsRedisplay = true;
@@ -187,11 +189,11 @@ IG1App::key(unsigned int key)
 			mUpdateEnabled = !mUpdateEnabled;
 			if (mUpdateEnabled)
 			{
-				cout << "Enable continuous update \n";
+				cout << "Enable continuous update. \n";
 				mNextUpdate = glfwGetTime() + FRAME_DURATION;
 			}
 			else {
-				cout << "Disable continuous update\n";
+				cout << "Disable continuous update.\n";
 			}
 				break;
 		default:
