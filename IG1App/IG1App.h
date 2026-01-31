@@ -66,7 +66,7 @@ protected:
 	int mWinH = 600;               // window's height
 
 	// Apartado 14
-	double const FRAME_DURATION = 1.0 / 40.0;
+	double const FRAME_DURATION = 1.0 / 20.0;
 	bool mUpdateEnabled = false;
 	double mNextUpdate = 0.0;
 };
