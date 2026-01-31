@@ -23,9 +23,9 @@ void Cube::render(const glm::mat4& modelViewMat) const
 	mMesh->render();
 
 	glCullFace(GL_FRONT);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
 	mMesh->render();
 
-
+	glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
 	glDisable(GL_CULL_FACE);
 }

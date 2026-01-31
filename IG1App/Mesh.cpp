@@ -198,62 +198,75 @@ Mesh*
 Mesh::generateCube(GLdouble length)
 {
 	Mesh* mesh = new Mesh();
-	mesh->mPrimitive = GL_TRIANGLE_STRIP;
+	mesh->mPrimitive = GL_TRIANGLES;
 
 	length /= 2;
 
-	mesh->mNumVertices = 8;
+	mesh->mNumVertices = 36;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
+	//// Top face
+	//mesh->vVertices.emplace_back(-length, length, length);
+	//mesh->vVertices.emplace_back(length, length, length);
+	//mesh->vVertices.emplace_back(-length, length, -length);
+	//mesh->vVertices.emplace_back(length, length, -length);
+
+	//// Back Face
+	//mesh->vVertices.emplace_back(-length, -length, -length);
+	//mesh->vVertices.emplace_back(length, -length, -length);
+
+	//// Bottom Face
+	//mesh->vVertices.emplace_back(-length, -length, length);
+	//mesh->vVertices.emplace_back(length, -length, length);
+
 	// Top face
+	mesh->vVertices.emplace_back(length, length, -length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(length, length, -length);
 	mesh->vVertices.emplace_back(-length, length, length);
 	mesh->vVertices.emplace_back(length, length, length);
-	mesh->vVertices.emplace_back(-length, length, -length);
-	mesh->vVertices.emplace_back(length, length, -length);
 
-	// Back Face
+
+	// Bottom face
+	mesh->vVertices.emplace_back(length, -length, length);
+	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(length, -length, length);
 	mesh->vVertices.emplace_back(-length, -length, -length);
 	mesh->vVertices.emplace_back(length, -length, -length);
 
-	// Bottom Face
+	// Front face
+	mesh->vVertices.emplace_back(length, length, length);
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(length, length, length);
 	mesh->vVertices.emplace_back(-length, -length, length);
 	mesh->vVertices.emplace_back(length, -length, length);
 
-	//// Top face
-	//mesh->vVertices.emplace_back(length, length, -length);
-	//mesh->vVertices.emplace_back(-length, length, -length);
-	//mesh->vVertices.emplace_back(-length, length, length);
-	//mesh->vVertices.emplace_back(length, length, length);
+	// Back face
+	mesh->vVertices.emplace_back(length, -length, -length);
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(length, -length, -length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(length, length, -length);
 
-	//// Bottom face
-	//mesh->vVertices.emplace_back(length, -length, length);
-	//mesh->vVertices.emplace_back(-length, -length, length);
-	//mesh->vVertices.emplace_back(-length, -length, -length);
-	//mesh->vVertices.emplace_back(length, -length, -length);
+	// Left face
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(-length, -length, length);
 
-	//// Front face
-	//mesh->vVertices.emplace_back(length, length, length);
-	//mesh->vVertices.emplace_back(-length, length, length);
-	//mesh->vVertices.emplace_back(-length, -length, length);
-	//mesh->vVertices.emplace_back(length, -length, length);
-
-	//// Back face
-	//mesh->vVertices.emplace_back(length, -length, -length);
-	//mesh->vVertices.emplace_back(-length, -length, -length);
-	//mesh->vVertices.emplace_back(-length, length, -length);
-	//mesh->vVertices.emplace_back(length, length, -length);
-
-	//// Left face
-	//mesh->vVertices.emplace_back(-length, length, length);
-	//mesh->vVertices.emplace_back(-length, length, -length);
-	//mesh->vVertices.emplace_back(-length, -length, -length);
-	//mesh->vVertices.emplace_back(-length, -length, length);
-
-	//// Right face
-	//mesh->vVertices.emplace_back(length, length, -length);
-	//mesh->vVertices.emplace_back(length, length, length);
-	//mesh->vVertices.emplace_back(length, -length, length);
-	//mesh->vVertices.emplace_back(length, -length, -length);
+	// Right face
+	mesh->vVertices.emplace_back(length, length, -length);
+	mesh->vVertices.emplace_back(length, length, length);
+	mesh->vVertices.emplace_back(length, -length, length);
+	mesh->vVertices.emplace_back(length, length, -length);
+	mesh->vVertices.emplace_back(length, -length, length);
+	mesh->vVertices.emplace_back(length, -length, -length);
 
 	return mesh;
 }
