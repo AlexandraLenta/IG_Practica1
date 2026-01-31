@@ -177,34 +177,19 @@ Mesh::generateRectangle(GLdouble w, GLdouble h) {
 	mesh->vVertices.emplace_back(x, y, 0.0);
 	mesh->vVertices.emplace_back(-x, y, 0.0);
 
-
 	return mesh;
 }
 
 Mesh*
 Mesh::generateRGBRectangle(GLdouble w, GLdouble h) {
 	// Create mesh
-	Mesh* mesh = new Mesh();
-	mesh->mPrimitive = GL_TRIANGLE_STRIP;
-
-	// Set vertices
-	mesh->mNumVertices = 4;
-	mesh->vVertices.reserve(mesh->mNumVertices);
+	Mesh* mesh = generateRectangle(w, h);
 
 	mesh->vColors.reserve(mesh->mNumVertices);
 	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
 	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
 	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
 	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
-
-	GLdouble x = w / 2;
-	GLdouble y = h / 2;
-
-	// Create vertices
-	mesh->vVertices.emplace_back(x, -y, 0.0);
-	mesh->vVertices.emplace_back(-x, -y, 0.0);
-	mesh->vVertices.emplace_back(x, y, 0.0);
-	mesh->vVertices.emplace_back(-x, y, 0.0);
 
 	return mesh;
 }
@@ -213,28 +198,62 @@ Mesh*
 Mesh::generateCube(GLdouble length)
 {
 	Mesh* mesh = new Mesh();
-	mesh->mPrimitive = GL_TRIANGLES;
+	mesh->mPrimitive = GL_TRIANGLE_STRIP;
 
-	GLdouble l = length / 2.0;
+	length /= 2;
 
-	glm::vec3 v0(-l, -l, l);
-	glm::vec3 v1(l, -l, l);
-	glm::vec3 v2(l, l, l);
-	glm::vec3 v3(-l, l, l);
-	glm::vec3 v4(-l, -l, -l);
-	glm::vec3 v5(l, -l, -l);
-	glm::vec3 v6(l, l, -l);
-	glm::vec3 v7(-l, l, -l);
+	mesh->mNumVertices = 8;
+	mesh->vVertices.reserve(mesh->mNumVertices);
 
-	mesh->vVertices = {v0, v1, v2,  v0, v2, v3,//delante
-		v1, v5, v6,  v1, v6, v2,//der
-		v5, v4, v7,  v5, v7, v6,//detras
-		v4, v0, v3,  v4, v3, v7,//izq
-		v3, v2, v6,  v3, v6, v7,//top
-		v4, v5, v1,  v4, v1, v0 //abajp
-	};
+	// Top face
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(length, length, length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(length, length, -length);
 
-	mesh->mNumVertices = static_cast<GLuint>(mesh->vVertices.size());
+	// Back Face
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(length, -length, -length);
+
+	// Bottom Face
+	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(length, -length, length);
+
+	//// Top face
+	//mesh->vVertices.emplace_back(length, length, -length);
+	//mesh->vVertices.emplace_back(-length, length, -length);
+	//mesh->vVertices.emplace_back(-length, length, length);
+	//mesh->vVertices.emplace_back(length, length, length);
+
+	//// Bottom face
+	//mesh->vVertices.emplace_back(length, -length, length);
+	//mesh->vVertices.emplace_back(-length, -length, length);
+	//mesh->vVertices.emplace_back(-length, -length, -length);
+	//mesh->vVertices.emplace_back(length, -length, -length);
+
+	//// Front face
+	//mesh->vVertices.emplace_back(length, length, length);
+	//mesh->vVertices.emplace_back(-length, length, length);
+	//mesh->vVertices.emplace_back(-length, -length, length);
+	//mesh->vVertices.emplace_back(length, -length, length);
+
+	//// Back face
+	//mesh->vVertices.emplace_back(length, -length, -length);
+	//mesh->vVertices.emplace_back(-length, -length, -length);
+	//mesh->vVertices.emplace_back(-length, length, -length);
+	//mesh->vVertices.emplace_back(length, length, -length);
+
+	//// Left face
+	//mesh->vVertices.emplace_back(-length, length, length);
+	//mesh->vVertices.emplace_back(-length, length, -length);
+	//mesh->vVertices.emplace_back(-length, -length, -length);
+	//mesh->vVertices.emplace_back(-length, -length, length);
+
+	//// Right face
+	//mesh->vVertices.emplace_back(length, length, -length);
+	//mesh->vVertices.emplace_back(length, length, length);
+	//mesh->vVertices.emplace_back(length, -length, length);
+	//mesh->vVertices.emplace_back(length, -length, -length);
 
 	return mesh;
 }
