@@ -19,3 +19,7 @@ void Scene2::init() {
 	gObjects.push_back(new RGBTriangle(50, 200));
 	gObjects.push_back(new RegularPolygon(100, 200, {1.0, 0.0, 1.0, 1.0}));
 }
+
+Scene2::~Scene2() {
+
+}
