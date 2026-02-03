@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -122,8 +122,7 @@
               "RelativeToolTip": "IG1App\\RGBCube.cpp",
               "ViewState": "AgIAAAsAAAAAAAAAAADwvxYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-03T14:00:39.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T14:00:39.497Z"
             },
             {
               "$type": "Document",
@@ -147,8 +146,7 @@
               "RelativeToolTip": "IG1App\\Scene2.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-24T17:16:28.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T17:16:28.203Z"
             },
             {
               "$type": "Document",
@@ -172,12 +170,11 @@
               "RelativeToolTip": "IG1App\\Mesh.cpp",
               "ViewState": "AgIAAG4AAAAAAAAAAAAqwHsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-23T15:53:26.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:53:26.653Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Scene3.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene3.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene3.cpp",
@@ -198,8 +195,7 @@
               "RelativeToolTip": "IG1App\\Scene3.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-31T17:30:00.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T17:30:00.056Z"
             },
             {
               "$type": "Document",
@@ -223,8 +219,7 @@
               "RelativeToolTip": "IG1App\\RGBTriangle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-23T15:51:27.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:51:27.371Z"
             },
             {
               "$type": "Document",
@@ -260,8 +255,7 @@
               "RelativeToolTip": "IG1App\\Scene1.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-23T15:44:40.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:44:40.354Z"
             },
             {
               "$type": "Document",
@@ -273,8 +267,7 @@
               "RelativeToolTip": "IG1App\\Scene1.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-23T15:43:29.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:43:29.513Z"
             },
             {
               "$type": "Document",
@@ -286,8 +279,7 @@
               "RelativeToolTip": "IG1App\\Scene.h",
               "ViewState": "AgIAAAUAAAAAAAAAAAAmwBkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-23T15:32:22.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:32:22.759Z"
             },
             {
               "$type": "Document",
@@ -299,8 +291,7 @@
               "RelativeToolTip": "IG1App\\Scene.cpp",
               "ViewState": "AgIAABMAAAAAAAAAAAAmwBgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-23T14:52:59.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T14:52:59.814Z"
             },
             {
               "$type": "Document",
@@ -342,8 +333,7 @@
               "RelativeToolTip": "IG1App\\Entity.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-24T16:14:01.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-24T16:14:01.939Z"
             },
             {
               "$type": "Document",
@@ -355,8 +345,7 @@
               "RelativeToolTip": "IG1App\\RGBCube.h",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-03T14:00:00.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T14:00:00.734Z"
             },
             {
               "$type": "Document",
@@ -368,8 +357,7 @@
               "RelativeToolTip": "IG1App\\Cube.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-31T17:26:21.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T17:26:21.015Z"
             },
             {
               "$type": "Document",
@@ -393,8 +381,7 @@
               "RelativeToolTip": "IG1App\\Mesh.h",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwBYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-23T14:55:09.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T14:55:09.892Z"
             },
             {
               "$type": "Document",
@@ -418,12 +405,11 @@
               "RelativeToolTip": "IG1App\\RGBTriangle.cpp",
               "ViewState": "AgIAAAgAAAAAAAAAAAAkwBEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-23T15:52:32.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-23T15:52:32.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Scene2.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene2.cpp",
