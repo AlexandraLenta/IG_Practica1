@@ -4,6 +4,10 @@ RGBCube::RGBCube(GLdouble length) : EntityWithColors(), length(length), angle(0)
 	mMesh = Mesh::generateRGBCubeTriangles(length);
 }
 
+RGBCube::~RGBCube() {
+
+}
+
 void
 RGBCube::update() {
 	angle += 1.0f;

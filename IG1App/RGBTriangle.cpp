@@ -5,6 +5,10 @@ RGBTriangle::RGBTriangle(GLdouble r, GLdouble posX, GLdouble posY, GLdouble posZ
 	mMesh = Mesh::generateRGBTriangle(r, posX, posY);
 }
 
+RGBTriangle::~RGBTriangle() {
+
+}
+
 void
 RGBTriangle::update() {
 	rotate(2);

@@ -5,6 +5,10 @@ RGBRectangle::RGBRectangle(GLdouble w, GLdouble h) : EntityWithColors() {
 	mMesh = Mesh::generateRGBRectangle(w, h);
 }
 
+RGBRectangle::~RGBRectangle() {
+
+}
+
 void RGBRectangle::render(glm::mat4 const& modelViewMat) const {
 	if (mMesh != nullptr) {
 		glm::mat4 aMat = modelViewMat * mModelMat; // glm matrix multiplication

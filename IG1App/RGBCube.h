@@ -5,6 +5,7 @@ class RGBCube : public EntityWithColors
 {
 public:
 	RGBCube(GLdouble length);
+	~RGBCube();
 	void update() override;
 
 private:

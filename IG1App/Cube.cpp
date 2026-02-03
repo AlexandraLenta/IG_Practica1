@@ -5,6 +5,10 @@ Cube::Cube(GLdouble length, glm::vec4 color): SingleColorEntity(color), mColor(c
 	mMesh = Mesh::generateCube(length);
 }
 
+Cube::~Cube() {
+
+}
+
 void Cube::render(const glm::mat4& modelViewMat) const
 {
 	if (mMesh == nullptr) return;
