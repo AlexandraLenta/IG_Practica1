@@ -5,6 +5,7 @@ class SingleColorEntity : public Abs_Entity
 {
 public:
 	SingleColorEntity(glm::vec4);
+	~SingleColorEntity();
 
 	glm::vec4 getColor() const;
 	void setColor(glm::vec4);

@@ -6,6 +6,10 @@ SingleColorEntity::SingleColorEntity(glm::vec4 color = {1.0, 1.0, 1.0, 1.0}) : A
 	mShader = Shader::get("simple");
 }
 
+SingleColorEntity::~SingleColorEntity() {
+
+}
+
 glm::vec4 SingleColorEntity::getColor() const {
 	return mColor;
 }
