@@ -114,7 +114,7 @@ Mesh::createRGBAxes(GLdouble l)
 }
 
 Mesh* 
-Mesh::generateRegularPolygon(GLuint num, GLdouble r, GLdouble posX, GLdouble posY) {
+Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	// Calculate necessary angles in radians
 	float angleToSum = 360.0 / (float)(num);
 	float angleInRadians = radians(angleToSum);
@@ -133,7 +133,7 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r, GLdouble posX, GLdouble pos
 		float x = r * cos(currentAngle);
 		float y = r * sin(currentAngle);
 
-		mesh->vVertices.emplace_back(x + posX, y + posY, 0.0);
+		mesh->vVertices.emplace_back(x, y, 0.0);
 
 		currentAngle += angleInRadians;
 	}
@@ -142,8 +142,8 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r, GLdouble posX, GLdouble pos
 }
 
 Mesh*
-Mesh::generateRGBTriangle(GLdouble r, GLdouble posX, GLdouble posY) {
-	Mesh* mesh = generateRegularPolygon(3, r, posX, posY);
+Mesh::generateRGBTriangle(GLdouble r) {
+	Mesh* mesh = generateRegularPolygon(3, r);
 	mesh->mPrimitive = GL_TRIANGLES;
 
 	// Set vertices

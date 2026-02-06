@@ -8,12 +8,13 @@ public:
 	~RGBTriangle();
 
 	void update() override;
-	void rotate(GLdouble d);
+	void rotate(GLdouble l, GLdouble g);
 
 private:
 	glm::vec3 position;
 	float radius;
 	glm::vec3 originalDisplacement;
-	float angle = 0;
+	float localAngle = 0;
+	float globalAngle = 0;
 };
 

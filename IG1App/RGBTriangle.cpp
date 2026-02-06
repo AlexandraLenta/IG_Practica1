@@ -2,7 +2,7 @@
 
 RGBTriangle::RGBTriangle(GLdouble r, GLdouble posX, GLdouble posY, GLdouble posZ) : EntityWithColors(), position(posX, posY, posZ), originalDisplacement(posX, posY, posZ), radius(r) {
 	// crea una malla triangular
-	mMesh = Mesh::generateRGBTriangle(r, posX, posY);
+	mMesh = Mesh::generateRGBTriangle(r);
 }
 
 RGBTriangle::~RGBTriangle() {
@@ -11,17 +11,19 @@ RGBTriangle::~RGBTriangle() {
 
 void
 RGBTriangle::update() {
-	rotate(2);
+	rotate(90, 2);
 }
 
 void
-RGBTriangle::rotate(GLdouble d) {
-	angle += d;
+RGBTriangle::rotate(GLdouble l, GLdouble g) {
+	localAngle += l;
+	globalAngle += g;
 
-	position.x = radius * glm::cos(glm::radians(angle));
-	position.y = radius * glm::sin(glm::radians(angle));
+	glm::mat4 localRotationMat = glm::rotate(glm::mat4(1.0f), glm::radians(localAngle), glm::vec3(0.0, 0.0, 1.0));
 
-	mModelMat = glm::translate(mModelMat, position);
-	mModelMat = glm::rotate(mModelMat, (float)glm::radians(d), glm::vec3(0.0, 0.0, 1.0));
-	mModelMat = glm::translate(mModelMat, -position);
+	glm::mat4 globalRotationMat = glm::rotate(glm::mat4(1.0f), glm::radians(globalAngle), glm::vec3(0.0, 0.0, 1.0));
+
+	glm::mat4 globalRotationFinal = glm::translate(globalRotationMat, position);
+
+	this->setModelMat(globalRotationFinal * localRotationMat);
 }
