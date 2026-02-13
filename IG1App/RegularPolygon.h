@@ -1,5 +1,5 @@
-#ifndef H_SingleColorEntity_H
-#define H_SingleColorEntity_H
+#ifndef H_RegularPolygon_H
+#define H_RegularPolygon_H
 
 #include "SingleColorEntity.h"
 class RegularPolygon : public SingleColorEntity 
@@ -9,4 +9,4 @@ public:
 	~RegularPolygon();
 };
 
-#endif H_SingleColor_H
+#endif H_RegularPolygon_H
