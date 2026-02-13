@@ -5,11 +5,13 @@ Scene2::Scene2() : Scene() {}
 void Scene2::init() {
 	Scene::init();
 
-	gObjects.push_back(new RGBRectangle(200 * sqrt(2), 200*sqrt(2)));
+	float circleRadius = 200;
+
+	gObjects.push_back(new RGBRectangle(circleRadius * sqrt(2), circleRadius * sqrt(2)));
 	RGBTriangle* tr = new RGBTriangle(50);
-	tr->setModelMat(glm::translate(tr->modelMat(), glm::vec3(200, 0.0, 0.0)));
+	tr->setModelMat(glm::translate(tr->modelMat(), glm::vec3(circleRadius, 0.0, 0.0)));
 	gObjects.push_back(tr);
-	gObjects.push_back(new RegularPolygon(100, 200, {1.0, 0.0, 1.0, 1.0}));
+	gObjects.push_back(new RegularPolygon(100, circleRadius, {1.0, 0.0, 1.0, 1.0}));
 }
 
 Scene2::~Scene2() {
