@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_RGBCube_H
+#define H_RGBCube_H
+
 #include "Entity.h"
 
 class RGBCube : public EntityWithColors
@@ -17,3 +19,4 @@ private:
 	void rotate(GLfloat angle);
 };
 
+#endif H_RGBCube_H

@@ -1,5 +1,6 @@
 #include "Scene3.h"
 #include "RGBCube.h"
+#include "Cube.h"
 
 Scene3::Scene3() : Scene() {
 

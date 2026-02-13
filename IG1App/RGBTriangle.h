@@ -1,10 +1,12 @@
-#pragma once
+#ifndef H_RGBTriangle_H
+#define H_RGBTriangle_H
+
 #include "Entity.h"
 
 class RGBTriangle : public EntityWithColors
 {
 public:
-	explicit RGBTriangle(GLdouble r, GLdouble posX = 0, GLdouble posY = 0, GLdouble posZ = 0);
+	explicit RGBTriangle(GLdouble r);
 	~RGBTriangle();
 
 	void update() override;
@@ -18,3 +20,4 @@ private:
 	float globalAngle = 0;
 };
 
+#endif H_RGBTriangle_H

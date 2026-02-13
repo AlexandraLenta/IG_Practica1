@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_RGBRectangle_H
+#define H_RGBRectangle_H
+
 #include "Entity.h"
 
 class RGBRectangle : public EntityWithColors
@@ -9,3 +11,4 @@ public:
 	void render(glm::mat4 const& modelViewMat) const override;
 };
 
+#endif H_RGBRectangle_H

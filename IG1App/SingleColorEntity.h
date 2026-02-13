@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_SingleColorEntity_H
+#define H_SingleColorEntity_H
+
 #include "Entity.h"
 
 class SingleColorEntity : public Abs_Entity
@@ -15,3 +17,4 @@ private:
 	glm::vec4 mColor;
 };
 
+#endif H_SingleColorEntity_H

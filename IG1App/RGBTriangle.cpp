@@ -1,6 +1,6 @@
 ﻿#include "RGBTriangle.h"
 
-RGBTriangle::RGBTriangle(GLdouble r, GLdouble posX, GLdouble posY, GLdouble posZ) : EntityWithColors(), position(posX, posY, posZ), originalDisplacement(posX, posY, posZ), radius(r) {
+RGBTriangle::RGBTriangle(GLdouble r) : EntityWithColors(), radius(r) {
 	// crea una malla triangular
 	mMesh = Mesh::generateRGBTriangle(r);
 }
