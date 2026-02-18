@@ -74,6 +74,6 @@ Scene::render(Camera const& cam) const
 
 void
 Scene::update() {
-	for (auto& obj : gObjects)
+	for (Abs_Entity* obj : gObjects)
 		obj->update();
 }

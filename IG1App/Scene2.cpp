@@ -13,7 +13,3 @@ void Scene2::init() {
 	gObjects.push_back(tr);
 	gObjects.push_back(new RegularPolygon(100, circleRadius, {1.0, 0.0, 1.0, 1.0}));
 }
-
-Scene2::~Scene2() {
-
-}

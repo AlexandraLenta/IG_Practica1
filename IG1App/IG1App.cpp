@@ -81,7 +81,7 @@ IG1App::init()
 	mScenes.push_back(new Scene3);
 
 	mCamera->set2D();
-	for (auto& scene : mScenes) scene->init();
+	for (Scene* scene : mScenes) scene->init();
 	mScenes[mCurrentScene]->load();
 }
 

@@ -12,7 +12,3 @@ void Scene3::init()
 	gObjects.push_back(new RGBCube(100.0));
 }
 
-Scene3::~Scene3() {
-
-}
-
