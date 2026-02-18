@@ -1,5 +1,8 @@
 #ifndef H_RGBRectangle_H
 #define H_RGBRectangle_H
+#ifndef _H_Entities_H_
+#define _H_Entities_H_
+
 
 #include "Entity.h"
 
@@ -7,7 +10,7 @@ class RGBRectangle : public EntityWithColors
 {
 public:
 	explicit RGBRectangle(GLdouble w, GLdouble h);
-	~RGBRectangle();
+
 	void render(glm::mat4 const& modelViewMat) const override;
 };
 

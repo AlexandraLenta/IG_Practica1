@@ -8,14 +8,13 @@ class RGBTriangle : public EntityWithColors
 public:
 	explicit RGBTriangle(GLdouble r);
 	~RGBTriangle();
+	explicit RGBTriangle(GLdouble r, GLdouble pos);
 
 	void update() override;
 	void rotate(GLdouble l, GLdouble g);
 
 private:
-	glm::vec3 position;
-	float radius;
-	glm::vec3 originalDisplacement;
+	float position;
 	float localAngle = 0;
 	float globalAngle = 0;
 };

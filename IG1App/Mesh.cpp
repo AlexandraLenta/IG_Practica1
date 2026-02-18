@@ -144,12 +144,11 @@ Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 Mesh*
 Mesh::generateRGBTriangle(GLdouble r) {
 	Mesh* mesh = generateRegularPolygon(3, r);
+
+	// Cambiar primitiva para poder rellenar la figura
 	mesh->mPrimitive = GL_TRIANGLES;
 
-	// Set vertices
-	mesh->mNumVertices = 3;
-	mesh->vVertices.reserve(mesh->mNumVertices);
-
+	// Poner colores
 	mesh->vColors.reserve(mesh->mNumVertices);
 	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
 	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);

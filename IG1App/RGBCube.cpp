@@ -1,18 +1,14 @@
 #include "RGBCube.h"
 
-RGBCube::RGBCube(GLdouble length) : EntityWithColors(), length(length), angle(0), axis(1.0, 0.0, 0.0), position( length / 2, length / 2, -length / 2) {
+RGBCube::RGBCube(GLdouble length) : EntityWithColors(), length(length), position( length / 2, length / 2, -length / 2) {
 	mMesh = Mesh::generateRGBCubeTriangles(length);
-}
-
-RGBCube::~RGBCube() {
-
 }
 
 void
 RGBCube::update() {
-	angle += 1.0f;
-	if (angle >= 180.0f) {
-		angle = 0.0f;
+	angle += 1.0f; 
+	if (angle >= 180.0f) { // si se ha movido 180 grados
+		angle = 0.0f; 
 		// x-> z -> y
 		if (axis.x > 0.0f) { // if moving in x, change to z
 			axis = { 0.0, 0.0, 1.0 };

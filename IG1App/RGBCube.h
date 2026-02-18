@@ -7,13 +7,12 @@ class RGBCube : public EntityWithColors
 {
 public:
 	explicit RGBCube(GLdouble length);
-	~RGBCube();
 	void update() override;
 
 private:
-	GLfloat angle;
+	GLfloat angle = 0;
 	GLdouble length;
-	glm::vec3 axis;
+	glm::vec3 axis = { 1.0, 0.0, 0.0 };
 	glm::vec3 position;
 
 	void rotate(GLfloat angle);
