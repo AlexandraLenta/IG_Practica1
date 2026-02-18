@@ -6,8 +6,6 @@
 class RGBTriangle : public EntityWithColors
 {
 public:
-	explicit RGBTriangle(GLdouble r);
-	~RGBTriangle();
 	explicit RGBTriangle(GLdouble r, GLdouble pos);
 
 	void update() override;
