@@ -7,17 +7,18 @@ EntityWithTexture::EntityWithTexture() : EntityWithColors(),mTexture(nullptr), m
 
 void EntityWithTexture::render(glm::mat4 const& modelViewMat) const
 {
-    glm::mat4 aMat = modelViewMat * mModelMat;
+    if (mMesh != nullptr) {
+        glm::mat4 aMat = modelViewMat * mModelMat;
 
-    mShader->use();
-    upload(aMat);
+        mShader->use();
+        mShader->setUniform("modulate", mModulate);
+        upload(aMat);
 
-    mShader->setUniform("modulate", mModulate);
-
-    if (mTexture != nullptr)
-    {
-        mTexture->bind();
-        mMesh->render();
-        mTexture->unbind();
+        if (mTexture != nullptr)
+        {
+            mTexture->bind();
+            mMesh->render();
+            mTexture->unbind();
+        }
     }
 }

@@ -312,3 +312,8 @@ Mesh::generateRGBCubeTriangles(GLdouble length) {
 
 	return mesh;
 }
+
+Mesh*
+Mesh::generateRectangleTexCor(GLdouble w, GLdouble h) {
+
+}

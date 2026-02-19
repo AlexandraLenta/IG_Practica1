@@ -11,7 +11,7 @@ public:
 	void render(glm::mat4 const& modelViewMat) const override;
 
 protected:
-	Texture* mTexture;
+	Texture* mTexture = nullptr;
 	bool mModulate = false;
 };
 
