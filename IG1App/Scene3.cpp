@@ -2,10 +2,6 @@
 #include "RGBCube.h"
 #include "Cube.h"
 
-Scene3::Scene3() : Scene() {
-
-}
-
 void Scene3::init()
 {
 	Scene::init();

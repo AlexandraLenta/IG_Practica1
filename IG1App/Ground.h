@@ -7,8 +7,6 @@ class Ground : public EntityWithColors
 {
 public:
     explicit Ground(GLdouble w, GLdouble h);
-
-    void render(glm::mat4 const& modelViewMat) const override;
 };
 
 #endif _H_Ground_H_

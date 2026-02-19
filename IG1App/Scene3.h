@@ -6,7 +6,6 @@
 class Scene3 : public Scene
 {
 public:
-	Scene3();
 	void init() override;
 };
 

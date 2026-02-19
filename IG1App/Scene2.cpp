@@ -1,7 +1,5 @@
 #include "Scene2.h"
 
-Scene2::Scene2() : Scene() {}
-
 void Scene2::init() {
 	Scene::init();
 
