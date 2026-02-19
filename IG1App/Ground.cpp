@@ -1,6 +1,6 @@
 #include "Ground.h"
 
-Ground :: Ground(GLdouble w, GLdouble h) : EntityWithColors()
+Ground :: Ground(GLdouble w, GLdouble h) : EntityWithTexture()
 {
 	mMesh = Mesh::generateRGBRectangle(w, h); // generar malla
 

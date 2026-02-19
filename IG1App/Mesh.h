@@ -40,6 +40,7 @@ protected:
 	std::vector<glm::vec3> vVertices; // vertex array
 	std::vector<glm::vec4> vColors;   // color array
 	virtual void draw() const;
+	std::vector<glm::vec2> vTextureCords; //coordenadas de textura
 
 	GLuint mVAO;  // vertex array object
 
