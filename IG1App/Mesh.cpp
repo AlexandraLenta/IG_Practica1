@@ -316,4 +316,13 @@ Mesh::generateRGBCubeTriangles(GLdouble length) {
 Mesh*
 Mesh::generateRectangleTexCor(GLdouble w, GLdouble h) {
 
+	Mesh* mesh = generateRectangle(w, h);
+	mesh->vColors.reserve(mesh->mNumVertices);
+
+	mesh->vColors.emplace_back(0, 1);
+	mesh->vColors.emplace_back(0, 0);
+	mesh->vColors.emplace_back(1, 1);
+	mesh->vColors.emplace_back(1, 0);
+
+	return mesh;
 }
