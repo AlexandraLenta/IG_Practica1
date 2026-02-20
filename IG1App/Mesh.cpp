@@ -388,3 +388,49 @@ Mesh::generateBoxOutlineTexCor(GLdouble length) {
 
 	return mesh;
 }
+
+Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) {
+	Mesh* mesh = new Mesh();
+
+	// puntas * 2 (radio mayor y radio menor) + 1 (origen) + 1 (conexión con la primera punta)
+	mesh->mNumVertices = np * 2 + 2;
+
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	mesh->mPrimitive = GL_TRIANGLE_FAN;
+
+	// origen
+	mesh->vVertices.emplace_back(0, 0, 0);
+
+	// calcular angulos
+	float angleToSum = 360.0 / (float)(np) / 2.0;
+	float angleInRadians = radians(angleToSum);
+	float currentAngle = radians(90.0);
+
+	// crear vértices
+	for (int i = 0; i < np; i++) {
+		float x = re * cos(currentAngle);
+		float y = re * sin(currentAngle);
+
+		// punta de radio mayor
+		mesh->vVertices.emplace_back(x, y, h);
+
+		currentAngle += angleInRadians;
+
+		x = re / 2.0 * cos(currentAngle);
+		y = re / 2.0 * sin(currentAngle);
+
+		// punta de radio menor
+		mesh->vVertices.emplace_back(x, y, h);
+
+		currentAngle += angleInRadians;
+	}
+
+
+	float x = re * cos(radians(90.0));
+	float y = re * sin(radians(90.0));
+
+	// punta en el mismo lugar que la primera para conectar la figura
+	mesh->vVertices.emplace_back(x, y, h);
+
+	return mesh;
+}
