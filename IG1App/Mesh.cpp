@@ -51,6 +51,16 @@ Mesh::load()
 			glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(vec4), nullptr);
 			glEnableVertexAttribArray(1);
 		}
+
+		if (vTextureCords.size() > 0) {
+			glGenBuffers(1, &mTBO);
+
+			glBindBuffer(GL_ARRAY_BUFFER, mTBO);
+			glBufferData(GL_ARRAY_BUFFER,vTextureCords.size() * sizeof(vec2),vTextureCords.data(),GL_STATIC_DRAW);
+
+			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(vec2), nullptr);
+			glEnableVertexAttribArray(2);
+		}
 	}
 }
 
@@ -67,6 +77,10 @@ Mesh::unload()
 			glDeleteBuffers(1, &mCBO);
 			mCBO = NONE;
 		}
+		if (mTBO != NONE) {
+			glDeleteBuffers(1, &mTBO);
+			mTBO = NONE;
+		}
 	}
 }
 
@@ -77,7 +91,6 @@ Mesh::render() const
 
 	glBindVertexArray(mVAO);
 	draw();
-
 
 }
 

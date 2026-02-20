@@ -47,6 +47,7 @@ protected:
 private:
 	GLuint mVBO;  // vertex buffer object
 	GLuint mCBO;  // color buffer object
+	GLuint mTBO;
 };
 
 #endif //_H_Scene_H_
