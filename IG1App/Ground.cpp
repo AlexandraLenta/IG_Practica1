@@ -2,7 +2,7 @@
 
 Ground :: Ground(GLdouble w, GLdouble h, Texture* tex) : EntityWithTexture(tex, false)
 {
-	mMesh = Mesh::generateRGBRectangle(w, h); // generar malla
+	mMesh = Mesh::generateRectangleTexCor(w, h); // generar malla
 
 	glm::mat4 model = glm::mat4(1.0f); // crear matriz identidad
 
