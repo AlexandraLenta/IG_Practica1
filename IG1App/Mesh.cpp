@@ -77,6 +77,8 @@ Mesh::render() const
 
 	glBindVertexArray(mVAO);
 	draw();
+
+
 }
 
 Mesh*
@@ -314,15 +316,15 @@ Mesh::generateRGBCubeTriangles(GLdouble length) {
 }
 
 Mesh*
-Mesh::generateRectangleTexCor(GLdouble w, GLdouble h) {
+Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh) {
 
 	Mesh* mesh = generateRectangle(w, h);
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
-	mesh->vTextureCords.emplace_back(0.0, 1.0);
+	mesh->vTextureCords.emplace_back(0.0, rh);
 	mesh->vTextureCords.emplace_back(0.0, 0.0);
-	mesh->vTextureCords.emplace_back(1.0, 1.0);
-	mesh->vTextureCords.emplace_back(1.0, 0.0);
+	mesh->vTextureCords.emplace_back(rw, rh);
+	mesh->vTextureCords.emplace_back(rw, 0.0);
 
 	return mesh;
 }
