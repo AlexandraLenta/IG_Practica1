@@ -1,7 +1,7 @@
 #include "Star3D.h"
 
 Star3D::Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex) : EntityWithTexture(tex) {
-	mMesh = Mesh::generateStar3D(radius, pointNr, coorZ);
+	mMesh = Mesh::generateStar3DTexCor(radius, pointNr, coorZ);
 }
 
 void 

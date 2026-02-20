@@ -434,3 +434,34 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) {
 
 	return mesh;
 }
+
+Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
+	Mesh* mesh = generateStar3D(re, np, h);
+
+	mesh->vTextureCords.reserve(mesh->mNumVertices);
+
+	// el centro en el origen
+	mesh->vTextureCords.emplace_back(0.5, 0.5);
+	
+	mesh->vTextureCords.emplace_back(0, 0);
+	mesh->vTextureCords.emplace_back(0, 0.25);
+	mesh->vTextureCords.emplace_back(0, 0.5);
+	mesh->vTextureCords.emplace_back(0, 0.75);
+	mesh->vTextureCords.emplace_back(0, 1);
+
+	mesh->vTextureCords.emplace_back(0.25, 1);
+	mesh->vTextureCords.emplace_back(0.5, 1);
+	mesh->vTextureCords.emplace_back(0.75, 1);
+	mesh->vTextureCords.emplace_back(1, 1);
+
+	mesh->vTextureCords.emplace_back(1, 0.75);
+	mesh->vTextureCords.emplace_back(1, 0.5);
+	mesh->vTextureCords.emplace_back(1, 0.25);
+	mesh->vTextureCords.emplace_back(1, 0);
+
+	mesh->vTextureCords.emplace_back(0.75, 0);
+	mesh->vTextureCords.emplace_back(0.5, 0);
+	mesh->vTextureCords.emplace_back(0.25, 0);
+
+	return mesh;
+}
