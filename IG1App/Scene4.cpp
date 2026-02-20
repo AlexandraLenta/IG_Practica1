@@ -20,6 +20,10 @@ Scene4::init() {
 	boxInsideTex->load("../assets/images/container.jpg");
 	gTextures.push_back(boxInsideTex);
 
+	Texture* starTex = new Texture();
+	starTex->load("../assets/images/rueda.png");
+	gTextures.push_back(starTex);
+
 	// variables
 	float groundW = 200;
 	float groundH = 200;
@@ -29,5 +33,5 @@ Scene4::init() {
 
 	//gObjects.push_back(new Ground(groundW, groundH, ground));
 	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
-	gObjects.push_back(new Star3D(starRadius, pointNr, starZ));
+	gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
 }
