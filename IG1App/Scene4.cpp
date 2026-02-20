@@ -15,10 +15,14 @@ Scene4::init() {
 	boxTex->load("../assets/images/papelE.png");
 	gTextures.push_back(boxTex);
 
+	Texture* boxInsideTex = new Texture();
+	boxInsideTex->load("../assets/images/container.jpg");
+	gTextures.push_back(boxInsideTex);
+
 	// variables
 	float groundW = 200;
 	float groundH = 200;
 
 	//gObjects.push_back(new Ground(groundW, groundH, ground));
-	gObjects.push_back(new BoxOutline(groundW, boxTex));
+	gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
 }
