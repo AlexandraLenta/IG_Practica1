@@ -341,3 +341,39 @@ Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh) {
 
 	return mesh;
 }
+
+Mesh* 
+Mesh::generateBoxOutline(GLdouble length) {
+	Mesh* mesh = new Mesh(); 
+	mesh->mPrimitive = GL_TRIANGLE_STRIP;
+	mesh->mNumVertices = 10;
+
+	length /= 2;
+
+	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(length, -length, length);
+	mesh->vVertices.emplace_back(length, length, length);
+	mesh->vVertices.emplace_back(length, -length, -length);
+	mesh->vVertices.emplace_back(length, length, -length);
+	mesh->vVertices.emplace_back(-length, -length, -length);
+	mesh->vVertices.emplace_back(-length, length, -length);
+	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(length, length, length);
+
+	return mesh;
+}
+
+Mesh*
+Mesh::generateBoxOutlineTexCor(GLdouble length) {
+	Mesh* mesh = generateBoxOutline(length);
+
+	mesh->vTextureCords.reserve(mesh->mNumVertices);
+
+	mesh->vTextureCords.emplace_back(0.0, 1);
+	mesh->vTextureCords.emplace_back(0.0, 0.0);
+	mesh->vTextureCords.emplace_back(1, 1);
+	mesh->vTextureCords.emplace_back(1, 0.0);
+
+	return mesh;
+}

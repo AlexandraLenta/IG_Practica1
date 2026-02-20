@@ -9,6 +9,7 @@ public:
 	EntityWithTexture(Texture* tex = nullptr, bool modulate = false);
 
 	void render(glm::mat4 const& modelViewMat) const override;
+	void setTexture(Texture* tex) { mTexture = tex; }
 
 protected:
 	Texture* mTexture = nullptr;
