@@ -31,8 +31,11 @@ Scene::destroy()
 
 	for (Abs_Entity* el : gObjects)
 		delete el;
+	for (Texture* tex : gTexture)
+		delete tex;
 
 	gObjects.clear();
+	gTexture.clear();
 }
 
 void

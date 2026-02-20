@@ -6,7 +6,7 @@
 class EntityWithTexture : public EntityWithColors
 {
 public:
-	EntityWithTexture();
+	EntityWithTexture(Texture* tex = nullptr, bool modulate = false);
 
 	void render(glm::mat4 const& modelViewMat) const override;
 

@@ -9,6 +9,7 @@
 #include "RegularPolygon.h"
 #include "RGBTriangle.h"
 #include "RGBRectangle.h"
+#include "Texture.h"
 
 #include <vector>
 
@@ -36,6 +37,7 @@ protected:
 	void resetGL();
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
+	std::vector<Texture*> gTexture;
 };
 
 #endif //_H_Scene_H_
