@@ -1,12 +1,11 @@
 #ifndef _H_BoxOutline_H_
 #define _H_BoxOutline_H_
-#include "SingleColorEntity.h"
+#include "EntityWithTexture.h"
 class BoxOutline :
-    public SingleColorEntity
+    public EntityWithTexture
 {
 public:
-    explicit BoxOutline(GLdouble length);
-    void render(const glm::mat4& modelViewMat) const override;
+    explicit BoxOutline(GLdouble length, Texture* tex);
 };
 
 #endif _H_BoxOutline_H_
