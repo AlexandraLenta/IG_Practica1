@@ -1,6 +1,6 @@
 #include "BoxOutline.h"
 
-BoxOutline::BoxOutline(GLdouble length, Texture* texOut, Texture* texIn) : EntityWithTexture(texOut), textureInside(texIn) {
+BoxOutline::BoxOutline(GLdouble length, Texture* texOut, Texture* texIn) : EntityWithTexture(texOut), mTextureInside(texIn) {
 	mMesh = Mesh::generateBoxOutlineTexCor(length);
 }
 
@@ -25,9 +25,9 @@ BoxOutline::render(glm::mat4 const& modelViewMat) const {
 
             glCullFace(GL_FRONT);
 
-            textureInside->bind();
+            mTextureInside->bind();
             mMesh->render();
-            textureInside->unbind();
+            mTextureInside->unbind();
 
             glDisable(GL_CULL_FACE);
         }

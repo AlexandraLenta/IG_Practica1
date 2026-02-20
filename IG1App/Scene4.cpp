@@ -6,7 +6,7 @@ void
 Scene4::init() {
 	Scene::init();
 
-	// cargar la textura
+	// cargar las texturas
 	Texture* ground = new Texture();
 	ground->load("../assets/images/baldosaC.png");
 	gTextures.push_back(ground);
