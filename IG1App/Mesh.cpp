@@ -370,7 +370,21 @@ Mesh::generateBoxOutlineTexCor(GLdouble length) {
 
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
-	mesh->vTextureCords.emplace_back(0.0, 1);
+	mesh->vTextureCords.emplace_back(0, 0);
+	mesh->vTextureCords.emplace_back(1, 0);
+	
+	mesh->vTextureCords.emplace_back(1, 1);
+
+	mesh->vTextureCords.emplace_back(0, 0);
+	mesh->vTextureCords.emplace_back(0, 1);
+
+	mesh->vTextureCords.emplace_back(1, 0);
+	mesh->vTextureCords.emplace_back(1, 1);
+
+	mesh->vTextureCords.emplace_back(0, 0);
+	mesh->vTextureCords.emplace_back(0, 1);
+
+	mesh->vTextureCords.emplace_back(1, 1);
 
 	return mesh;
 }

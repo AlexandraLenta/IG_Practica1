@@ -19,6 +19,6 @@ Scene4::init() {
 	float groundW = 200;
 	float groundH = 200;
 
-	gObjects.push_back(new Ground(groundW, groundH, ground));
-	//gObjects.push_back(new BoxOutline(groundW, boxTex));
+	//gObjects.push_back(new Ground(groundW, groundH, ground));
+	gObjects.push_back(new BoxOutline(groundW, boxTex));
 }
