@@ -2,6 +2,7 @@
 #include "Ground.h"
 #include "BoxOutline.h"
 #include "Star3D.h"
+#include "Box.h"
 
 void
 Scene4::init() {
@@ -33,5 +34,6 @@ Scene4::init() {
 
 	//gObjects.push_back(new Ground(groundW, groundH, ground));
 	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
-	gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
+	//gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
+	gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
 }
