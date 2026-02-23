@@ -26,11 +26,13 @@ Star3D::render(const glm::mat4& modelViewMat) const {
 
 void
 Star3D::update() {
+	//increase angel
 	angleZ += 1.0f;
 	angleY += 0.5f;
 	mModelMat = glm::mat4(1.0f);
+	//rotation about y
 	mModelMat = glm::rotate(mModelMat,glm::radians(angleY),glm::vec3(0, 1, 0));
-
+	//rotation about z
 	mModelMat = glm::rotate(mModelMat,glm::radians(angleZ),glm::vec3(0, 0, 1));
 
 }
