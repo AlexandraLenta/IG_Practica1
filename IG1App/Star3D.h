@@ -10,7 +10,8 @@ public:
     void update() override;
 
 private:
-    float angleZ = 0.0f;
-    float angleY = 0.0f;
+    float angle = 0.0f;
+
+    void rotate(float angle);
 };
 
