@@ -8,5 +8,9 @@ public:
     Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex);
     void render(const glm::mat4& modelViewMat) const override;
     void update() override;
+
+private:
+    float angleZ = 0.0f;
+    float angleY = 0.0f;
 };
 
