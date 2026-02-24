@@ -34,10 +34,10 @@ Box::render(glm::mat4 const& modelViewMat) const {
 
             glCullFace(GL_BACK);
 
-            glm::mat4 mat2 = glm::translate(mat2, glm::vec3(0, length, 0));
-            mat2 = glm::rotate(mModelMat, glm::radians(90.0f), glm::vec3(1, 0, 0));
+            glm::mat4 mModelMatLid = glm::translate(glm::mat4(1.0f), glm::vec3(0, length/2, 0));
+            mModelMatLid = glm::rotate(mModelMatLid, glm::radians(90.0f), glm::vec3(1, 0, 0));
 
-            upload(modelViewMat * mat2);
+            upload(modelViewMat * mModelMatLid);
 
             mTexture->bind();
             mLidMesh->render();
