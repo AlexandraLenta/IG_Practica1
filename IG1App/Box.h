@@ -10,5 +10,6 @@ public:
 private:
     Mesh* mLidMesh;
     Texture* mTextureInside;
+    GLdouble length;
 };
 
