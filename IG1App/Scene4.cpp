@@ -3,6 +3,7 @@
 #include "BoxOutline.h"
 #include "Star3D.h"
 #include "Box.h"
+#include "GlassParapet.h"
 
 void
 Scene4::init() {
@@ -25,6 +26,10 @@ Scene4::init() {
 	starTex->load("../assets/images/rueda.png");
 	gTextures.push_back(starTex);
 
+	Texture* glass = new Texture();
+	glass->load("../assets/images/windowC.png");
+	gTextures.push_back(glass);
+
 	// variables
 	float groundW = 200;
 	float groundH = 200;
@@ -35,5 +40,6 @@ Scene4::init() {
 	//gObjects.push_back(new Ground(groundW, groundH, ground));
 	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
 	//gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
-	gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
+	//gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
+	gObjects.push_back(new GlassParapet(starRadius, glass));
 }

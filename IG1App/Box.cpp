@@ -5,6 +5,9 @@ Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(
 
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
     mMeshTop->load(); // cargar la nueva malla en el GPU
+
+    mModelMatTop = glm::translate(glm::mat4(1.0f), glm::vec3(0, length / 2, 0));
+    mModelMatTop = glm::rotate(mModelMatTop, glm::radians(90.0f), glm::vec3(1, 0, 0));
 }
 
 void
