@@ -6,11 +6,20 @@ class Box :
 public:
     Box(GLdouble length, Texture* tex, Texture* texInside);
     void render(glm::mat4 const& modelViewMat) const override;
+    void update() override;
 
 private:
-    Mesh* mLidMesh;
+    Mesh* mMeshTop;
     Texture* mTextureInside;
-    glm::mat4 mModelMatLid;
+    glm::mat4 mModelMatTop;
     GLdouble length;
+    float topAngle = 0.0f;
+    int moveDir = 1;
+
+    void renderSides() const;
+    void renderBottom() const;
+    void renderTop() const;
+
+    void moveLid();
 };
 
