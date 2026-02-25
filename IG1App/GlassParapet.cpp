@@ -7,6 +7,7 @@ GlassParapet::GlassParapet(GLdouble length, Texture* tex) : EntityWithTexture(te
 void
 GlassParapet::render(glm::mat4 const& modelViewMat) const {
 	glEnable(GL_BLEND);
+	glDepthMask(GL_FALSE);
 
 	glBlendColor(0, 0, 0, 0.5f);
 	
@@ -15,6 +16,6 @@ GlassParapet::render(glm::mat4 const& modelViewMat) const {
 	EntityWithTexture::render(modelViewMat);
 
 	glBlendFunc(GL_ONE, GL_ZERO);
-	
+	glDepthMask(GL_TRUE);
 	glDisable(GL_BLEND);
 }
