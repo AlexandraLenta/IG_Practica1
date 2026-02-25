@@ -5,8 +5,8 @@ class Photo :
 {
 public:
     Photo(GLdouble length);
+    ~Photo();
     void update() override;
 private:
     GLdouble length;
 };
-

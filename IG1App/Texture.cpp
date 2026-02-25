@@ -70,7 +70,17 @@ Texture::setWrap(GLuint wp) // GL_REPEAT, GL_CLAMP_TO_EDGE, ...
 
 void 
 Texture::loadColorBuffer(GLsizei width, GLsizei height, GLuint buffer) {
+	if (!mId) {
+		init();
+	}
+
 	glReadBuffer(buffer); // cambiamos el buffer del cual leemos
+
+
+	glBindTexture(GL_TEXTURE_2D, mId);
+	
 	glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 0, 0, width, height, 0); // copiamos la imagen del color buffer en la textura activa
-	glReadBuffer(GL_BACK); // restablecemos default
+	
+	glBindTexture(GL_TEXTURE_2D, 0);
+
 }

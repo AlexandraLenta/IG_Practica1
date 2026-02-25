@@ -5,6 +5,10 @@ EntityWithTexture::EntityWithTexture(Texture* tex, bool modulate) : EntityWithCo
     mShader = Shader::get("texture");
 }
 
+EntityWithTexture::~EntityWithTexture() {
+    delete mTexture;
+}
+
 void EntityWithTexture::render(glm::mat4 const& modelViewMat) const
 {
     if (mMesh != nullptr) {
