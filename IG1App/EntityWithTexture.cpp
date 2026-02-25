@@ -1,6 +1,6 @@
 #include "EntityWithTexture.h"
 
-EntityWithTexture::EntityWithTexture(Texture* tex, bool modulate) : EntityWithColors(), mTexture(tex), mModulate(modulate)
+EntityWithTexture::EntityWithTexture(Texture* tex, bool modulate) : Abs_Entity(), mTexture(tex), mModulate(modulate)
 {
     mShader = Shader::get("texture");
 }

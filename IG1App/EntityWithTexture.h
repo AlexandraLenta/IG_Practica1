@@ -3,7 +3,7 @@
 #include "Entity.h"
 #include "Texture.h"
 
-class EntityWithTexture : public EntityWithColors
+class EntityWithTexture : public Abs_Entity
 {
 public:
 	EntityWithTexture(Texture* tex = nullptr, bool modulate = false);
