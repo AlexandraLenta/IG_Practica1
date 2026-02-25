@@ -351,6 +351,7 @@ Mesh::generateBoxOutline(GLdouble length) {
 	length /= 2;
 
 	mesh->vVertices.emplace_back(-length, -length, length);
+	mesh->vVertices.emplace_back(-length, length, length);
 	mesh->vVertices.emplace_back(length, -length, length);
 	mesh->vVertices.emplace_back(length, length, length);
 	mesh->vVertices.emplace_back(length, -length, -length);
@@ -359,7 +360,6 @@ Mesh::generateBoxOutline(GLdouble length) {
 	mesh->vVertices.emplace_back(-length, length, -length);
 	mesh->vVertices.emplace_back(-length, -length, length);
 	mesh->vVertices.emplace_back(-length, length, length);
-	mesh->vVertices.emplace_back(length, length, length);
 
 	return mesh;
 }
@@ -371,20 +371,20 @@ Mesh::generateBoxOutlineTexCor(GLdouble length) {
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
 	mesh->vTextureCords.emplace_back(0, 0);
-	mesh->vTextureCords.emplace_back(1, 0);
+	mesh->vTextureCords.emplace_back(0, 1);
 	
-	mesh->vTextureCords.emplace_back(1, 1);
-
-	mesh->vTextureCords.emplace_back(0, 0);
-	mesh->vTextureCords.emplace_back(0, 1);
-
 	mesh->vTextureCords.emplace_back(1, 0);
-	mesh->vTextureCords.emplace_back(1, 1);
 
+	mesh->vTextureCords.emplace_back(1, 1);
 	mesh->vTextureCords.emplace_back(0, 0);
+
 	mesh->vTextureCords.emplace_back(0, 1);
+	mesh->vTextureCords.emplace_back(1, 0);
 
 	mesh->vTextureCords.emplace_back(1, 1);
+	mesh->vTextureCords.emplace_back(0, 0);
+
+	mesh->vTextureCords.emplace_back(0, 1);
 
 	return mesh;
 }
