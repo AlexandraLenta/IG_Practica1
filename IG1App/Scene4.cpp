@@ -5,6 +5,7 @@
 #include "Box.h"
 #include "GlassParapet.h"
 #include "Grass.h"
+#include "Photo.h"
 
 void
 Scene4::init() {
@@ -42,10 +43,11 @@ Scene4::init() {
 	float starZ = 150;
 	float pointNr = 8;
 
-	//gObjects.push_back(new Ground(groundW, groundH, ground));
+	gObjects.push_back(new Ground(groundW, groundH, ground));
 	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
 	//gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
 	//gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
 	//gObjects.push_back(new GlassParapet(starRadius, glass));
-	gObjects.push_back(new Grass(starRadius, grass));
+	//gObjects.push_back(new Grass(starRadius, grass));
+	gObjects.push_back(new Photo(100));
 }
