@@ -12,6 +12,7 @@ private:
     Mesh* mMeshTop;
     Texture* mTextureInside;
     glm::mat4 mModelMatTop;
+    glm::mat4 mModelMatBottom;
     GLdouble length;
     float topAngle = 0.0f;
     int moveDir = 1;

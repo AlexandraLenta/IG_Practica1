@@ -6,8 +6,13 @@ Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
     mMeshTop->load(); // cargar la nueva malla en el GPU
 
-    mModelMatTop = glm::translate(glm::mat4(1.0f), glm::vec3(0, length / 2, 0));
-    mModelMatTop = glm::rotate(mModelMatTop, glm::radians(90.0f), glm::vec3(1, 0, 0));
+    // mover matriz para la tapa
+    mModelMatTop = glm::translate(glm::mat4(1.0f), glm::vec3(0, length / 2, 0)); // mover hacia arriba
+    mModelMatTop = glm::rotate(mModelMatTop, glm::radians(90.0f), glm::vec3(1, 0, 0)); // rotar con el interior abajo
+
+    // mover matriz para el fondo
+    mModelMatBottom = glm::translate(glm::mat4(1.0f), glm::vec3(0, -length / 2, 0)); // mover hacia abajo
+    mModelMatBottom = glm::rotate(mModelMatBottom, glm::radians(-90.0f), glm::vec3(1, 0, 0)); // rotar con el interior arriba
 }
 
 void
@@ -27,9 +32,6 @@ Box::render(glm::mat4 const& modelViewMat) const {
 
             if (mMeshTop) // si existe
             {
-                glm::mat4 mModelMatBottom = glm::translate(glm::mat4(1.0f), glm::vec3(0, -length / 2, 0)); // mover hacia abajo
-                mModelMatBottom = glm::rotate(mModelMatBottom, glm::radians(-90.0f), glm::vec3(1, 0, 0)); // rotar 90 grados, con el interior hacia arriba
-
                 upload(modelViewMat * mModelMatBottom);
 
                 renderBottom(); // renderizar fondo
