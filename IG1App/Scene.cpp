@@ -80,3 +80,6 @@ Scene::update() {
 	for (Abs_Entity* obj : gObjects)
 		obj->update();
 }
+
+void
+Scene::saveImage() {}

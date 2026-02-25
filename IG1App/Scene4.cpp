@@ -47,9 +47,14 @@ Scene4::init() {
 	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
 	//gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
 	//gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
-	gObjects.push_back(new GlassParapet(starRadius, glass));
+	gObjects.push_back(new GlassParapet(boxSize, glass));
 	//gObjects.push_back(new Grass(starRadius, grass));
 	//Photo* photo = new Photo(300);
 	//photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)));
 	//gObjects.push_back(photo);
+}
+
+void
+Scene4::saveImage() {
+
 }
