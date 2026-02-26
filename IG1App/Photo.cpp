@@ -1,9 +1,10 @@
 #include "Photo.h"
+#include "IG1App.h"
 
 Photo::Photo(GLdouble length) : EntityWithTexture(), length(length) {
 	mMesh = Mesh::generateRectangleTexCor(length, length, 1, 1);
 	mTexture = new Texture();
-	mTexture->loadColorBuffer(600, 600);
+	mTexture->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
 }
 
 Photo::~Photo() {
@@ -13,7 +14,7 @@ Photo::~Photo() {
 
 void
 Photo::update() {
-	mTexture->loadColorBuffer(600, 600);
+	mTexture->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
 }
 
 GLuint* 

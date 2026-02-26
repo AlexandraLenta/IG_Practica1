@@ -31,7 +31,7 @@ public:
 	void load();
 	void unload();
 
-	void saveImage();
+	virtual void saveImage();
 
 protected:
 	void destroy();

@@ -12,6 +12,7 @@ public:
     GLuint* getImg();
 private:
     GLdouble length;
+    int width, height;
 };
 
 #endif H_Photo_H
