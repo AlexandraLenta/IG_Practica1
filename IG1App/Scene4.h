@@ -5,6 +5,6 @@ class Scene4 :
 {
 public:
     void init() override;
-    void saveImage() override;
+    //void saveImage() override;
 };
 
