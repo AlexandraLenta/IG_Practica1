@@ -82,4 +82,5 @@ Scene::update() {
 }
 
 void
-Scene::saveImage() {}
+Scene::saveImage() {
+}

@@ -6,6 +6,7 @@
 #include "GlassParapet.h"
 #include "Grass.h"
 #include "Photo.h"
+#include "BMPFileSaver.h"
 
 void
 Scene4::init() {
@@ -64,12 +65,12 @@ Scene4::init() {
 	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, y, -groundX / 4)));
 	gObjects.push_back(grass);
 
-	//Photo* photo = new Photo(300);
-	//photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)));
-	//gObjects.push_back(photo);
+	photoObj = new Photo(300);
+	photoObj->setModelMat(glm::rotate(photoObj->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)));
+	gObjects.push_back(photoObj);
 }
 
-//void
-//Scene4::saveImage() {
-//
-//}
+void
+Scene4::saveImage() {
+	BMPFileSaver::saveToBmp(photoObj->getImg());
+}

@@ -9,7 +9,7 @@ public:
     Photo(GLdouble length);
     ~Photo();
     void update() override;
-    GLuint* saveImg();
+    GLuint* getImg();
 private:
     GLdouble length;
 };

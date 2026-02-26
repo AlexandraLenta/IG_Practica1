@@ -201,9 +201,9 @@ IG1App::key(unsigned int key)
 				cout << "Disable continuous update.\n";
 			}
 				break;
-		/*case 'F':
-			mCurrentScene->saveImage();
-			break;*/
+		case 'F':
+			mScenes[mCurrentScene]->saveImage();
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

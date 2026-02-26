@@ -17,7 +17,7 @@ Photo::update() {
 }
 
 GLuint* 
-Photo::saveImg() {
+Photo::getImg() {
 	GLuint pixels[32];
 	glGetTexImage(GL_TEXTURE_2D, 0,
 		GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, pixels);
