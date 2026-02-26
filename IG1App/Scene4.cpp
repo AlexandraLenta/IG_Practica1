@@ -54,7 +54,7 @@ Scene4::init() {
 	gObjects.push_back(box);
 
 	Star3D* star = new Star3D(starRadius, pointNr, starZ, starTex);
-	star->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 2 + offset, y, -groundZ / 2 + offset)) * glm::scale(glm::mat4(1.0f),
+	star->transformModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 2 + offset, y, -groundZ / 2 + offset)) * glm::scale(glm::mat4(1.0f),
 		glm::vec3(scale)));
 	gObjects.push_back(star);
 

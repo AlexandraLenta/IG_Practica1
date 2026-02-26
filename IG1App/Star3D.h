@@ -8,11 +8,13 @@ class Star3D :
 {
 public:
     Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex);
+    void transformModelMat(glm::mat4 newMat);
     void render(const glm::mat4& modelViewMat) const override;
     void update() override;
 
 private:
     float angle = 0.0f;
+    glm::mat4 mPositionMat;
 
     void rotate(float angle);
 };

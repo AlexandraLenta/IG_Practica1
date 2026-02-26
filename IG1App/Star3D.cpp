@@ -4,6 +4,13 @@ Star3D::Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex) : 
 	mMesh = Mesh::generateStar3DTexCor(radius, pointNr, coorZ);
 }
 
+// DUDA!
+void
+Star3D::transformModelMat(glm::mat4 newMat) {
+	mModelMat = newMat;
+	mPositionMat = newMat;
+}
+
 void 
 Star3D::render(const glm::mat4& modelViewMat) const {
 	// dibujar primera estrella
@@ -33,5 +40,5 @@ Star3D::rotate(float a) {
 	//rotacion en z
 	glm::mat4 rotationZMat = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0, 0, 1));
 
-	setModelMat(rotationYMat * rotationZMat * mModelMat);
+	setModelMat(mPositionMat * rotationYMat * rotationZMat);
 }
