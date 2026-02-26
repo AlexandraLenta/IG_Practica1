@@ -32,11 +32,11 @@ Box::render(glm::mat4 const& modelViewMat) const {
 
             if (mMeshTop) // si existe
             {
-                upload(modelViewMat * mModelMatBottom);
+                upload(modelViewMat * mModelMat * mModelMatBottom);
 
                 renderBottom(); // renderizar fondo
 
-                upload(modelViewMat * mModelMatTop);
+                upload(modelViewMat * mModelMat * mModelMatTop);
 
                 renderTop(); // renderizar tapa
             }
