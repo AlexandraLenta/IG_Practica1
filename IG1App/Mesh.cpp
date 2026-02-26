@@ -173,7 +173,7 @@ Mesh::generateRGBTriangle(GLdouble r) {
 }
 
 Mesh*
-Mesh::generateRectangle(GLdouble w, GLdouble h) {
+Mesh::generateRectangle(GLdouble x, GLdouble z) {
 	// Create mesh
 	Mesh* mesh = new Mesh();
 	mesh->mPrimitive = GL_TRIANGLE_STRIP;
@@ -182,14 +182,14 @@ Mesh::generateRectangle(GLdouble w, GLdouble h) {
 	mesh->mNumVertices = 4;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
-	GLdouble x = w / 2;
-	GLdouble y = h / 2;
+	x /= 2;
+	z /= 2;
 
 	// Create vertices
-	mesh->vVertices.emplace_back(x, -y, 0.0);
-	mesh->vVertices.emplace_back(-x, -y, 0.0);
-	mesh->vVertices.emplace_back(x, y, 0.0);
-	mesh->vVertices.emplace_back(-x, y, 0.0);
+	mesh->vVertices.emplace_back(x, -z, 0.0);
+	mesh->vVertices.emplace_back(-x, -z, 0.0);
+	mesh->vVertices.emplace_back(x, z, 0.0);
+	mesh->vVertices.emplace_back(-x, z, 0.0);
 
 	return mesh;
 }
@@ -329,9 +329,9 @@ Mesh::generateRGBCubeTriangles(GLdouble length) {
 }
 
 Mesh*
-Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh) {
+Mesh::generateRectangleTexCor(GLdouble x, GLdouble z, GLuint rw, GLuint rh) {
 
-	Mesh* mesh = generateRectangle(w, h);
+	Mesh* mesh = generateRectangle(x, z);
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
 	mesh->vTextureCords.emplace_back(rw, 0);
@@ -343,30 +343,32 @@ Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh) {
 }
 
 Mesh* 
-Mesh::generateBoxOutline(GLdouble length) {
+Mesh::generateBoxOutline(GLdouble x, GLdouble y, GLdouble z) {
 	Mesh* mesh = new Mesh(); 
 	mesh->mPrimitive = GL_TRIANGLE_STRIP;
 	mesh->mNumVertices = 10;
 
-	length /= 2;
+	x /= 2;
+	y /= 2;
+	z /= 2;
 
-	mesh->vVertices.emplace_back(-length, -length, length);
-	mesh->vVertices.emplace_back(-length, length, length);
-	mesh->vVertices.emplace_back(length, -length, length);
-	mesh->vVertices.emplace_back(length, length, length);
-	mesh->vVertices.emplace_back(length, -length, -length);
-	mesh->vVertices.emplace_back(length, length, -length);
-	mesh->vVertices.emplace_back(-length, -length, -length);
-	mesh->vVertices.emplace_back(-length, length, -length);
-	mesh->vVertices.emplace_back(-length, -length, length);
-	mesh->vVertices.emplace_back(-length, length, length);
+	mesh->vVertices.emplace_back(-x, -y, z);
+	mesh->vVertices.emplace_back(-x, y, z);
+	mesh->vVertices.emplace_back(x, -y, z);
+	mesh->vVertices.emplace_back(x, y, z);
+	mesh->vVertices.emplace_back(x, -y, -z);
+	mesh->vVertices.emplace_back(x, y, -z);
+	mesh->vVertices.emplace_back(-x, -y, -z);
+	mesh->vVertices.emplace_back(-x, y, -z);
+	mesh->vVertices.emplace_back(-x, -y, z);
+	mesh->vVertices.emplace_back(-x, y, z);
 
 	return mesh;
 }
 
 Mesh*
-Mesh::generateBoxOutlineTexCor(GLdouble length) {
-	Mesh* mesh = generateBoxOutline(length);
+Mesh::generateBoxOutlineTexCor(GLdouble x, GLdouble y, GLdouble z) {
+	Mesh* mesh = generateBoxOutline(x, y, z);
 
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 

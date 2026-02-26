@@ -32,39 +32,38 @@ Scene4::init() {
 	glass->load("../assets/images/windowC.png", 150);
 	gTextures.push_back(glass);
 
-	Texture* grass = new Texture();
-	grass->load("../assets/images/grass.png");
-	gTextures.push_back(grass);
+	Texture* grassTex = new Texture();
+	grassTex->load("../assets/images/grass.png");
+	gTextures.push_back(grassTex);
 
 	// variables
-	float groundW = 200;
-	float groundH = 200;
+	float groundX = 200;
+	float groundY = 100;
+	float groundZ = 200;
 	float starRadius = 40;
 	float starZ = 40;
 	float pointNr = 8;
+	float y = 20;
+	float offset = 150;
+	float scale = 0.3f;
 
-	gObjects.push_back(new Ground(groundW, groundH, ground));
+	gObjects.push_back(new Ground(groundX, groundZ, ground));
 
 	Box* box = new Box(starRadius, boxTex, boxInsideTex);
-	box->setModelMat(glm::translate(glm::mat4(1.0f),glm::vec3(-groundW / 2 + 150, 20, -groundH / 2 + 150)));
+	box->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 2 + offset, y, -groundZ / 2 + offset)));
 	gObjects.push_back(box);
 
 	Star3D* star = new Star3D(starRadius, pointNr, starZ, starTex);
-	star->setModelMat(glm::translate(glm::mat4(1.0f),glm::vec3(-groundW / 2 + 150, 20, -groundH / 2 + 150))* glm::scale(glm::mat4(1.0f),
-		glm::vec3(0.3f)));
+	star->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 2 + offset, y, -groundZ / 2 + offset)) * glm::scale(glm::mat4(1.0f),
+		glm::vec3(scale)));
 	gObjects.push_back(star);
 
-	gObjects.push_back(new GlassParapet(groundW, glass));
+	gObjects.push_back(new GlassParapet(groundX, groundY, groundZ, glass));
 
-	Grass* hierba = new Grass(starRadius, grass);
-	hierba->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundW / 4, 20, -groundW / 4)));
-	gObjects.push_back(hierba);
+	Grass* grass = new Grass(starRadius, grassTex);
+	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, y, -groundX / 4)));
+	gObjects.push_back(grass);
 
-	//gObjects.push_back(new BoxOutline(groundW, boxTex, boxInsideTex));
-	//gObjects.push_back(new Star3D(starRadius, pointNr, starZ, starTex));
-	//gObjects.push_back(new Box(starRadius, boxTex, boxInsideTex));
-	//gObjects.push_back(new GlassParapet(boxSize, glass));
-	//gObjects.push_back(new Grass(starRadius, grass));
 	//Photo* photo = new Photo(300);
 	//photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)));
 	//gObjects.push_back(photo);

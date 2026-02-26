@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_Grass_H
+#define H_Grass_H
+
 #include "EntityWithTexture.h"
 class Grass :
     public EntityWithTexture
@@ -6,8 +8,6 @@ class Grass :
 public:
     Grass(GLdouble length, Texture* tex);
     void render(glm::mat4 const& modelViewMat) const override;
-private:
-    glm::mat4 mModelMat2;
-    glm::mat4 mModelMat3;
 };
 
+#endif H_Grass_H

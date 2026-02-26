@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_Star3D_H
+#define H_Star3D_H
+
 #include "EntityWithTexture.h"
 
 class Star3D :
@@ -15,3 +17,4 @@ private:
     void rotate(float angle);
 };
 
+#endif H_Star3D_H

@@ -1,7 +1,7 @@
 #include "BoxOutline.h"
 
 BoxOutline::BoxOutline(GLdouble length, Texture* texOut, Texture* texIn) : EntityWithTexture(texOut), mTextureInside(texIn) {
-	mMesh = Mesh::generateBoxOutlineTexCor(length);
+	mMesh = Mesh::generateBoxOutlineTexCor(length, length, length);
 }
 
 void

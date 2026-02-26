@@ -1,7 +1,7 @@
 #include "Box.h"
 
 Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(tex), mTextureInside(texInside), length(length), mModelMatTop(1.0f) {
-	mMesh = Mesh::generateBoxOutlineTexCor(length);
+	mMesh = Mesh::generateBoxOutlineTexCor(length, length, length);
 
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
     mMeshTop->load(); // cargar la nueva malla en el GPU
@@ -48,13 +48,13 @@ Box::render(glm::mat4 const& modelViewMat) const {
 
 void
 Box::renderSides() const {
-    glCullFace(GL_BACK);
+    glCullFace(GL_FRONT);
 
     mTexture->bind();
     mMesh->render();
     mTexture->unbind();
 
-    glCullFace(GL_FRONT);
+    glCullFace(GL_BACK);
 
     mTextureInside->bind();
     mMesh->render();

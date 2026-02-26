@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_Box_H
+#define H_Box_H
+
 #include "EntityWithTexture.h"
 class Box :
     public EntityWithTexture
@@ -24,3 +26,4 @@ private:
     void moveLid();
 };
 
+#endif H_Box_H

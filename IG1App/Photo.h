@@ -1,4 +1,6 @@
-#pragma once
+#ifndef H_Photo_H
+#define H_Photo_H
+
 #include "EntityWithTexture.h"
 class Photo :
     public EntityWithTexture
@@ -11,3 +13,5 @@ public:
 private:
     GLdouble length;
 };
+
+#endif H_Photo_H

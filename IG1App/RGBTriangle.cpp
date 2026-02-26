@@ -21,5 +21,5 @@ RGBTriangle::rotate(GLdouble l, GLdouble g) {
 
 	glm::mat4 globalRotationFinal = glm::translate(globalRotationMat, glm::vec3(position, 0.0, 0.0));
 
-	this->setModelMat(globalRotationFinal * localRotationMat);
+	setModelMat(globalRotationFinal * localRotationMat);
 }

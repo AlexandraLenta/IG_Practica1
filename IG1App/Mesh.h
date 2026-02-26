@@ -17,8 +17,8 @@ public:
 	static Mesh* generateCube(GLdouble length);
 	static Mesh* generateRGBCubeTriangles(GLdouble length);
 	static Mesh* generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh);
-	static Mesh* generateBoxOutline(GLdouble length);
-	static Mesh* generateBoxOutlineTexCor(GLdouble length);
+	static Mesh* generateBoxOutline(GLdouble x, GLdouble y, GLdouble z);
+	static Mesh* generateBoxOutlineTexCor(GLdouble x, GLdouble y, GLdouble z);
 	static Mesh* generateStar3D(GLdouble re, GLuint np, GLdouble h);
 	static Mesh* generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h);
 
