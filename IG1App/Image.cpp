@@ -1,6 +1,8 @@
 #include "Image.h"
 
 #include <stdexcept>
+#include "Texture.h"
+#include "IG1App.h"
 
 // stb_image and stb_image_write are using for reading
 // and writing images (https://github.com/nothings/stb)
@@ -167,4 +169,23 @@ Image::save(const std::string& name)
 	if (result == 0)
 		throw std::logic_error("Image::load(string&): ERROR: cannot save image.");
 
+}
+
+void 
+Image::saveImg() {
+	Texture* saveTex = new Texture();
+
+	saveTex->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
+
+	saveTex->bind(); // activar textura
+
+	glGetTexImage(GL_TEXTURE_2D, 0,
+		GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, data_); // coger data de la textura activa en pixels
+
+	saveTex->unbind(); // desactivar textura
+
+	save("screenshot.bmp");
+
+	delete saveTex;
+	saveTex = nullptr;
 }

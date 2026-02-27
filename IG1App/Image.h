@@ -52,6 +52,8 @@ public:
 		return data_[y * width_ + x];
 	}
 
+	void saveImg();
+
 	#ifdef __cpp_multidimensional_subscript
 	const rgba_color& operator[](GLsizei x, GLsizei y) const { return operator()(x, y); }
 	rgba_color& operator[](GLsizei x, GLsizei y) { return operator()(x, y); }

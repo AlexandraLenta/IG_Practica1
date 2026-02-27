@@ -7,6 +7,7 @@ class Box :
 {
 public:
     Box(GLdouble length, Texture* tex, Texture* texInside);
+    ~Box();
     void render(glm::mat4 const& modelViewMat) const override;
     void update() override;
 

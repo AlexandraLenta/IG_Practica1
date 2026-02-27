@@ -12,8 +12,6 @@ void
 Scene4::init() {
 	Scene::init();
 
-	texLoader = new TextureLoader();
-
 	// cargar las texturas
 	Texture* groundTex = texLoader->getTexture("baldosaC.png");
 	Texture* boxTex = texLoader->getTexture("papelE.png");

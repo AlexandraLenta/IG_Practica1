@@ -10,9 +10,6 @@ class Scene4 :
 {
 public:
     void init() override;
-
-private:
-    TextureLoader* texLoader;
 };
 
 #endif H_Scene4_H

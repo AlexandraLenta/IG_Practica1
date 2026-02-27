@@ -17,6 +17,9 @@ Scene::init()
 
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
+
+	// cargador de texturas
+	texLoader = new TextureLoader();
 }
 
 Scene::~Scene()
@@ -33,6 +36,8 @@ Scene::destroy()
 		delete el;
 
 	gObjects.clear();
+
+	delete texLoader;
 }
 
 void

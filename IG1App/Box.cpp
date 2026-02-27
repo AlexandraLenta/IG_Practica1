@@ -15,6 +15,10 @@ Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(
     mModelMatBottom = glm::rotate(mModelMatBottom, glm::radians(-90.0f), glm::vec3(1, 0, 0)); // rotar con el interior arriba
 }
 
+Box::~Box() {
+    delete mMeshTop;
+}
+
 void
 Box::render(glm::mat4 const& modelViewMat) const {
     if (mMesh != nullptr) {
