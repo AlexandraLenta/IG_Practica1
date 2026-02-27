@@ -20,10 +20,7 @@ private:
     float topAngle = 0.0f;
     int moveDir = 1;
 
-    void renderSides() const;
-    void renderLid() const;
-
-    void moveLid();
+    void renderMesh(Mesh* mesh) const;
 };
 
 #endif H_Box_H

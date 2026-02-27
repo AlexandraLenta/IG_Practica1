@@ -186,10 +186,11 @@ Mesh::generateRectangle(GLdouble x, GLdouble z) {
 	z /= 2;
 
 	// Create vertices
-	mesh->vVertices.emplace_back(x, -z, 0.0);
+	mesh->vVertices.emplace_back(-x, z, 0.0);
 	mesh->vVertices.emplace_back(-x, -z, 0.0);
 	mesh->vVertices.emplace_back(x, z, 0.0);
-	mesh->vVertices.emplace_back(-x, z, 0.0);
+	mesh->vVertices.emplace_back(x, -z, 0.0);
+
 
 	return mesh;
 }
@@ -334,10 +335,10 @@ Mesh::generateRectangleTexCor(GLdouble x, GLdouble z, GLuint rw, GLuint rh) {
 	Mesh* mesh = generateRectangle(x, z);
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
-	mesh->vTextureCords.emplace_back(rw, 0);
+	mesh->vTextureCords.emplace_back(0, rh);
 	mesh->vTextureCords.emplace_back(0, 0);
 	mesh->vTextureCords.emplace_back(rw, rh);
-	mesh->vTextureCords.emplace_back(0, rh);
+	mesh->vTextureCords.emplace_back(rw, 0);
 
 	return mesh;
 }

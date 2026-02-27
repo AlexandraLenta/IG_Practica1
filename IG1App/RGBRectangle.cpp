@@ -14,11 +14,11 @@ void RGBRectangle::render(glm::mat4 const& modelViewMat) const {
 		glEnable(GL_CULL_FACE);
 		glFrontFace(GL_CW);
 
-		glCullFace(GL_BACK);
+		glCullFace(GL_FRONT);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		mMesh->render();
 
-		glCullFace(GL_FRONT);
+		glCullFace(GL_BACK);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		mMesh->render();
 
