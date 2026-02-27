@@ -6,36 +6,21 @@
 #include "GlassParapet.h"
 #include "Grass.h"
 #include "Photo.h"
-#include "BMPFileSaver.h"
+#include "TextureLoader.h"
 
 void
 Scene4::init() {
 	Scene::init();
 
+	texLoader = new TextureLoader();
+
 	// cargar las texturas
-	Texture* groundTex = new Texture();
-	groundTex->load("../assets/images/baldosaC.png");
-	gTextures.push_back(groundTex);
-
-	Texture* boxTex = new Texture();
-	boxTex->load("../assets/images/papelE.png");
-	gTextures.push_back(boxTex);
-
-	Texture* boxInsideTex = new Texture();
-	boxInsideTex->load("../assets/images/container.jpg");
-	gTextures.push_back(boxInsideTex);
-
-	Texture* starTex = new Texture();
-	starTex->load("../assets/images/rueda.png");
-	gTextures.push_back(starTex);
-
-	Texture* glass = new Texture();
-	glass->load("../assets/images/windowC.png", 150);
-	gTextures.push_back(glass);
-
-	Texture* grassTex = new Texture();
-	grassTex->load("../assets/images/grass.png");
-	gTextures.push_back(grassTex);
+	Texture* groundTex = texLoader->getTexture("baldosaC.png");
+	Texture* boxTex = texLoader->getTexture("papelE.png");
+	Texture* boxInsideTex = texLoader->getTexture("container.jpg");
+	Texture* starTex = texLoader->getTexture("rueda.png");
+	Texture* glass = texLoader->getTexture("windowC.png", 150);
+	Texture* grassTex = texLoader->getTexture("grass.png");
 
 	// variables
 	float groundX = 200;
@@ -45,7 +30,8 @@ Scene4::init() {
 	float boxSize = 40;
 	float starZ = 40;
 	float pointNr = 8;
-	float floorHeight = 20;
+	float floorHeight = 25;
+	float starFloorHeight = 10;
 	float offset = 150;
 	float scale = 0.2f;
 	float photoSize = 50;
@@ -60,9 +46,7 @@ Scene4::init() {
 	box->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(boxPosX, floorHeight, boxPosZ)));
 	gObjects.push_back(box);
 
-	Star3D* star = new Star3D(starRadius, pointNr, starZ, starTex);
-	star->transformModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(starPosX, floorHeight, starPosZ)) * glm::scale(glm::mat4(1.0f),
-		glm::vec3(scale)));
+	Star3D* star = new Star3D(starRadius*scale, pointNr, starZ*scale, starTex, glm::vec3(starPosX, starFloorHeight, starPosZ));
 	gObjects.push_back(star);
 
 	gObjects.push_back(new GlassParapet(groundX, groundY, groundZ, glass));
@@ -71,12 +55,7 @@ Scene4::init() {
 	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, floorHeight, -groundX / 4)));
 	gObjects.push_back(grass);
 
-	photoObj = new Photo(photoSize);
-	photoObj->setModelMat(glm::rotate(photoObj->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)) * glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 10)));
-	gObjects.push_back(photoObj);
-}
-
-void
-Scene4::saveImage() {
-	BMPFileSaver::saveToBmp(photoObj->getImg());
+	Photo* photo = new Photo(photoSize);
+	photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)) * glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 10)));
+	gObjects.push_back(photo);
 }

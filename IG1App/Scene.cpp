@@ -31,11 +31,8 @@ Scene::destroy()
 
 	for (Abs_Entity* el : gObjects)
 		delete el;
-	for (Texture* tex : gTextures)
-		delete tex;
 
 	gObjects.clear();
-	gTextures.clear();
 }
 
 void
@@ -79,8 +76,4 @@ void
 Scene::update() {
 	for (Abs_Entity* obj : gObjects)
 		obj->update();
-}
-
-void
-Scene::saveImage() {
 }

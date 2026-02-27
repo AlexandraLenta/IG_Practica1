@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Photo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Photo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\BMPFileSaver.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\BMPFileSaver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\RGBTriangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RGBTriangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,117 +53,150 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 309,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 246,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Scene.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Scene.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.cpp",
-              "RelativeToolTip": "IG1App\\Scene.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-26T10:00:55.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BMPFileSaver.h",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.h",
-              "RelativeDocumentMoniker": "IG1App\\BMPFileSaver.h",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.h",
-              "RelativeToolTip": "IG1App\\BMPFileSaver.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAHAAAAAAAAAA==",
+              "Title": "Image.h",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.h",
+              "RelativeDocumentMoniker": "IG1App\\Image.h",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.h",
+              "RelativeToolTip": "IG1App\\Image.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-26T09:57:53.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Scene4.h",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.h",
-              "RelativeDocumentMoniker": "IG1App\\Scene4.h",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.h",
-              "RelativeToolTip": "IG1App\\Scene4.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T12:32:10.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Scene4.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Scene4.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp",
-              "RelativeToolTip": "IG1App\\Scene4.cpp",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwD8AAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T12:33:08.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BMPFileSaver.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.cpp",
-              "RelativeDocumentMoniker": "IG1App\\BMPFileSaver.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\BMPFileSaver.cpp",
-              "RelativeToolTip": "IG1App\\BMPFileSaver.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-26T09:58:15.062Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 279,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Photo.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Photo.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Photo.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Photo.cpp",
-              "RelativeToolTip": "IG1App\\Photo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-25T09:07:37.988Z",
+              "WhenOpened": "2026-02-27T15:36:25.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.h",
-              "RelativeDocumentMoniker": "IG1App\\Scene.h",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene.h",
-              "RelativeToolTip": "IG1App\\Scene.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
+              "Title": "Texture.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Texture.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Texture.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Texture.cpp",
+              "RelativeToolTip": "IG1App\\Texture.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T15:35:08.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Box.h",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.h",
+              "RelativeDocumentMoniker": "IG1App\\Box.h",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.h",
+              "RelativeToolTip": "IG1App\\Box.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-26T09:31:03.756Z",
+              "WhenOpened": "2026-02-27T15:25:42.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Box.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Box.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Box.cpp",
+              "RelativeToolTip": "IG1App\\Box.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T15:20:53.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Scene4.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Scene4.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp",
+              "RelativeToolTip": "IG1App\\Scene4.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T15:19:54.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "RGBTriangle.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\RGBTriangle.cpp",
-              "RelativeDocumentMoniker": "IG1App\\RGBTriangle.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\RGBTriangle.cpp",
-              "RelativeToolTip": "IG1App\\RGBTriangle.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Title": "Scene2.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Scene2.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp",
+              "RelativeToolTip": "IG1App\\Scene2.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-23T16:19:30.79Z",
+              "WhenOpened": "2026-02-27T15:18:56.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Scene1.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene1.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Scene1.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene1.cpp",
+              "RelativeToolTip": "IG1App\\Scene1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T15:18:42.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Image.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Image.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Image.cpp",
+              "RelativeToolTip": "IG1App\\Image.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T15:08:49.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IG1App.h",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.h",
+              "RelativeDocumentMoniker": "IG1App\\IG1App.h",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.h",
+              "RelativeToolTip": "IG1App\\IG1App.h",
+              "ViewState": "AgIAACwAAAAAAAAAAAAMwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-27T14:59:53.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IG1App.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp",
+              "RelativeDocumentMoniker": "IG1App\\IG1App.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp",
+              "RelativeToolTip": "IG1App\\IG1App.cpp",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAYwBsBAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T14:59:48.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Photo.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Photo.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Photo.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Photo.cpp",
+              "RelativeToolTip": "IG1App\\Photo.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T09:07:37.988Z",
               "EditorCaption": ""
             }
           ]

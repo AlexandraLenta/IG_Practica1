@@ -1,4 +1,5 @@
 #include "Scene1.h"
+#include "RegularPolygon.h"
 
 void Scene1::init() {
 	Scene::init();

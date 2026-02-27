@@ -35,6 +35,8 @@ public:
 	void run();   // the main event processing loop
 	void close(); // the application
 
+	void saveImage();
+
 protected:
 	IG1App() = default;
 	~IG1App() { close(); };

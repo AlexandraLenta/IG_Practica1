@@ -1,4 +1,7 @@
 #include "Scene2.h"
+#include "RGBRectangle.h"
+#include "RGBTriangle.h"
+#include "RegularPolygon.h"
 
 void Scene2::init() {
 	Scene::init();

@@ -6,10 +6,6 @@
 
 #include "Camera.h"
 #include "Entity.h"
-#include "RegularPolygon.h"
-#include "RGBTriangle.h"
-#include "RGBRectangle.h"
-#include "Texture.h"
 
 #include <vector>
 
@@ -31,15 +27,12 @@ public:
 	void load();
 	void unload();
 
-	virtual void saveImage();
-
 protected:
 	void destroy();
 	void setGL();
 	void resetGL();
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
-	std::vector<Texture*> gTextures;
 };
 
 #endif //_H_Scene_H_

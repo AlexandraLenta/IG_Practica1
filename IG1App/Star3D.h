@@ -7,14 +7,13 @@ class Star3D :
     public EntityWithTexture
 {
 public:
-    Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex);
-    void transformModelMat(glm::mat4 newMat);
+    Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex, glm::vec3 position);
     void render(const glm::mat4& modelViewMat) const override;
     void update() override;
 
 private:
     float angle = 0.0f;
-    glm::mat4 mPositionMat;
+    glm::vec3 position;
 
     void rotate(float angle);
 };

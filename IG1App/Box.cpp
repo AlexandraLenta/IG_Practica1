@@ -34,11 +34,11 @@ Box::render(glm::mat4 const& modelViewMat) const {
             {
                 upload(modelViewMat * mModelMat * mModelMatBottom);
 
-                renderBottom(); // renderizar fondo
+                renderLid(); // renderizar fondo
 
                 upload(modelViewMat * mModelMat * mModelMatTop);
 
-                renderTop(); // renderizar tapa
+                renderLid(); // renderizar tapa
             }
 
             glDisable(GL_CULL_FACE);
@@ -62,22 +62,7 @@ Box::renderSides() const {
 }
 
 void
-Box::renderBottom() const {
-    glCullFace(GL_BACK);
-
-    mTexture->bind();
-    mMeshTop->render();
-    mTexture->unbind();
-
-    glCullFace(GL_FRONT);
-
-    mTextureInside->bind();
-    mMeshTop->render();
-    mTextureInside->unbind();
-}
-
-void 
-Box::renderTop() const {
+Box::renderLid() const {
     glCullFace(GL_BACK);
 
     mTexture->bind();

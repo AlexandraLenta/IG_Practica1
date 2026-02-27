@@ -1,7 +1,9 @@
 #include "IG1App.h"
 
 #include <iostream>
-
+#include "Image.h"
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 using namespace std;
 
 // static single instance (singleton pattern)
@@ -202,7 +204,8 @@ IG1App::key(unsigned int key)
 			}
 				break;
 		case 'F':
-			mScenes[mCurrentScene]->saveImage();
+			saveImage();
+			cout << "Save image\n";
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
@@ -273,4 +276,26 @@ IG1App::changeScene(size_t sceneNr)
 	}
 
 	return true;
+}
+
+void
+IG1App::saveImage() {
+	Texture* saveTex = new Texture();
+	
+	saveTex->loadColorBuffer(s_ig1app.viewPort().width(), s_ig1app.viewPort().height());
+
+	Image* img = new Image();
+
+	saveTex->bind(); // activar textura
+
+	glm::u8vec4 pixels[32]; // vector de data del buffer
+
+	glGetTexImage(GL_TEXTURE_2D, 0,
+		GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, pixels); // coger data de la textura activa en pixels
+
+	saveTex->unbind(); // desactivar textura
+
+	img->load(pixels, s_ig1app.viewPort().width(), s_ig1app.viewPort().height()); // cargar data de la textura en la imagen
+
+	img->save("screenshot.bmp");
 }

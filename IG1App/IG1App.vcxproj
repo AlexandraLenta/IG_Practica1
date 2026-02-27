@@ -96,6 +96,7 @@
     <ClInclude Include="SingleColorEntity.h" />
     <ClInclude Include="Star3D.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,7 @@
     <ClCompile Include="SingleColorEntity.cpp" />
     <ClCompile Include="Star3D.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="Viewport.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

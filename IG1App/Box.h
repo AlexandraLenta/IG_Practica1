@@ -20,8 +20,7 @@ private:
     int moveDir = 1;
 
     void renderSides() const;
-    void renderBottom() const;
-    void renderTop() const;
+    void renderLid() const;
 
     void moveLid();
 };
