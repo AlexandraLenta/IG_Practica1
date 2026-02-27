@@ -96,9 +96,6 @@
     <ClInclude Include="Photo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="BMPFileSaver.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="TextureLoader.h">
       <Filter>Archivos de código fuente</Filter>
     </ClInclude>
@@ -186,9 +183,6 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="Photo.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="BMPFileSaver.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="TextureLoader.cpp">

@@ -69,7 +69,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BMPFileSaver.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="BoxOutline.h" />
     <ClInclude Include="Camera.h" />
@@ -100,7 +99,6 @@
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BMPFileSaver.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="BoxOutline.cpp" />
     <ClCompile Include="Camera.cpp" />
