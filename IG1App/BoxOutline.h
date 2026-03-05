@@ -7,7 +7,7 @@ class BoxOutline :
 public:
     explicit BoxOutline(GLdouble length, Texture* texOut, Texture* texIn);
     void render(glm::mat4 const& modelViewMat) const override;
-private:
+protected:
     Texture* mTextureInside;
 };
 

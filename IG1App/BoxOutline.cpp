@@ -17,13 +17,13 @@ BoxOutline::render(glm::mat4 const& modelViewMat) const {
         {
             glEnable(GL_CULL_FACE);
 
-            glCullFace(GL_BACK);
+            glCullFace(GL_FRONT);
 
             mTexture->bind();
             mMesh->render();
             mTexture->unbind();
 
-            glCullFace(GL_FRONT);
+            glCullFace(GL_BACK);
 
             mTextureInside->bind();
             mMesh->render();

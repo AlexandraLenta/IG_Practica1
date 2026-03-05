@@ -1,8 +1,6 @@
 #include "Box.h"
 
-Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(tex), mTextureInside(texInside), length(length), mModelMatTop(1.0f) {
-	mMesh = Mesh::generateBoxOutlineTexCor(length, length, length);
-
+Box::Box(GLdouble length, Texture* tex, Texture* texInside) : BoxOutline(length, tex, texInside), length(length), mModelMatTop(1.0f) {
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
     mMeshTop->load(); // cargar la nueva malla en el GPU
 }
@@ -13,47 +11,35 @@ Box::~Box() {
 
 void
 Box::render(glm::mat4 const& modelViewMat) const {
-    if (mMesh != nullptr) {
-        glm::mat4 aMat = modelViewMat * mModelMat;
+    BoxOutline::render(modelViewMat);
+    
+    if (mMeshTop) // si existe
+    {
+        glEnable(GL_CULL_FACE);
+        // mover matriz para el fondo
+        glm::mat4 matBottom = glm::mat4(1.0f);
+        matBottom = glm::translate(glm::mat4(1.0f), glm::vec3(0, -length / 2, 0)); // mover hacia abajo
+        matBottom = glm::rotate(matBottom, glm::radians(-90.0f), glm::vec3(1, 0, 0)); // rotar con el interior arriba
 
-        mShader->use();
-        mShader->setUniform("modulate", mModulate);
-        upload(aMat);
+        upload(modelViewMat * mModelMat * matBottom); // renderizar respecto a la matriz de la caja
 
-        if (mTexture != nullptr)
-        {
-            glEnable(GL_CULL_FACE);
+        renderMesh(mMeshTop); // renderizar fondo
 
-            renderMesh(mMesh); // renderizar lados
+        glm::mat4 matTop = glm::mat4(1.0f); // resetear matriz
 
-            if (mMeshTop) // si existe
-            {
-                // mover matriz para el fondo
-                glm::mat4 matBottom = glm::mat4(1.0f);
-                matBottom = glm::translate(glm::mat4(1.0f), glm::vec3(0, -length / 2, 0)); // mover hacia abajo
-                matBottom = glm::rotate(matBottom, glm::radians(-90.0f), glm::vec3(1, 0, 0)); // rotar con el interior arriba
+        matTop = glm::translate(matTop, glm::vec3(-length / 2, length / 2, 0)); // mover hacia el centro
 
-                upload(modelViewMat * mModelMat * matBottom); // renderizar respecto a la matriz de la caja
+        matTop = glm::rotate(matTop, glm::radians(topAngle), glm::vec3(0, 0, 1)); // rotar el angulo necesario
 
-                renderMesh(mMeshTop); // renderizar fondo
+        matTop = glm::rotate(matTop, glm::radians(90.0f), glm::vec3(1, 0, 0)); // rotar para que este horizontal
 
-                glm::mat4 matTop = glm::mat4(1.0f); // resetear matriz
+        matTop = glm::translate(matTop, glm::vec3(length / 2, 0, 0)); // mover hacia su posicion como tapa
 
-                matTop = glm::translate(matTop, glm::vec3(-length / 2, length / 2, 0)); // mover hacia el centro
+        upload(modelViewMat * mModelMat * matTop); // renderizar respecto a la matriz de la caja
 
-                matTop = glm::rotate(matTop, glm::radians(topAngle), glm::vec3(0, 0, 1)); // rotar el angulo necesario
+        renderMesh(mMeshTop); // renderizar tapa
 
-                matTop = glm::rotate(matTop, glm::radians(90.0f), glm::vec3(1, 0, 0)); // rotar para que este horizontal
-
-                matTop = glm::translate(matTop, glm::vec3(length / 2, 0, 0)); // mover hacia su posicion como tapa
-
-                upload(modelViewMat * mModelMat * matTop); // renderizar respecto a la matriz de la caja
-
-                renderMesh(mMeshTop); // renderizar tapa
-            }
-
-            glDisable(GL_CULL_FACE);
-        }
+        glDisable(GL_CULL_FACE);
     }
 }
 
