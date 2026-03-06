@@ -9,10 +9,8 @@ public:
     Photo(GLdouble length);
     ~Photo();
     void update() override;
-    GLuint* getImg();
 private:
     GLdouble length;
-    int width, height;
 };
 
 #endif H_Photo_H
