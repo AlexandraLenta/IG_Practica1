@@ -20,7 +20,6 @@ private:
     GLdouble length;
     float topAngle = 0.0f;
     int moveDir = 1;
-
 };
 
 #endif H_Box_H

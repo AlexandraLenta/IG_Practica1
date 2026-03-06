@@ -16,12 +16,3 @@ void
 Photo::update() {
 	mTexture->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
 }
-
-GLuint* 
-Photo::getImg() {
-	GLuint pixels[32];
-	glGetTexImage(GL_TEXTURE_2D, 0,
-		GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, pixels);
-
-	return pixels;
-}
