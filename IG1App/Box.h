@@ -1,10 +1,10 @@
 #ifndef H_Box_H
 #define H_Box_H
 
-#include "BoxOutline.h"
+#include "EntityWithTexture.h"
 
 class Box :
-    public BoxOutline
+    public EntityWithTexture
 {
 public:
     Box(GLdouble length, Texture* tex, Texture* texInside);
@@ -14,6 +14,7 @@ public:
 
 private:
     Mesh* mMeshTop;
+    Texture* mTextureInside;
     glm::mat4 mModelMatTop;
     glm::mat4 mModelMatBottom;
     GLdouble length;
