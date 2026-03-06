@@ -47,15 +47,6 @@ Scene4::init() {
 	glm::mat4 matStar = glm::mat4(1.0f);
 	matStar = glm::translate(matStar, glm::vec3(boxPosX, floorHeight, boxPosZ));
 	gObjects.back()->setModelMat(matStar);
-	/*Box* box = new Box(boxSize, boxTex, boxInsideTex);
-	glm::mat4 boxMat = glm::translate(glm::mat4(1.0f), glm::vec3(boxPosX, floorHeight, boxPosZ));
-	box->setModelMat(boxMat);
-	gObjects.push_back(box);
-
-	Star3D* star = new Star3D(starRadius * scale, pointNr, starZ * scale, starTex, glm::vec3(0, 0, 0));
-	glm::mat4 starMat = boxMat * glm::translate(glm::mat4(1.0f), glm::vec3(0, starFloorHeight, 0));
-	star->setModelMat(starMat);
-	gObjects.push_back(star);*/
 
 	gObjects.push_back(new GlassParapet(groundX, groundY, groundZ, glass));
 
