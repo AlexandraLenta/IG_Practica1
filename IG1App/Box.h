@@ -20,8 +20,6 @@ private:
     GLdouble length;
     float topAngle = 0.0f;
     int moveDir = 1;
-
-    void renderMesh(Mesh* mesh) const;
 };
 
 #endif H_Box_H

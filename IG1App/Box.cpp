@@ -71,17 +71,6 @@ Box::render(glm::mat4 const& modelViewMat) const {
 }
 
 void
-Box::renderMesh(Mesh* mesh) const {
-    
-
-    glCullFace(GL_BACK);
-
-    mTextureInside->bind();
-    mesh->render();
-    mTextureInside->unbind();
-}
-
-void
 Box::update() {
     if (topAngle >= 180.0f)
         moveDir = -1;
