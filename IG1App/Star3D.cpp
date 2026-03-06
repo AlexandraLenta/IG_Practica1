@@ -1,6 +1,6 @@
 #include "Star3D.h"
 
-Star3D::Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex, glm::vec3 position) : EntityWithTexture(tex), position(position) {
+Star3D::Star3D(GLdouble radius, GLuint pointNr, GLdouble coorZ, Texture* tex) : EntityWithTexture(tex) {
 	mMesh = Mesh::generateStar3DTexCor(radius, pointNr, coorZ);
 }
 
@@ -26,11 +26,13 @@ Star3D::update() {
 void 
 Star3D::rotate(float a) {
 	//increase angle
+	glm::vec3 pos = glm::vec3(mModelMat[3]);
+	
 	angle += a;
 
 	glm::mat4 finalPosMat = glm::mat4(1.0f);
 
-	finalPosMat = glm::translate(finalPosMat, position);
+	finalPosMat = glm::translate(finalPosMat, pos);
 	//rotacion en y
 	glm::mat4 rotationYMat = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0, 1, 0));
 	//rotacion en z
