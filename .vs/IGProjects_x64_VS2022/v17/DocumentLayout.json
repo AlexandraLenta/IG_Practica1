@@ -11,6 +11,18 @@
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Star3D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Star3D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Photo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -78,11 +86,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 342,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
+              "Title": "Star3D.h",
+              "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.h",
+              "RelativeDocumentMoniker": "IG1App\\Star3D.h",
+              "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.h",
+              "RelativeToolTip": "IG1App\\Star3D.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-06T15:30:07.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Star3D.cpp",
+              "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Star3D.cpp",
+              "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Star3D.cpp",
+              "RelativeToolTip": "IG1App\\Star3D.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-06T15:22:50.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "RGBRectangle.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\RGBRectangle.cpp",
               "RelativeDocumentMoniker": "IG1App\\RGBRectangle.cpp",
@@ -95,13 +129,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Box.h",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Box.h",
               "RelativeDocumentMoniker": "IG1App\\Box.h",
               "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Box.h",
               "RelativeToolTip": "IG1App\\Box.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-27T15:25:42.143Z",
               "EditorCaption": ""
@@ -114,20 +148,20 @@
               "RelativeDocumentMoniker": "IG1App\\Box.cpp",
               "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Box.cpp",
               "RelativeToolTip": "IG1App\\Box.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAADwv0cAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-27T15:20:53.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Photo.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Photo.cpp",
               "RelativeDocumentMoniker": "IG1App\\Photo.cpp",
               "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Photo.cpp",
               "RelativeToolTip": "IG1App\\Photo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-25T09:07:37.988Z",
               "EditorCaption": ""
@@ -140,14 +174,14 @@
               "RelativeDocumentMoniker": "IG1App\\Scene4.cpp",
               "ToolTip": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene4.cpp",
               "RelativeToolTip": "IG1App\\Scene4.cpp",
-              "ViewState": "AgIAABkAAAAAAAAAAADwvzIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAEwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-02-27T15:19:54.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Scene.h",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene.h",
               "RelativeDocumentMoniker": "IG1App\\Scene.h",
@@ -160,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Scene.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene.cpp",
@@ -173,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Mesh.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Mesh.cpp",
               "RelativeDocumentMoniker": "IG1App\\Mesh.cpp",
@@ -185,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Scene4.h",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene4.h",
               "RelativeDocumentMoniker": "IG1App\\Scene4.h",
@@ -197,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "IG1App.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\IG1App.cpp",
               "RelativeDocumentMoniker": "IG1App\\IG1App.cpp",
@@ -210,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Grass.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Grass.cpp",
               "RelativeDocumentMoniker": "IG1App\\Grass.cpp",
@@ -223,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Scene2.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene2.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene2.cpp",
@@ -235,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Scene1.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Scene1.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene1.cpp",
@@ -247,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Texture.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Texture.cpp",
               "RelativeDocumentMoniker": "IG1App\\Texture.cpp",
@@ -259,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Image.h",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Image.h",
               "RelativeDocumentMoniker": "IG1App\\Image.h",
@@ -271,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Image.cpp",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\Image.cpp",
               "RelativeDocumentMoniker": "IG1App\\Image.cpp",
@@ -283,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "IG1App.h",
               "DocumentMoniker": "C:\\Users\\zhiyi\\OneDrive\\Dokumenter\\Github\\IG_Practica1\\IG1App\\IG1App.h",
               "RelativeDocumentMoniker": "IG1App\\IG1App.h",
