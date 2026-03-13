@@ -49,7 +49,9 @@ Scene4::init() {
 	matStar = glm::translate(matStar, glm::vec3(boxPosX, floorHeight, boxPosZ));
 	gObjects.back()->setModelMat(matStar);
 
-	gObjects.push_back(new GlassParapet(groundX, groundY, groundZ, glass));
+	GlassParapet* glassP = new GlassParapet(groundX, glass);
+	glassP->setModelMat(glm::scale(glm::mat4(1.0f), glm::vec3(1, 0.5, 1)));
+	gObjects.push_back(glassP);
 
 	Grass* grass = new Grass(starRadius, grassTex);
 	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, floorHeight, -groundX / 4)));

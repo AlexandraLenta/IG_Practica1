@@ -1,7 +1,7 @@
 #include "GlassParapet.h"
 
-GlassParapet::GlassParapet(GLdouble x, GLdouble y, GLdouble z, Texture* tex) : EntityWithTexture(tex) {
-	mMesh = Mesh::generateBoxOutlineTexCor(x, y, z);
+GlassParapet::GlassParapet(GLdouble length, Texture* tex) : EntityWithTexture(tex) {
+	mMesh = Mesh::generateBoxOutlineTexCor(length);
 }
 
 void

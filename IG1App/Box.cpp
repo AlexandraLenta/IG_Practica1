@@ -1,7 +1,7 @@
 #include "Box.h"
 
 Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(tex), length(length), mTextureInside(texInside) {
-    mMesh = Mesh::generateBoxOutlineTexCor(length, length, length);
+    mMesh = Mesh::generateBoxOutlineTexCor(length);
 
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
     mMeshTop->load(); // cargar la nueva malla en el GPU
