@@ -306,3 +306,12 @@ IG1App::saveImage() {
 	delete img;
 	img = nullptr;
 }
+
+void
+Camera::orbit(GLdouble incAng, GLdouble incY) {
+	mAng += incAng;
+	mEye.x = mLook.x + cos(glm::radians(mAng)) * mRadio;
+	mEye.z = mLook.z - sin(glm::radians(mAng)) * mRadio;
+	mEye.y += incY;
+	setVM();
+}

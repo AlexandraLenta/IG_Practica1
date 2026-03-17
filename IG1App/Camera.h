@@ -57,6 +57,9 @@ public:
 	// eje n
 	void rollReal(GLfloat cs);
 
+	// orbit
+	void orbit(GLdouble incAng, GLdouble incY);
+
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position
@@ -78,6 +81,8 @@ protected:
 	glm::vec3 mRight;
 	glm::vec3 mUpward;
 	glm::vec3 mFront;
+
+	GLdouble mRadio, mAng;
 
 	void setVM();
 	void setPM();

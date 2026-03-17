@@ -37,6 +37,8 @@ Camera::set2D()
 	mEye = {0, 0, 500};
 	mLook = {0, 0, 0};
 	mUp = {0, 1, 0};
+	mRadio = mEye.z;
+	mAng = 0;
 	setVM();
 }
 
@@ -46,6 +48,8 @@ Camera::set3D()
 	mEye = {500, 500, 500};
 	mLook = {0, 10, 0};
 	mUp = {0, 1, 0};
+	mRadio = sqrt(mEye.x * mEye.x + mEye.z * mEye.z); // calcular hipotenusa MAYBE
+	//mAng = acos() // the idea is to calculate the angle, based on look & eye
 	setVM();
 }
 
