@@ -127,3 +127,25 @@ Camera::setAxes() {
 	mUpward = row(mViewMat, 1);
 	mFront = -row(mViewMat, 2);
 }
+
+void
+Camera::moveLR(GLfloat cs) {
+	mEye += mRight * cs;
+	mLook += mRight * cs;
+	setVM();
+	setAxes();
+}
+
+void
+Camera::moveFB(GLfloat cs) {
+	mEye += mFront * cs;
+	//mLook += mFront * cs; // MAYBE
+	setVM();
+}
+
+void
+Camera::moveUD(GLfloat cs) {
+	mEye += mUpward * cs;
+	mLook += mUpward * cs;
+	setVM();
+}

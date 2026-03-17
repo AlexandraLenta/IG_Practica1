@@ -207,6 +207,24 @@ IG1App::key(unsigned int key)
 			saveImage();
 			cout << "Save image\n";
 			break;
+		case 'w':
+			mCamera->moveUD(1);
+			break;
+		case 's':
+			mCamera->moveUD(-1);
+			break;
+		case 'W':
+			mCamera->moveFB(1);
+			break;
+		case 'S':
+			mCamera->moveFB(-1);
+			break;
+		case 'a':
+			mCamera->moveLR(1);
+			break;
+		case 'd':
+			mCamera->moveLR(-1);
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
