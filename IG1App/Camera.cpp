@@ -104,6 +104,14 @@ Camera::setPM()
 		                 mFarVal);
 		// glm::ortho defines the orthogonal projection matrix
 	}
+	else { // if not ortho, perspective
+		mProjMat = frustum(xLeft * mScaleFact,
+			xRight * mScaleFact,
+			yBot * mScaleFact, 
+			yTop * mScaleFact,
+			mNearVal,
+			mFarVal);
+	}
 }
 
 void
@@ -148,4 +156,10 @@ Camera::moveUD(GLfloat cs) {
 	mEye += mUpward * cs;
 	mLook += mUpward * cs;
 	setVM();
+}
+
+void
+Camera::changePrj() {
+	bOrto = !bOrto;
+	setPM();
 }
