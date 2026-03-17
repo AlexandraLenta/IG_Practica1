@@ -443,26 +443,19 @@ Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
 
 	// el centro en el origen
 	mesh->vTextureCords.emplace_back(0.5, 0.5);
-	
-	mesh->vTextureCords.emplace_back(0, 0);
-	mesh->vTextureCords.emplace_back(0, 0.25);
-	mesh->vTextureCords.emplace_back(0, 0.5);
-	mesh->vTextureCords.emplace_back(0, 0.75);
-	mesh->vTextureCords.emplace_back(0, 1);
 
-	mesh->vTextureCords.emplace_back(0.25, 1);
-	mesh->vTextureCords.emplace_back(0.5, 1);
-	mesh->vTextureCords.emplace_back(0.75, 1);
-	mesh->vTextureCords.emplace_back(1, 1);
+	for (int i = 1; i < mesh->vVertices.size(); i++) {
+		const auto& p = mesh->vVertices[i];
 
-	mesh->vTextureCords.emplace_back(1, 0.75);
-	mesh->vTextureCords.emplace_back(1, 0.5);
-	mesh->vTextureCords.emplace_back(1, 0.25);
-	mesh->vTextureCords.emplace_back(1, 0);
+		// exterior (i impar) -> radio, interior (i par) -> radio/2
+		GLdouble r = i % 2 == 0 ? re * 0.5f : re;
+		
+		// normalizar
+		GLdouble u = 0.5 + -0.5 * (p.x / r);
+		GLdouble v = 0.5 + -0.5 * (p.y / r);
 
-	mesh->vTextureCords.emplace_back(0.75, 0);
-	mesh->vTextureCords.emplace_back(0.5, 0);
-	mesh->vTextureCords.emplace_back(0.25, 0);
+		mesh->vTextureCords.emplace_back(u, v);
+	}
 
 	return mesh;
 }

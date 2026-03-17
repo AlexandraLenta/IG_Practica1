@@ -8,6 +8,7 @@
 class Scene4 :
     public Scene
 {
+    std::vector<EntityWithTexture*> transparentObj;
 public:
     void init() override;
 };
