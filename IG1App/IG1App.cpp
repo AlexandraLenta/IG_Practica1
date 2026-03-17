@@ -268,10 +268,10 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 				mCamera->yawReal(-1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
-			mCamera->pitchReal(1); // rotates 1 on the Z axis
+			mCamera->pitchReal(1); // pitches upwards
 			break;
 		case GLFW_KEY_DOWN:
-			mCamera->pitchReal(-1); // rotates -1 on the Z axis
+			mCamera->pitchReal(-1); // pitches downwards
 			break;
 		default:
 			need_redisplay = false;
