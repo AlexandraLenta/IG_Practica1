@@ -48,6 +48,15 @@ public:
 	// change to perspective projection
 	void changePrj();
 
+	// eje u
+	void pitchReal(GLfloat cs);
+
+	// eje v
+	void yawReal(GLfloat cs);
+
+	// eje n
+	void rollReal(GLfloat cs);
+
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position

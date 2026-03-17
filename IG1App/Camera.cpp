@@ -163,3 +163,22 @@ Camera::changePrj() {
 	bOrto = !bOrto;
 	setPM();
 }
+
+void
+Camera::pitchReal(GLfloat cs) {
+	mLook += mUpward * cs;
+	setVM();
+}
+
+void
+Camera::yawReal(GLfloat cs) {
+	mLook += mRight * cs;
+	setVM();
+}
+
+void
+Camera::rollReal(GLfloat cs) {
+	mUp += mFront * cs;
+	setVM();
+}
+

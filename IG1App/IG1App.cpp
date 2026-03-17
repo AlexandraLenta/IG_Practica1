@@ -257,21 +257,21 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			break;
 		case GLFW_KEY_RIGHT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->pitch(-1); // rotates -1 on the X axis
+				mCamera->rollReal(1); // rolls towards the right
 			else
-				mCamera->pitch(1); // rotates 1 on the X axis
+				mCamera->yawReal(1); // looks to the right
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->yaw(1); // rotates 1 on the Y axis
+				mCamera->rollReal(-1); // rolls towards the left
 			else
-				mCamera->yaw(-1); // rotate -1 on the Y axis
+				mCamera->yawReal(-1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
-			mCamera->roll(1); // rotates 1 on the Z axis
+			mCamera->pitchReal(1); // rotates 1 on the Z axis
 			break;
 		case GLFW_KEY_DOWN:
-			mCamera->roll(-1); // rotates -1 on the Z axis
+			mCamera->pitchReal(-1); // rotates -1 on the Z axis
 			break;
 		default:
 			need_redisplay = false;
