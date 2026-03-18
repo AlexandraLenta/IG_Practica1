@@ -74,6 +74,10 @@ protected:
 	double const FRAME_DURATION = 1.0 / 20.0;
 	bool mUpdateEnabled = false;
 	double mNextUpdate = 0.0;
+
+	//apartado 50
+	glm::dvec2 mMouseCoord;// Guarda coordenadas x y del raton
+	int mMouseButt; // Guarda el boton del raton que pulsa
 };
 
 inline Viewport const&

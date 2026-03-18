@@ -176,6 +176,7 @@ IG1App::display() const
 		mCamera->set3D();
 		mCamera->upload();
 		mScenes[mCurrentScene]->render(*mCamera);
+
 		// derecha cenital
 		mViewPort->setPos(mWinW / 2, 0);
 		mViewPort->setSize(mWinW / 2, mWinH);
