@@ -166,27 +166,37 @@ IG1App::display() const
 		mScenes[mCurrentScene]->render(*mCamera);
 	}
 	else {
-		// guardar estado de cam
-		Camera backup = *mCamera;
-
-		// izq vista 3d normal
-		mViewPort->setPos(0, 0);
-		mViewPort->setSize(mWinW / 2, mWinH);
-
-		mCamera->set3D();
-		mCamera->upload();
-		mScenes[mCurrentScene]->render(*mCamera);
-
-		// derecha cenital
-		mViewPort->setPos(mWinW / 2, 0);
-		mViewPort->setSize(mWinW / 2, mWinH);
-
-		mCamera->setCenital();
-		mCamera->upload();
-		mScenes[mCurrentScene]->render(*mCamera);
-		*mCamera = backup;
+		display2V();
 	}
 	glfwSwapBuffers(mWindow);
+}
+
+void
+IG1App::display2V() const {
+	// camera auxiliar
+	Camera auxCam = *mCamera; // copia camera
+
+	Viewport auxVP = *mViewPort; // copia viewport
+
+	mViewPort->setSize(mWinW / 2, mWinH); // mismo height, width dividido en dos
+
+	auxCam.setSize(mViewPort->width(), mViewPort->height());
+
+	// izquierda, vista 3d
+	mViewPort->setPos(0, 0);
+	
+	auxCam.set3D();
+	
+	mScenes[mCurrentScene]->render(auxCam); // renderizamos
+
+	// derecha, cenital
+	mViewPort->setPos(mWinW / 2, 0);
+
+	auxCam.setCenital();
+
+	mScenes[mCurrentScene]->render(auxCam);
+
+	*mViewPort = auxVP; // restaurar viewport
 }
 
 void
