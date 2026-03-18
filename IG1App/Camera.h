@@ -60,6 +60,8 @@ public:
 	// orbit
 	void orbit(GLdouble incAng, GLdouble incY);
 
+	void setCenital();
+
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position

@@ -36,6 +36,7 @@ public:
 	void close(); // the application
 
 	void saveImage();
+	bool m2Vistas = false;
 
 protected:
 	IG1App() = default;

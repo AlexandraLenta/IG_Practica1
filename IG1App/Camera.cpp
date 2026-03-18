@@ -50,6 +50,9 @@ Camera::set3D()
 	mUp = {0, 1, 0};
 	mRadio = sqrt(mEye.x * mEye.x + mEye.z * mEye.z); // calcular hipotenusa MAYBE
 	//mAng = acos() // the idea is to calculate the angle, based on look & eye
+	
+	//mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),glm::vec3(mLook.x, 0, mLook.z));
+    //mAng = glm::degrees(atan2(mEye.z - mLook.z,mEye.x - mLook.x));
 	setVM();
 }
 
@@ -183,6 +186,19 @@ Camera::yawReal(GLfloat cs) {
 void
 Camera::rollReal(GLfloat cs) {
 	mUp += mFront * cs;
+	setVM();
+}
+
+void Camera::setCenital() {
+	// camara arriba
+	mEye = { 0, 500, 0 };
+	mLook = { 0, 0, 0 };	// mira centro
+	mUp = { 0, 0, -1 };
+
+	mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),
+		glm::vec3(mLook.x, 0, mLook.z));
+	mAng = 0.0;
+
 	setVM();
 }
 

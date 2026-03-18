@@ -153,9 +153,39 @@ IG1App::display() const
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clears the back buffer
 
-	mScenes[mCurrentScene]->render(*mCamera); // uploads the viewport and camera to the GPU
+	//mScenes[mCurrentScene]->render(*mCamera); // uploads the viewport and camera to the GPU
 
-	glfwSwapBuffers(mWindow); // swaps the front and back buffer
+	//glfwSwapBuffers(mWindow); // swaps the front and back buffer
+
+	if (!m2Vistas) {
+		//solo 1 vist
+		mViewPort->setPos(0, 0);
+		mViewPort->setSize(mWinW, mWinH);
+
+		mCamera->upload();
+		mScenes[mCurrentScene]->render(*mCamera);
+	}
+	else {
+		// guardar estado de cam
+		Camera backup = *mCamera;
+
+		// izq vista 3d normal
+		mViewPort->setPos(0, 0);
+		mViewPort->setSize(mWinW / 2, mWinH);
+
+		mCamera->set3D();
+		mCamera->upload();
+		mScenes[mCurrentScene]->render(*mCamera);
+		// derecha cenital
+		mViewPort->setPos(mWinW / 2, 0);
+		mViewPort->setSize(mWinW / 2, mWinH);
+
+		mCamera->setCenital();
+		mCamera->upload();
+		mScenes[mCurrentScene]->render(*mCamera);
+		*mCamera = backup;
+	}
+	glfwSwapBuffers(mWindow);
 }
 
 void
@@ -227,6 +257,9 @@ IG1App::key(unsigned int key)
 			break;
 		case 'p':
 			mCamera->changePrj();
+			break;
+		case 'k':
+			m2Vistas = !m2Vistas;
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
