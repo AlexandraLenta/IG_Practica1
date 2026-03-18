@@ -262,6 +262,9 @@ IG1App::key(unsigned int key)
 		case 'k':
 			m2Vistas = !m2Vistas;
 			break;
+		case 'O': // TESTING
+			mCamera->orbit(1, 1);
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
@@ -339,13 +342,4 @@ IG1App::saveImage() {
 	img->saveImg();
 	delete img;
 	img = nullptr;
-}
-
-void
-Camera::orbit(GLdouble incAng, GLdouble incY) {
-	mAng += incAng;
-	mEye.x = mLook.x + cos(glm::radians(mAng)) * mRadio;
-	mEye.z = mLook.z - sin(glm::radians(mAng)) * mRadio;
-	mEye.y += incY;
-	setVM();
 }

@@ -48,11 +48,9 @@ Camera::set3D()
 	mEye = {500, 500, 500};
 	mLook = {0, 10, 0};
 	mUp = {0, 1, 0};
-	mRadio = sqrt(mEye.x * mEye.x + mEye.z * mEye.z); // calcular hipotenusa MAYBE
-	//mAng = acos() // the idea is to calculate the angle, based on look & eye
-	
-	//mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),glm::vec3(mLook.x, 0, mLook.z));
-    //mAng = glm::degrees(atan2(mEye.z - mLook.z,mEye.x - mLook.x));
+	//mAng = 0;
+	mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),glm::vec3(mLook.x, 0, mLook.z));
+    mAng = -glm::degrees(atan2(mEye.z - mLook.z,mEye.x - mLook.x));
 	setVM();
 }
 
@@ -189,6 +187,15 @@ Camera::rollReal(GLfloat cs) {
 	setVM();
 }
 
+void
+Camera::orbit(GLdouble incAng, GLdouble incY) {
+	mAng += incAng;
+	mEye.x = mLook.x + cos(glm::radians(mAng)) * mRadio;
+	mEye.z = mLook.z - sin(glm::radians(mAng)) * mRadio;
+	mEye.y += incY;
+	setVM();
+}
+
 void Camera::setCenital() {
 	// camara arriba
 	mEye = { 0, 500, 0 };
@@ -201,4 +208,3 @@ void Camera::setCenital() {
 
 	setVM();
 }
-
