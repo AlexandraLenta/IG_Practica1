@@ -353,3 +353,15 @@ IG1App::saveImage() {
 	delete img;
 	img = nullptr;
 }
+
+void IG1App::mouse(int button, int state, int mods) {
+
+}
+
+void IG1App::motion(double x, double y) {
+
+}
+
+void IG1App::mouseWheel(double dx, double dy) {
+
+}

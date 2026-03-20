@@ -84,7 +84,7 @@ protected:
 	glm::vec3 mUpward;
 	glm::vec3 mFront;
 
-	GLdouble mRadio, mAng;
+	GLdouble mRadio = 1000.0, mAng = -45;
 
 	void setVM();
 	void setPM();

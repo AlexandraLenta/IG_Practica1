@@ -79,6 +79,10 @@ protected:
 	//apartado 50
 	glm::dvec2 mMouseCoord;// Guarda coordenadas x y del raton
 	int mMouseButt; // Guarda el boton del raton que pulsa
+
+	void mouse(int button, int state, int mods);
+	void motion(double x, double y);
+	void mouseWheel(double dx, double dy);
 };
 
 inline Viewport const&
