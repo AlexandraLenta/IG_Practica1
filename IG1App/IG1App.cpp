@@ -79,7 +79,7 @@ IG1App::init()
 	mCamera = new Camera(mViewPort);
 	//mScenes.push_back(new Scene);
 	//mScenes.push_back(new Scene1);
-	//mScenes.push_back(new Scene2);
+	mScenes.push_back(new Scene2);
 	//mScenes.push_back(new Scene3);
 	mScenes.push_back(new Scene4);
 
@@ -178,6 +178,9 @@ IG1App::display() const
 
 void
 IG1App::display2V() const {
+
+	mScenes[0]->load();
+	mScenes[1]->load();
 	// camera auxiliar
 	Camera auxCam = *mCamera; // copia camera
 
@@ -192,14 +195,14 @@ IG1App::display2V() const {
 	
 	auxCam.set3D();
 	
-	mScenes[mCurrentScene]->render(auxCam); // renderizamos
+	mScenes[1]->render(auxCam); // renderizamos
 
 	// derecha, cenital
 	mViewPort->setPos(mWinW / 2, 0);
 
 	auxCam.setCenital();
 
-	mScenes[mCurrentScene]->render(auxCam);
+	mScenes[0]->render(auxCam);
 
 	*mViewPort = auxVP; // restaurar viewport
 }
