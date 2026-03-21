@@ -91,6 +91,8 @@ protected:
 	void mouse(int button, int state, int mods);
 	void motion(double x, double y);
 	void mouseWheel(double dx, double dy);
+
+	void initDisplay2V();
 };
 
 inline Viewport const&

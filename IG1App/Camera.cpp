@@ -135,7 +135,6 @@ Camera::upload() const
 	uploadPM();
 }
 
-
 void
 Camera::setAxes() {
 	mRight = row(mViewMat, 0);
@@ -173,8 +172,6 @@ Camera::changePrj() {
 
 void
 Camera::pitchReal(GLfloat cs) {
-	//mLook += mUpward * cs;
-
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
 
 	mFront = glm::vec3(mat * glm::vec4(mFront, 0.0f));
@@ -187,7 +184,6 @@ Camera::pitchReal(GLfloat cs) {
 
 void
 Camera::yawReal(GLfloat cs) {
-	//mLook += mRight * cs;
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mUpward);
 
 	mFront = glm::vec3(mat * glm::vec4(mFront, 0.0f));
@@ -200,8 +196,6 @@ Camera::yawReal(GLfloat cs) {
 
 void
 Camera::rollReal(GLfloat cs) {
-	//mUp += mFront * cs;
-
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront);
 
 	mUpward = glm::vec3(mat * glm::vec4(mUpward, 0.0f));

@@ -79,9 +79,9 @@ IG1App::init()
 	mCamera = new Camera(mViewPort);
 	//mScenes.push_back(new Scene);
 	//mScenes.push_back(new Scene1);
+	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene2);
 	//mScenes.push_back(new Scene3);
-	mScenes.push_back(new Scene4);
 
 	mCamera->set2D();
 	for (Scene* scene : mScenes) scene->init();
@@ -158,29 +158,23 @@ IG1App::display() const
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clears the back buffer
 
-	//mScenes[mCurrentScene]->render(*mCamera); // uploads the viewport and camera to the GPU
-
-	//glfwSwapBuffers(mWindow); // swaps the front and back buffer
-
 	if (!m2Vistas) {
-		//solo 1 vist
+		// one view
 		mViewPort->setPos(0, 0);
 		mViewPort->setSize(mWinW, mWinH);
 
 		mCamera->upload();
 		mScenes[mCurrentScene]->render(*mCamera);
 	}
-	else {
+	else { // two views
 		display2V();
 	}
+
 	glfwSwapBuffers(mWindow);
 }
 
 void
 IG1App::display2V() const {
-
-	mScenes[0]->load();
-	mScenes[1]->load();
 	// camera auxiliar
 	Camera auxCam = *mCamera; // copia camera
 
@@ -193,16 +187,16 @@ IG1App::display2V() const {
 	// izquierda, vista 3d
 	mViewPort->setPos(0, 0);
 	
-	auxCam.set3D();
+	//auxCam.set3D();
 	
-	mScenes[1]->render(auxCam); // renderizamos
+	mScenes[0]->render(auxCam); // renderizamos
 
 	// derecha, cenital
 	mViewPort->setPos(mWinW / 2, 0);
 
-	auxCam.setCenital();
+	//auxCam.setCenital();
 
-	mScenes[0]->render(auxCam);
+	mScenes[1]->render(auxCam);
 
 	*mViewPort = auxVP; // restaurar viewport
 }
@@ -279,9 +273,7 @@ IG1App::key(unsigned int key)
 			break;
 		case 'k':
 			m2Vistas = !m2Vistas;
-			break;
-		case 'O': // TESTING
-			mCamera->orbit(1, 1);
+			initDisplay2V();
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
@@ -392,23 +384,28 @@ IG1App::mouse(int button, int action, int mods) {
 	double xpos, ypos;
 	glfwGetCursorPos(s_ig1app.mWindow, &xpos, &ypos);
 
-	// DUDA: es necesario hacer el paso de y de ventana a y del puerto de vista? 
-	// funciona mal si lo hacemos
+	int height;
+	glfwGetWindowSize(mWindow, nullptr, &height);
+	ypos = height - ypos; // conversion of y from window to y from viewport
 
 	mMouseCoord = { xpos, ypos };
 }
 
 void 
 IG1App::motion(double x, double y) {
+	int height;
+	glfwGetWindowSize(mWindow, nullptr, &height);
+	y = height - y; // conversion of y from window to y from viewport
+
 	glm::dvec2 mp = mMouseCoord - glm::dvec2{ x, y }; // how much we've moved
 
 	mMouseCoord = glm::dvec2(x, y); // new position
 
 	if (mMouseButt == GLFW_MOUSE_BUTTON_LEFT) { // if its the left button
-		mCamera->orbit(mp.x * 0.05, -mp.y);
+		mCamera->orbit(mp.x * 0.05, mp.y);
 	}
 	else if (mMouseButt == GLFW_MOUSE_BUTTON_RIGHT) { // if its the right button
-		mCamera->moveLR(-mp.x);
+		mCamera->moveLR(mp.x);
 		mCamera->moveUD(mp.y);
 
 	}
@@ -420,8 +417,6 @@ IG1App::motion(double x, double y) {
 void 
 IG1App::mouseWheel(double dx, double dy) {
 	int key = glfwGetKey(s_ig1app.mWindow, GLFW_KEY_LEFT_CONTROL); // if control is pressed 
-	
-	// DUDA: asi se verifica si esta pressed el modifier?
 
 	if (key == GLFW_PRESS) {
 		mCamera->setScale(dy * 0.05);
@@ -433,3 +428,12 @@ IG1App::mouseWheel(double dx, double dy) {
 	mNeedsRedisplay = true;
 }
 
+void
+IG1App::initDisplay2V() {
+	if (m2Vistas) {
+		mScenes[1]->load();
+	}
+	else {
+		mScenes[1]->unload();
+	}
+}
