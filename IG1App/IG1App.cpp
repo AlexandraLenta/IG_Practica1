@@ -123,6 +123,11 @@ IG1App::iniWinOpenGL()
 	glfwSetKeyCallback(mWindow, s_specialkey);
 	glfwSetWindowRefreshCallback(mWindow, s_display);
 
+	// mouse callbacks
+	glfwSetMouseButtonCallback(mWindow, s_mouse);
+	glfwSetCursorPosCallback(mWindow, s_motion);
+	glfwSetScrollCallback(mWindow, s_mouseWheel);
+
 	// Error message callback (all messages)
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0u, 0, GL_TRUE);
@@ -304,15 +309,15 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			break;
 		case GLFW_KEY_RIGHT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->rollReal(1); // rolls towards the right
+				mCamera->rollReal(-1); // rolls towards the right
 			else
-				mCamera->yawReal(1); // looks to the right
+				mCamera->yawReal(-1); // looks to the right
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->rollReal(-1); // rolls towards the left
+				mCamera->rollReal(1); // rolls towards the left
 			else
-				mCamera->yawReal(-1); // looks to the left
+				mCamera->yawReal(1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
 			mCamera->pitchReal(1); // pitches upwards
@@ -354,14 +359,74 @@ IG1App::saveImage() {
 	img = nullptr;
 }
 
-void IG1App::mouse(int button, int state, int mods) {
-
+void 
+IG1App::s_mouse(GLFWwindow* win, int button,
+	int action, int mods) {
+	s_ig1app.mouse(button, action, mods);
 }
 
-void IG1App::motion(double x, double y) {
-
+void 
+IG1App::s_motion(GLFWwindow* win,
+	double x, double y) {
+	s_ig1app.motion(x, y);
 }
 
-void IG1App::mouseWheel(double dx, double dy) {
-
+void
+IG1App::s_mouseWheel(GLFWwindow* win,
+	double dx, double dy) {
+	s_ig1app.mouseWheel(dx, dy);
 }
+
+void 
+IG1App::mouse(int button, int action, int mods) {
+	if (action == GLFW_PRESS) {
+		mMouseButt = button;
+	}
+	else {
+		mMouseButt = -1;
+	}
+
+	double xpos, ypos;
+	glfwGetCursorPos(s_ig1app.mWindow, &xpos, &ypos);
+
+	// DUDA: es necesario hacer el paso de y de ventana a y del puerto de vista? 
+	// funciona mal si lo hacemos
+
+	mMouseCoord = { xpos, ypos };
+}
+
+void 
+IG1App::motion(double x, double y) {
+	glm::dvec2 mp = mMouseCoord - glm::dvec2{ x, y }; // how much we've moved
+
+	mMouseCoord = glm::dvec2(x, y); // new position
+
+	if (mMouseButt == GLFW_MOUSE_BUTTON_LEFT) { // if its the left button
+		mCamera->orbit(mp.x * 0.05, -mp.y);
+	}
+	else if (mMouseButt == GLFW_MOUSE_BUTTON_RIGHT) { // if its the right button
+		mCamera->moveLR(-mp.x);
+		mCamera->moveUD(mp.y);
+
+	}
+	mNeedsRedisplay = true;
+
+	// TODO: vector de objetos transparentes en scene4
+}
+
+void 
+IG1App::mouseWheel(double dx, double dy) {
+	int key = glfwGetKey(s_ig1app.mWindow, GLFW_KEY_LEFT_CONTROL); // if control is pressed 
+	
+	// DUDA: asi se verifica si esta pressed el modifier?
+
+	if (key == GLFW_PRESS) {
+		mCamera->setScale(dy * 0.05);
+	}
+	else {
+		mCamera->moveFB(dy);
+	}
+
+	mNeedsRedisplay = true;
+}
+

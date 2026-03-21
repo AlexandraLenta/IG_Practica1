@@ -58,6 +58,14 @@ protected:
 	static void s_key(GLFWwindow* win, unsigned int codepoint) { s_ig1app.key(codepoint); };
 	static void s_specialkey(GLFWwindow* win, int key, int scancode, int action, int mods) { s_ig1app.specialkey(key, scancode, action, mods); };
 
+	static void s_mouse(GLFWwindow* win, int button,
+		int action, int mods);
+	static void s_motion(GLFWwindow* win,
+		double x, double y);
+	static void s_mouseWheel(GLFWwindow* win,
+		double dx, double dy);
+
+
 	// Viewport position and size
 	Viewport* mViewPort = nullptr;
 	// Camera position, view volume and projection
@@ -78,7 +86,7 @@ protected:
 
 	//apartado 50
 	glm::dvec2 mMouseCoord;// Guarda coordenadas x y del raton
-	int mMouseButt; // Guarda el boton del raton que pulsa
+	int mMouseButt = -1; // Guarda el boton del raton que pulsa
 
 	void mouse(int button, int state, int mods);
 	void motion(double x, double y);
