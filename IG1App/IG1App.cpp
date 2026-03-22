@@ -77,15 +77,28 @@ IG1App::init()
 	// allocate memory and resources
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
-	//mScenes.push_back(new Scene);
-	//mScenes.push_back(new Scene1);
+
+	// Crear viewport izq y su cam 
+	mViewportLeft = new Viewport(mWinW / 2, mWinH);
+	mViewportLeft->setPos(0, 0);
+	mCameraLeft = new Camera(mViewportLeft);
+	mCameraLeft->set3D();
+
+	// Crear viewport derecho y su cam 
+	mViewportRight = new Viewport(mWinW / 2, mWinH);
+	mViewportRight->setPos(mWinW / 2, 0);
+	mCameraRight = new Camera(mViewportRight);
+	mCameraRight->setCenital();
+
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene2);
-	//mScenes.push_back(new Scene3);
 
 	mCamera->set2D();
 	for (Scene* scene : mScenes) scene->init();
 	mScenes[mCurrentScene]->load();
+
+	mMouseButt = -1; //ningun mouse culo activo
+	mActiveViewport = -1; //ningun viewport activo
 }
 
 void
@@ -144,6 +157,11 @@ IG1App::destroy()
 		delete scene;
 	mScenes.clear();
 
+	delete mCameraLeft;
+	delete mCameraRight;
+	mCameraLeft = nullptr;
+	mCameraRight = nullptr;
+
 	delete mCamera;
 	mCamera = nullptr;
 	delete mViewPort;
@@ -175,30 +193,24 @@ IG1App::display() const
 
 void
 IG1App::display2V() const {
-	// camera auxiliar
-	Camera auxCam = *mCamera; // copia camera
 
-	Viewport auxVP = *mViewPort; // copia viewport
+	//vista izq
+	mViewportLeft->setPos(0, 0);
+	mViewportLeft->setSize(mWinW / 2, mWinH);
+	mViewportLeft->upload();
 
-	mViewPort->setSize(mWinW / 2, mWinH); // mismo height, width dividido en dos
+	mCameraLeft->setSize(mWinW / 2, mWinH);
+	mCameraLeft->upload();
+	mScenes[0]->render(*mCameraLeft);
 
-	auxCam.setSize(mViewPort->width(), mViewPort->height());
+	// derecha
+	mViewportRight->setPos(mWinW / 2, 0);
+	mViewportRight->setSize(mWinW / 2, mWinH);
+	mViewportRight->upload();
 
-	// izquierda, vista 3d
-	mViewPort->setPos(0, 0);
-	
-	//auxCam.set3D();
-	
-	mScenes[0]->render(auxCam); // renderizamos
-
-	// derecha, cenital
-	mViewPort->setPos(mWinW / 2, 0);
-
-	//auxCam.setCenital();
-
-	mScenes[1]->render(auxCam);
-
-	*mViewPort = auxVP; // restaurar viewport
+	mCameraRight->setSize(mWinW / 2, mWinH);
+	mCameraRight->upload();
+	mScenes[1]->render(*mCameraRight);
 }
 
 void
@@ -233,7 +245,10 @@ IG1App::key(unsigned int key)
 			mCamera->set2D();
 			break;
 		case 'u':
-			mScenes[mCurrentScene]->update();
+			if (m2Vistas)
+				mScenes[mActiveViewport]->update();
+			else
+				mScenes[mCurrentScene]->update();
 			break;
 		case 'U':
 			mUpdateEnabled = !mUpdateEnabled;
@@ -269,7 +284,13 @@ IG1App::key(unsigned int key)
 			mCamera->moveLR(-1);
 			break;
 		case 'p':
-			mCamera->changePrj();
+			if (m2Vistas) {
+				if (mActiveViewport == 0) mCameraLeft->changePrj();
+				else mCameraRight->changePrj();
+			}
+			else {
+				mCamera->changePrj();
+			}
 			break;
 		case 'k':
 			m2Vistas = !m2Vistas;
@@ -296,6 +317,12 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 
 	bool need_redisplay = true;
 
+	// Seleccionar la cam activa segun el viewport donde esta el cursor
+	Camera* cam = mCamera;
+	if (m2Vistas) {
+		if (mActiveViewport == 0) cam = mCameraLeft;
+		else if (mActiveViewport == 1) cam = mCameraRight;
+	}
 	// Handle keyboard input
 	// (key reference: https://www.glfw.org/docs/3.4/group__keys.html)
 	switch (key) {
@@ -304,21 +331,21 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			break;
 		case GLFW_KEY_RIGHT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->rollReal(-1); // rolls towards the right
+				cam->rollReal(-1); // rolls towards the right
 			else
-				mCamera->yawReal(-1); // looks to the right
+				cam->yawReal(-1); // looks to the right
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->rollReal(1); // rolls towards the left
+				cam->rollReal(1); // rolls towards the left
 			else
-				mCamera->yawReal(1); // looks to the left
+				cam->yawReal(1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
-			mCamera->pitchReal(1); // pitches upwards
+			cam->pitchReal(1); // pitches upwards
 			break;
 		case GLFW_KEY_DOWN:
-			mCamera->pitchReal(-1); // pitches downwards
+			cam->pitchReal(-1); // pitches downwards
 			break;
 		default:
 			need_redisplay = false;
@@ -374,6 +401,7 @@ IG1App::s_mouseWheel(GLFWwindow* win,
 
 void 
 IG1App::mouse(int button, int action, int mods) {
+
 	if (action == GLFW_PRESS) {
 		mMouseButt = button;
 	}
@@ -389,6 +417,11 @@ IG1App::mouse(int button, int action, int mods) {
 	ypos = height - ypos; // conversion of y from window to y from viewport
 
 	mMouseCoord = { xpos, ypos };
+	// Detectar en que viewport esta el cursor
+	if (m2Vistas) {
+		if (xpos < mWinW / 2) mActiveViewport = 0;
+		else mActiveViewport = 1;
+	}
 }
 
 void 
@@ -401,12 +434,19 @@ IG1App::motion(double x, double y) {
 
 	mMouseCoord = glm::dvec2(x, y); // new position
 
+	// Seleccionar la cam activa
+	Camera* cam = mCamera;
+	if (m2Vistas) {
+		if (mActiveViewport == 0) cam = mCameraLeft;
+		else cam = mCameraRight;
+	}
+
 	if (mMouseButt == GLFW_MOUSE_BUTTON_LEFT) { // if its the left button
-		mCamera->orbit(mp.x * 0.05, mp.y);
+		cam->orbit(mp.x * 0.05, mp.y);
 	}
 	else if (mMouseButt == GLFW_MOUSE_BUTTON_RIGHT) { // if its the right button
-		mCamera->moveLR(mp.x);
-		mCamera->moveUD(mp.y);
+		cam->moveLR(mp.x);
+		cam->moveUD(mp.y);
 
 	}
 	mNeedsRedisplay = true;
@@ -416,13 +456,19 @@ IG1App::motion(double x, double y) {
 
 void 
 IG1App::mouseWheel(double dx, double dy) {
+	Camera* cam = mCamera;
+	if (m2Vistas) {
+		if (mActiveViewport == 0) cam = mCameraLeft;
+		else cam = mCameraRight;
+	}
+
 	int key = glfwGetKey(s_ig1app.mWindow, GLFW_KEY_LEFT_CONTROL); // if control is pressed 
 
 	if (key == GLFW_PRESS) {
-		mCamera->setScale(dy * 0.05);
+		cam->setScale(dy * 0.05);
 	}
 	else {
-		mCamera->moveFB(dy);
+		cam->moveFB(dy);
 	}
 
 	mNeedsRedisplay = true;

@@ -93,6 +93,16 @@ protected:
 	void mouseWheel(double dx, double dy);
 
 	void initDisplay2V();
+
+	Viewport* mViewportLeft = nullptr;
+	Viewport* mViewportRight = nullptr;
+
+	// Cámaras para las dos vistas
+	Camera* mCameraLeft = nullptr;
+	Camera* mCameraRight = nullptr;
+
+	int mActiveViewport = -1;
+
 };
 
 inline Viewport const&
