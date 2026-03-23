@@ -2,6 +2,7 @@
 #include "Camera.h"
 
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/matrix_access.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
@@ -40,7 +41,7 @@ Camera::set2D()
 	mEye = {0, 0, 500};
 	mLook = {0, 0, 0};
 	mUp = {0, 1, 0};
-	mRadio = mEye.z;
+	mRadio = glm::sqrt(glm::pow(mEye.z - mLook.z, 2) + glm::pow(mEye.x - mLook.x, 2));
 	mAng = 180;
 	setVM();
 }
@@ -50,8 +51,8 @@ Camera::set3D()
 {
 	mEye = {500, 500, 500};
 	mLook = {0, 10, 0};
-	mUp = {0, 1, 0};
-	mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),glm::vec3(mLook.x, 0, mLook.z));
+	mUp = {0, 1, 0}; 
+	mRadio = glm::sqrt(glm::pow(mEye.z - mLook.z, 2) + glm::pow(mEye.x - mLook.x, 2));
     mAng = -glm::degrees(atan2(mEye.z - mLook.z,mEye.x - mLook.x));
 	setVM();
 }
@@ -146,8 +147,8 @@ void
 Camera::moveLR(GLfloat cs) {
 	mEye += mRight * cs;
 	mLook += mRight * cs;
+
 	setVM();
-	setAxes();
 }
 
 void
@@ -174,8 +175,8 @@ void
 Camera::pitchReal(GLfloat cs) {
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
 
-	mFront = glm::vec3(mat * glm::vec4(mFront, 0.0f));
-	mUpward = glm::normalize(glm::cross(mRight, mFront));
+	mFront = glm::vec3(mat * glm::vec4(mLook - mEye, 0.0f));
+	mUp = glm::normalize(glm::cross(mRight, mFront));
 
 	mLook = mEye + mFront;
 
@@ -186,8 +187,8 @@ void
 Camera::yawReal(GLfloat cs) {
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mUpward);
 
-	mFront = glm::vec3(mat * glm::vec4(mFront, 0.0f));
-	mRight = glm::normalize(glm::cross(mFront, mUpward));
+	mFront = glm::vec3(mat * glm::vec4(mLook - mEye, 0.0f));
+	mRight = glm::normalize(glm::cross(mUpward, mFront));
 
 	mLook = mEye + mFront;
 
@@ -198,21 +199,22 @@ void
 Camera::rollReal(GLfloat cs) {
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront);
 
-	mUpward = glm::vec3(mat * glm::vec4(mUpward, 0.0f));
-	mRight = glm::normalize(glm::cross(mFront, mUpward));
-
-	mLook = mEye + mFront;
-	mUp = mUpward;
+	mUp = glm::vec3(mat * glm::vec4(mUp, 0.0f));
+	mRight = glm::normalize(glm::cross(mFront, mUp));
 
 	setVM();
 }
 
 void
 Camera::orbit(GLdouble incAng, GLdouble incY) {
+	mRadio = glm::sqrt(glm::pow(mEye.z - mLook.z, 2) + glm::pow(mEye.x - mLook.x, 2));
+
 	mAng += incAng;
+	
 	mEye.x = mLook.x + cos(glm::radians(mAng)) * mRadio;
 	mEye.z = mLook.z - sin(glm::radians(mAng)) * mRadio;
 	mEye.y += incY;
+
 	setVM();
 }
 

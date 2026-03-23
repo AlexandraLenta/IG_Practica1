@@ -173,19 +173,16 @@ Image::save(const std::string& name)
 
 void 
 Image::saveImg() {
-	Texture* saveTex = new Texture();
+	Texture saveTex;
 
-	saveTex->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
+	saveTex.loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
 
-	saveTex->bind(); // activar textura
+	saveTex.bind(); // activar textura
 
 	glGetTexImage(GL_TEXTURE_2D, 0,
-		GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, data_); // coger data de la textura activa en pixels
+		GL_RGBA, GL_UNSIGNED_BYTE, data_); // coger data de la textura activa en pixels
 
-	saveTex->unbind(); // desactivar textura
+	saveTex.unbind(); // desactivar textura
 
 	save("screenshot.bmp");
-
-	delete saveTex;
-	saveTex = nullptr;
 }

@@ -42,7 +42,12 @@ IG1App::run() // enters the main event processing loop
 
 		// if update enabled and its time to update again
 		if (mUpdateEnabled && currentTime >= mNextUpdate) {
-			mScenes[mCurrentScene]->update();
+			if (m2Vistas) {
+				mScenes[0]->update();
+				mScenes[1]->update();
+			}
+			else
+				mScenes[mCurrentScene]->update();
 			mNeedsRedisplay = true;
 			mNextUpdate += FRAME_DURATION;
 		}
@@ -77,18 +82,6 @@ IG1App::init()
 	// allocate memory and resources
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
-
-	// Crear viewport izq y su cam 
-	mViewportLeft = new Viewport(mWinW / 2, mWinH);
-	mViewportLeft->setPos(0, 0);
-	mCameraLeft = new Camera(mViewportLeft);
-	mCameraLeft->set3D();
-
-	// Crear viewport derecho y su cam 
-	mViewportRight = new Viewport(mWinW / 2, mWinH);
-	mViewportRight->setPos(mWinW / 2, 0);
-	mCameraRight = new Camera(mViewportRight);
-	mCameraRight->setCenital();
 
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene2);
@@ -231,6 +224,16 @@ IG1App::key(unsigned int key)
 {
 	bool need_redisplay = true;
 
+	Camera* cam = mCamera;
+	if (m2Vistas) {
+		if (mActiveViewport == 0) {
+			cam = mCameraLeft;
+		}
+		else {
+			cam = mCameraRight;
+		}
+	}
+
 	switch (key) {
 		case '+':
 			mCamera->setScale(+0.01); // zoom in  (increases the scale)
@@ -266,31 +269,25 @@ IG1App::key(unsigned int key)
 			cout << "Save image\n";
 			break;
 		case 'w':
-			mCamera->moveUD(1);
+			cam->moveUD(1);
 			break;
 		case 's':
-			mCamera->moveUD(-1);
+			cam->moveUD(-1);
 			break;
 		case 'W':
-			mCamera->moveFB(1);
+			cam->moveFB(1);
 			break;
 		case 'S':
-			mCamera->moveFB(-1);
+			cam->moveFB(-1);
 			break;
 		case 'a':
-			mCamera->moveLR(1);
+			cam->moveLR(1);
 			break;
 		case 'd':
-			mCamera->moveLR(-1);
+			cam->moveLR(-1);
 			break;
 		case 'p':
-			if (m2Vistas) {
-				if (mActiveViewport == 0) mCameraLeft->changePrj();
-				else mCameraRight->changePrj();
-			}
-			else {
-				mCamera->changePrj();
-			}
+			cam->changePrj();
 			break;
 		case 'k':
 			m2Vistas = !m2Vistas;
@@ -437,8 +434,14 @@ IG1App::motion(double x, double y) {
 	// Seleccionar la cam activa
 	Camera* cam = mCamera;
 	if (m2Vistas) {
-		if (mActiveViewport == 0) cam = mCameraLeft;
-		else cam = mCameraRight;
+		if (mMouseCoord.x < mWinW / 2) {
+			cam = mCameraLeft;
+			mActiveViewport = 0;
+		}
+		else {
+			cam = mCameraRight;
+			mActiveViewport = 1;
+		}
 	}
 
 	if (mMouseButt == GLFW_MOUSE_BUTTON_LEFT) { // if its the left button
@@ -477,9 +480,25 @@ IG1App::mouseWheel(double dx, double dy) {
 void
 IG1App::initDisplay2V() {
 	if (m2Vistas) {
-		mScenes[1]->load();
+		mScenes[1]->load();	
+		
+		// Crear viewport izq y su cam 
+		mViewportLeft = new Viewport(mWinW / 2, mWinH);
+		mViewportLeft->setPos(0, 0);
+		mCameraLeft = new Camera(mViewportLeft);
+		mCameraLeft->set3D();
+
+		// Crear viewport derecho y su cam 
+		mViewportRight = new Viewport(mWinW / 2, mWinH);
+		mViewportRight->setPos(mWinW / 2, 0);
+		mCameraRight = new Camera(mViewportRight);
+		mCameraRight->set2D();
 	}
 	else {
 		mScenes[1]->unload();
+		delete mViewportLeft;
+		delete mViewportRight;
+		mViewportLeft = nullptr;
+		mViewportRight = nullptr;
 	}
 }

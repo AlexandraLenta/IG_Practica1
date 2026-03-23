@@ -90,16 +90,6 @@ protected:
 	void setPM();
 
 	void setAxes();
-
-private:
-	glm::vec4 row(glm::mat4 mat, int index) {
-		return glm::vec4(
-			mat[0][index],
-			mat[1][index],
-			mat[2][index],
-			mat[3][index]
-		);
-	}
 };
 
 #endif //_H_Camera_H_
