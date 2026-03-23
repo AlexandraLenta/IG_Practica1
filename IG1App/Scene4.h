@@ -11,6 +11,7 @@ class Scene4 :
     std::vector<EntityWithTexture*> transparentObj;
 public:
     void init() override;
+    void render(Camera const& cam) const override;
 };
 
 #endif H_Scene4_H

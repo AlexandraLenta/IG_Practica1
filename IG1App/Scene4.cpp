@@ -8,6 +8,9 @@
 #include "Photo.h"
 #include "TextureLoader.h"
 
+#include <algorithm>
+#include <map>
+
 void
 Scene4::init() {
 	Scene::init();
@@ -52,12 +55,48 @@ Scene4::init() {
 	GlassParapet* glassP = new GlassParapet(groundX, glass);
 	glassP->setModelMat(glm::scale(glm::mat4(1.0f), glm::vec3(1, 0.5, 1)));
 	gObjects.push_back(glassP);
+	transparentObj.push_back(glassP);
 
 	Grass* grass = new Grass(starRadius, grassTex);
 	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, floorHeight, -groundX / 4)));
 	gObjects.push_back(grass);
+	transparentObj.push_back(grass);
 
 	Photo* photo = new Photo(photoSize);
 	photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)) * glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 10)));
 	gObjects.push_back(photo);
+}
+
+void Scene4::render(Camera const& cam) const {
+	for (auto obj : gObjects) {
+		bool isTransparent = false;
+		for (auto t : transparentObj) 
+		{
+			if (obj == t) {
+				isTransparent = true;
+				break;
+			}
+		}
+		if (!isTransparent) {
+			obj->render(cam.viewMat());
+		}
+
+	}
+	std::map<float, EntityWithTexture*, std::greater<float>> sorted;
+	glm::vec3 camPos = cam.getEye();
+	for (auto obj : transparentObj) {
+
+		glm::vec3 pos = glm::vec3(obj->modelMat()[3]);
+		float dist = glm::distance(camPos, pos);
+
+		while (sorted.find(dist) != sorted.end()) 
+		{
+			dist += 0.0001f;
+		}
+		sorted[dist] = obj;
+	}
+
+	for (auto& pair : sorted) {
+		pair.second->render(cam.viewMat());
+	}
 }
