@@ -68,6 +68,7 @@ Scene4::init() {
 }
 
 void Scene4::render(Camera const& cam) const {
+	//obj opacos
 	for (auto obj : gObjects) {
 		bool isTransparent = false;
 		for (auto t : transparentObj) 
@@ -82,13 +83,15 @@ void Scene4::render(Camera const& cam) const {
 		}
 
 	}
+
+	//ordenar transparentes
 	std::map<float, EntityWithTexture*, std::greater<float>> sorted;
 	glm::vec3 camPos = cam.getEye();
 	for (auto obj : transparentObj) {
 
 		glm::vec3 pos = glm::vec3(obj->modelMat()[3]);
 		float dist = glm::distance(camPos, pos);
-
+		//evitar dupes
 		while (sorted.find(dist) != sorted.end()) 
 		{
 			dist += 0.0001f;
@@ -96,6 +99,7 @@ void Scene4::render(Camera const& cam) const {
 		sorted[dist] = obj;
 	}
 
+	//render transp
 	for (auto& pair : sorted) {
 		pair.second->render(cam.viewMat());
 	}
