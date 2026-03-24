@@ -2,7 +2,5 @@ Alexandra Lenta
 Zhiyi Zhou
 
 Opcionales:
-- Apartado 30
-- Apartado 31
-- Apartado 33
-- Apartado 36
+- Apartado 52
+- Apartado 53
