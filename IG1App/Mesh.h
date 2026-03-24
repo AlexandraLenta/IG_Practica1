@@ -52,7 +52,7 @@ protected:
 private:
 	GLuint mVBO;  // vertex buffer object
 	GLuint mCBO;  // color buffer object
-	GLuint mTBO; // texture buffer object
+	GLuint mTCO; // texture buffer object
 };
 
 #endif //_H_Scene_H_

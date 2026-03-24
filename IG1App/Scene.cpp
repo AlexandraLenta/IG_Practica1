@@ -2,7 +2,7 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <iostream>
+#include <map>
 
 using namespace glm;
 
@@ -35,7 +35,11 @@ Scene::destroy()
 	for (Abs_Entity* el : gObjects)
 		delete el;
 
+	for (Abs_Entity* el : transparentObj)
+		delete el;
+
 	gObjects.clear();
+	transparentObj.clear();
 
 	delete texLoader;
 }
@@ -45,12 +49,18 @@ Scene::load()
 {
 	for (Abs_Entity* obj : gObjects)
 		obj->load();
+
+	for (Abs_Entity* obj : transparentObj)
+		obj->load();
 }
 
 void
 Scene::unload()
 {
 	for (Abs_Entity* obj : gObjects)
+		obj->unload();
+
+	for (Abs_Entity* obj : transparentObj)
 		obj->unload();
 }
 
@@ -75,10 +85,37 @@ Scene::render(Camera const& cam) const
 
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
+
+	glEnable(GL_BLEND);
+	glDepthMask(GL_FALSE);
+
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	// order transparents
+	std::map<float, Abs_Entity*, std::greater<float>> sorted;
+	glm::vec3 camPos = cam.getEye();
+
+	for (auto& obj : transparentObj) {
+		glm::vec3 pos = glm::vec3(obj->modelMat()[3]);
+		float dist = glm::distance(camPos, pos);
+
+		sorted[dist] = obj;
+	}
+
+	//render transp
+	for (auto& pair : sorted) {
+		pair.second->render(cam.viewMat());
+	}
+
+	glDepthMask(GL_TRUE);
+	glDisable(GL_BLEND);
 }
 
 void
 Scene::update() {
 	for (Abs_Entity* obj : gObjects)
+		obj->update();
+
+	for (Abs_Entity* obj : transparentObj)
 		obj->update();
 }

@@ -7,7 +7,6 @@ class GlassParapet :
 {
 public:
     explicit GlassParapet(GLdouble length, Texture* tex);
-    void render(glm::mat4 const& modelViewMat) const override;
 };
 
 #endif H_GlassParapet_H

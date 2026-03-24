@@ -12,6 +12,9 @@ public:
     void render(glm::mat4 const& modelViewMat) const override;
     void update() override;
 
+    void load() override;
+    void unload() override;
+
 private:
     Mesh* mMeshTop;
     Texture* mTextureInside;

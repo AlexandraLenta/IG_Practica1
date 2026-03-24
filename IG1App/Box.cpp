@@ -4,11 +4,24 @@ Box::Box(GLdouble length, Texture* tex, Texture* texInside) : EntityWithTexture(
     mMesh = Mesh::generateBoxOutlineTexCor(length);
 
     mMeshTop = Mesh::generateRectangleTexCor(length, length, 1, 1); // generar malla
-    mMeshTop->load(); // cargar la nueva malla en el GPU
 }
 
 Box::~Box() {
     delete mMeshTop;
+}
+
+void
+Box::load() {
+    Abs_Entity::load();
+
+    mMeshTop->load();
+}
+
+void
+Box::unload() {
+    Abs_Entity::unload();
+
+    mMeshTop->unload();
 }
 
 void

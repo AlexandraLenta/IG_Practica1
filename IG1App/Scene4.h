@@ -8,14 +8,8 @@
 class Scene4 :
     public Scene
 {
-    std::vector<Abs_Entity*> transparentObj;
 public:
-    ~Scene4();
     void init() override;
-    void render(Camera const& cam) const override;
-
-    void load() override;
-    void unload() override;
 };
 
 #endif H_Scene4_H
