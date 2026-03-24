@@ -465,9 +465,9 @@ IG1App::mouseWheel(double dx, double dy) {
 		else cam = mCameraRight;
 	}
 
-	int key = glfwGetKey(s_ig1app.mWindow, GLFW_KEY_LEFT_CONTROL); // if control is pressed 
+	int ctrlState = glfwGetKey(s_ig1app.mWindow, GLFW_KEY_LEFT_CONTROL); // if control is pressed 
 
-	if (key == GLFW_PRESS) {
+	if (ctrlState == GLFW_PRESS) {
 		cam->setScale(dy * 0.05);
 	}
 	else {

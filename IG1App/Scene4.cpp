@@ -54,13 +54,13 @@ Scene4::init() {
 
 	GlassParapet* glassP = new GlassParapet(groundX, glass);
 	glassP->setModelMat(glm::scale(glm::mat4(1.0f), glm::vec3(1, 0.5, 1)));
-	gObjects.push_back(glassP);
+	//gObjects.push_back(glassP);
 	transparentObj.push_back(glassP);
 
 	Grass* grass = new Grass(starRadius, grassTex);
 	grass->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(-groundX / 4, floorHeight, -groundX / 4)));
 	gObjects.push_back(grass);
-	transparentObj.push_back(grass);
+	//transparentObj.push_back(grass);
 
 	Photo* photo = new Photo(photoSize);
 	photo->setModelMat(glm::rotate(photo->modelMat(), glm::radians(-90.0f), glm::vec3(1, 0, 0)) * glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 10)));
@@ -68,39 +68,49 @@ Scene4::init() {
 }
 
 void Scene4::render(Camera const& cam) const {
-	//obj opacos
-	for (auto obj : gObjects) {
-		bool isTransparent = false;
-		for (auto t : transparentObj) 
-		{
-			if (obj == t) {
-				isTransparent = true;
-				break;
-			}
-		}
-		if (!isTransparent) {
-			obj->render(cam.viewMat());
-		}
+	Scene::render(cam);
 
-	}
-
-	//ordenar transparentes
-	std::map<float, EntityWithTexture*, std::greater<float>> sorted;
+	// order transparents
+	std::map<float, Abs_Entity*, std::greater<float>> sorted;
 	glm::vec3 camPos = cam.getEye();
-	for (auto obj : transparentObj) {
-
+	for (auto& obj : transparentObj) {
 		glm::vec3 pos = glm::vec3(obj->modelMat()[3]);
 		float dist = glm::distance(camPos, pos);
-		//evitar dupes
-		while (sorted.find(dist) != sorted.end()) 
-		{
-			dist += 0.0001f;
-		}
+
+		//// avoid duplicates
+		//while (sorted.find(dist) != sorted.end()) 
+		//{
+		//	dist += 0.0001f;
+		//}
 		sorted[dist] = obj;
 	}
 
 	//render transp
 	for (auto& pair : sorted) {
 		pair.second->render(cam.viewMat());
+	}
+}
+
+void
+Scene4::load() {
+	Scene::load();
+
+	for (auto& obj : transparentObj) {
+		obj->load();
+	}
+}
+
+void
+Scene4::unload() {
+	Scene::unload();
+
+	for (auto& obj : transparentObj) {
+		obj->unload();
+	}
+}
+
+Scene4::~Scene4() {
+	for (auto& obj : transparentObj) {
+		delete obj;
 	}
 }

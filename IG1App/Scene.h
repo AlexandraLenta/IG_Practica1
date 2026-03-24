@@ -25,8 +25,8 @@ public:
 	virtual void update();
 
 	// load or unload scene data into the GPU
-	void load();
-	void unload();
+	virtual void load();
+	virtual void unload();
 
 protected:
 	void destroy();
