@@ -1,11 +1,13 @@
-#ifndef H_SingleColorEntity_H
-#define H_SingleColorEntity_H
+#ifndef H_Torus_H
+#define H_torus_H
 
 #include "SingleColorEntity.h"
 class Torus :
     public SingleColorEntity
 {
+public:
+    Torus(GLdouble R, GLdouble r, GLuint nPoints = 40, GLuint nSamples = 40);
 };
 
-#endif H_SingleColorEntity_H
+#endif H_Torus_H
 
