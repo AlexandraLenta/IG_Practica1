@@ -113,6 +113,7 @@ Camera::setPM()
 		// glm::ortho defines the orthogonal projection matrix
 	}
 	else { // if not ortho, perspective
+		// TODO: aplicar ratio
 		mProjMat = frustum(xLeft * mScaleFact,
 			xRight * mScaleFact,
 			yBot * mScaleFact, 
@@ -173,6 +174,10 @@ Camera::changePrj() {
 
 void
 Camera::pitchReal(GLfloat cs) {
+
+	// DUDA: P-R-Y: Se modifican los ejes de la cámara. Pitch y Yaw solo modifican mUp y mLook, y Roll sólo mUp. 
+	// Si hacemos esto no funciona.
+
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
 
 	mFront = glm::vec3(mat * glm::vec4(mLook - mEye, 0.0f));

@@ -288,10 +288,10 @@ IG1App::key(unsigned int key)
 			cam->moveFB(-1);
 			break;
 		case 'a':
-			cam->moveLR(1);
+			cam->moveLR(-1);
 			break;
 		case 'd':
-			cam->moveLR(-1);
+			cam->moveLR(1);
 			break;
 		case 'p':
 			cam->changePrj();
