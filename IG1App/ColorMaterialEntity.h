@@ -1,5 +1,5 @@
-#ifndef H_SingleColorEntity_H
-#define H_SingleColorEntity_H
+#ifndef H_ColorMaterialEntity_H
+#define H_ColorMaterialEntity_H
 
 #include "SingleColorEntity.h"
 class ColorMaterialEntity :
@@ -7,4 +7,4 @@ class ColorMaterialEntity :
 {
 };
 
-#endif H_SingleColorEntity_H
+#endif H_ColorMaterialEntity_H
