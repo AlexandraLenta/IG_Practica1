@@ -155,10 +155,17 @@ IG1App::destroy()
 	mCameraLeft = nullptr;
 	mCameraRight = nullptr;
 
+
+	delete mViewportLeft;
+	delete mViewportRight;
+	mViewportLeft = nullptr;
+	mViewportRight = nullptr;
+
 	delete mCamera;
 	mCamera = nullptr;
 	delete mViewPort;
 	mViewPort = nullptr;
+
 
 	glfwTerminate();
 }
@@ -500,5 +507,10 @@ IG1App::initDisplay2V() {
 		delete mViewportRight;
 		mViewportLeft = nullptr;
 		mViewportRight = nullptr;
+
+		delete mCameraLeft;
+		delete mCameraRight;
+		mCameraLeft = nullptr;
+		mCameraRight = nullptr;
 	}
 }
