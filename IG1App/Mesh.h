@@ -47,12 +47,15 @@ protected:
 	virtual void draw() const;
 	std::vector<glm::vec2> vTextureCords; //coordenadas de textura
 
+	std::vector<glm::vec3> vNormals; //vector normal
+
 	GLuint mVAO;  // vertex array object
 
 private:
 	GLuint mVBO;  // vertex buffer object
 	GLuint mCBO;  // color buffer object
 	GLuint mTCO; // texture buffer object
+	GLuint mNBO;
 };
 
 #endif //_H_Scene_H_

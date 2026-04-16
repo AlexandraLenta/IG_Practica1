@@ -5,6 +5,8 @@
 
 class Scene5 : public Scene
 {
+public:
+	void init() override;
 };
 
 #endif H_Scene_H
