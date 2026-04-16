@@ -1,4 +1,9 @@
 #include "IndexMesh.h"
+#include <limits>
+
+
+// Placeholder for the pending index of a GPU object
+constexpr GLuint NONE = std::numeric_limits<GLuint>::max();
 
 IndexMesh::IndexMesh() :Mesh() {
 
@@ -27,6 +32,10 @@ void IndexMesh::load() {
 void IndexMesh::unload() {
 
 	Mesh::unload();
+	if (mIBO != NONE) {
+		glDeleteBuffers(1, &mIBO);
+		mIBO = NONE;
+	}
 }
 
 IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile, GLuint nSamples,GLfloat angleMax) {

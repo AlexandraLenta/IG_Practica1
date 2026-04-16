@@ -174,16 +174,10 @@ Camera::changePrj() {
 
 void
 Camera::pitchReal(GLfloat cs) {
-
-	// DUDA: P-R-Y: Se modifican los ejes de la cámara. Pitch y Yaw solo modifican mUp y mLook, y Roll sólo mUp. 
-	// Si hacemos esto no funciona.
-
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
-
-	mFront = glm::vec3(mat * glm::vec4(mLook - mEye, 0.0f));
-	mUp = glm::normalize(glm::cross(mRight, mFront));
-
-	mLook = mEye + mFront;
+	mLook = mEye + glm::vec3(glm::vec4(mLook - mEye, 0.0f) * mat);
+	
+	mUp = glm::vec3(glm::vec4(mUp, 0.0f) * mat);
 
 	setVM();
 }
@@ -191,11 +185,9 @@ Camera::pitchReal(GLfloat cs) {
 void
 Camera::yawReal(GLfloat cs) {
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mUpward);
+	mLook = mEye + glm::vec3(glm::vec4(mLook - mEye, 0.0f) * mat);
 
-	mFront = glm::vec3(mat * glm::vec4(mLook - mEye, 0.0f));
-	mRight = glm::normalize(glm::cross(mUpward, mFront));
-
-	mLook = mEye + mFront;
+	mRight = glm::vec3(glm::vec4(mRight, 0.0f) * mat);
 
 	setVM();
 }
@@ -204,8 +196,9 @@ void
 Camera::rollReal(GLfloat cs) {
 	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront);
 
-	mUp = glm::vec3(mat * glm::vec4(mUp, 0.0f));
-	mRight = glm::normalize(glm::cross(mFront, mUp));
+	mUp = glm::vec3(glm::vec4(mUp, 0.0f) * mat);
+
+	mRight = glm::vec3(glm::vec4(mRight, 0.0f) * mat);
 
 	setVM();
 }

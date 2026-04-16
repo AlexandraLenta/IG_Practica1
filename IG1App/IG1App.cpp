@@ -83,7 +83,10 @@ IG1App::init()
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
+	mScenes.push_back(new Scene);
+	mScenes.push_back(new Scene1);
 	mScenes.push_back(new Scene2);
+	mScenes.push_back(new Scene3);
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene5);
 
@@ -303,8 +306,6 @@ IG1App::key(unsigned int key)
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
-				// DUDA
-				if (key == '5') changeScene(2);
 				if (changeScene(key - '0')) break;
 				cout << "[NOTE] There is no scene " << char(key) << ".\n";
 			}
@@ -340,19 +341,19 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			if (mods == GLFW_MOD_CONTROL)
 				cam->rollReal(-1); // rolls towards the right
 			else
-				cam->yawReal(-1); // looks to the right
+				cam->yawReal(1); // looks to the right
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
 				cam->rollReal(1); // rolls towards the left
 			else
-				cam->yawReal(1); // looks to the left
+				cam->yawReal(-1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
-			cam->pitchReal(1); // pitches upwards
+			cam->pitchReal(-1); // pitches upwards
 			break;
 		case GLFW_KEY_DOWN:
-			cam->pitchReal(-1); // pitches downwards
+			cam->pitchReal(1); // pitches downwards
 			break;
 		default:
 			need_redisplay = false;
