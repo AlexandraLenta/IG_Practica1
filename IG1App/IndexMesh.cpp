@@ -5,7 +5,7 @@
 // Placeholder for the pending index of a GPU object
 constexpr GLuint NONE = std::numeric_limits<GLuint>::max();
 
-IndexMesh::IndexMesh() :Mesh() {
+IndexMesh::IndexMesh() :Mesh(), mIBO(NONE) {
 
 }
 
