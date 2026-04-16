@@ -1,7 +1,7 @@
 #include "SingleColorEntity.h"
 
 
-SingleColorEntity::SingleColorEntity(glm::vec4 color = {1.0, 1.0, 1.0, 1.0}) : Abs_Entity() {
+SingleColorEntity::SingleColorEntity(glm::vec4 color) : Abs_Entity() {
 	mColor = color;
 	mShader = Shader::get("simple");
 }
