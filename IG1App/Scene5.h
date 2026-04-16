@@ -1,5 +1,5 @@
-#ifndef H_Scene_H
-#define H_Scene_H
+#ifndef H_Scene5_H
+#define H_Scene5_H
 
 #include "Scene.h"
 
@@ -9,4 +9,4 @@ public:
 	void init() override;
 };
 
-#endif H_Scene_H
+#endif H_Scene5_H
