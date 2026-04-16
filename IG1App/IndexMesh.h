@@ -1,8 +1,9 @@
-#ifndef H_Mesh_H
-#define H_Mesh_H
+#ifndef H_IndexMesh_H
+#define H_IndexMesh_H
 
 #include <numbers>
 #include "Mesh.h"
+
 class IndexMesh :
     public Mesh
 {
@@ -20,4 +21,4 @@ public:
         GLfloat angleMax = 2 * std::numbers::pi);
 
 };
-#endif H_Mesh_H
+#endif H_IndexMesh_H

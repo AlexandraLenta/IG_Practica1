@@ -303,6 +303,8 @@ IG1App::key(unsigned int key)
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
+				// DUDA
+				if (key == '5') changeScene(2);
 				if (changeScene(key - '0')) break;
 				cout << "[NOTE] There is no scene " << char(key) << ".\n";
 			}

@@ -8,9 +8,10 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): SingleCol
 
     profile.reserve(nPoints + 1);
 
-    //aumento del angulo en cada ite
-    const float incAngle =glm::radians(360) / nPoints;
+    // aumento del angulo en cada iteracion
+    const float incAngle =glm::radians(360.0f) / nPoints;
 
+    // crear la figura
     for (int i = 0; i <= nPoints; ++i) 
     {
         float angle = i * incAngle;

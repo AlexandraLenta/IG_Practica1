@@ -5,7 +5,6 @@ IndexMesh::IndexMesh() :Mesh() {
 }
 
 void IndexMesh::draw() const{
-
 	glDrawElements(
 		mPrimitive, // primitiva (GL_TRIANGLES, etc.)
 		vIndexes.size(), // número de índices
@@ -15,8 +14,8 @@ void IndexMesh::draw() const{
 }
 
 void IndexMesh::load() {
-
-	Mesh::load(); glBindVertexArray(mVAO);
+	Mesh::load(); 
+	glBindVertexArray(mVAO);
 	glGenBuffers(1, &mIBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER,
@@ -34,8 +33,10 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 
 	IndexMesh* mesh = new IndexMesh;
 	mesh->mPrimitive = GL_TRIANGLES;
+
 	int tamPerfil = profile.size();
 	mesh->vVertices.reserve(nSamples * tamPerfil);
+
 	// Genera los vértices de las muestras
 	GLdouble theta1 = angleMax / nSamples;
 

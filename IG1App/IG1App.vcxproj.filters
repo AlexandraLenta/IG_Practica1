@@ -99,9 +99,6 @@
     <ClInclude Include="TextureLoader.h">
       <Filter>Archivos de código fuente</Filter>
     </ClInclude>
-    <ClInclude Include="Scene5.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Scene6.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -118,6 +115,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="ColorMaterialEntity.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene5.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -209,9 +209,6 @@
     <ClCompile Include="TextureLoader.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Scene5.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="Scene6.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -228,6 +225,9 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="ColorMaterialEntity.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene5.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
