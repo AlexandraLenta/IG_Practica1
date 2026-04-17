@@ -339,21 +339,21 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			break;
 		case GLFW_KEY_RIGHT:
 			if (mods == GLFW_MOD_CONTROL)
-				cam->rollReal(-1); // rolls towards the right
+				cam->rollReal(1); // rolls towards the right
 			else
-				cam->yawReal(1); // looks to the right
+				cam->yawReal(-1); // looks to the right
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
-				cam->rollReal(1); // rolls towards the left
+				cam->rollReal(-1); // rolls towards the left
 			else
-				cam->yawReal(-1); // looks to the left
+				cam->yawReal(1); // looks to the left
 			break;
 		case GLFW_KEY_UP:
-			cam->pitchReal(-1); // pitches upwards
+			cam->pitchReal(1); // pitches upwards
 			break;
 		case GLFW_KEY_DOWN:
-			cam->pitchReal(1); // pitches downwards
+			cam->pitchReal(-1); // pitches downwards
 			break;
 		default:
 			need_redisplay = false;

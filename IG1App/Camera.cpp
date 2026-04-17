@@ -1,9 +1,11 @@
 #include "Shader.h"
 #include "Camera.h"
 
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/matrix_access.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/rotate_vector.hpp>
 
 #include <iostream>
 
@@ -174,31 +176,25 @@ Camera::changePrj() {
 
 void
 Camera::pitchReal(GLfloat cs) {
-	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mRight);
-	mLook = mEye + glm::vec3(glm::vec4(mLook - mEye, 0.0f) * mat);
+	mLook = mEye + glm::rotate(mLook - mEye, glm::radians(cs), mRight);
 	
-	mUp = glm::vec3(glm::vec4(mUp, 0.0f) * mat);
+	mUp = glm::rotate(mUp, glm::radians(cs), mRight);
 
 	setVM();
 }
 
 void
 Camera::yawReal(GLfloat cs) {
-	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mUpward);
-	mLook = mEye + glm::vec3(glm::vec4(mLook - mEye, 0.0f) * mat);
+	mLook = mEye + glm::rotate(mLook - mEye, glm::radians(cs), mUpward);
 
-	mRight = glm::vec3(glm::vec4(mRight, 0.0f) * mat);
+	mUp = glm::rotate(mUp, glm::radians(cs), mUpward);
 
 	setVM();
 }
 
 void
 Camera::rollReal(GLfloat cs) {
-	glm::mat4 mat = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront);
-
-	mUp = glm::vec3(glm::vec4(mUp, 0.0f) * mat);
-
-	mRight = glm::vec3(glm::vec4(mRight, 0.0f) * mat);
+	mUp = glm::rotate(mUp, glm::radians(cs), mFront);
 
 	setVM();
 }
