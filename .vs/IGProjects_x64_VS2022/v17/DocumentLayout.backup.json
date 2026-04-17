@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\SingleColorEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -94,23 +94,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 417,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SingleColorEntity.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
-              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
-              "RelativeToolTip": "IG1App\\SingleColorEntity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-16T15:48:15.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ColorMaterialEntity.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.cpp",
               "RelativeDocumentMoniker": "IG1App\\ColorMaterialEntity.cpp",
@@ -122,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ColorMaterialEntity.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.h",
               "RelativeDocumentMoniker": "IG1App\\ColorMaterialEntity.h",
@@ -134,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IndexMesh.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.cpp",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.cpp",
@@ -147,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SingleColorEntity.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.h",
               "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.h",
@@ -159,19 +147,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "IG1App.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp",
               "RelativeDocumentMoniker": "IG1App\\IG1App.cpp",
               "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp",
               "RelativeToolTip": "IG1App\\IG1App.cpp",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAAAGMBAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-14T09:28:24.105Z"
+              "WhenOpened": "2026-04-14T09:28:24.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Camera.cpp",
               "RelativeDocumentMoniker": "IG1App\\Camera.cpp",
@@ -181,6 +170,18 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-14T09:31:24.962Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SingleColorEntity.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
+              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
+              "RelativeToolTip": "IG1App\\SingleColorEntity.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-16T15:48:15.54Z"
             },
             {
               "$type": "Document",
@@ -346,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IndexMesh.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.h",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.h",
