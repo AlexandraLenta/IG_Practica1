@@ -12,6 +12,7 @@
 #include "Scene3.h"
 #include "Scene4.h"
 #include "Scene5.h"
+#include "Scene6.h"
 #include "Viewport.h"
 
 class IG1App

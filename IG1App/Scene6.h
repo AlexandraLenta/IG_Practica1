@@ -1,11 +1,12 @@
-#ifndef H_Scene_H
-#define H_Scene_H
+#ifndef H_Scene6_H
+#define H_Scene6_H
 
 #include "Scene.h"
 class Scene6 :
     public Scene
 {
+    void init() override;
 };
 
-#endif H_Scene_H
+#endif H_Scene6_H
 
