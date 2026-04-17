@@ -1,8 +1,8 @@
 #ifndef H_IndexedBox_H
 #define H_IndexedBox_H
-#include "SingleColorEntity.h"
+#include "ColorMaterialEntity.h"
 class IndexedBox :
-    public SingleColorEntity
+    public ColorMaterialEntity
 {
 public:
     IndexedBox(GLdouble l);
