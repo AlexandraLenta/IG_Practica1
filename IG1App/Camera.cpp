@@ -235,7 +235,7 @@ void Camera::uploadLight() const {
 
 	//transformar la luz a coordenadas de vista
 	glm::vec4 lightDirView = mViewMat * lightDirWorld;
-	shader->setUniform("lightDir", glm::vec3(lightDirView));
+	shader->setUniform("lightDir", lightDirView);
 
 	uploadVM();
 	uploadPM();

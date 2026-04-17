@@ -1,9 +1,9 @@
 #ifndef H_Torus_H
 #define H_torus_H
 
-#include "SingleColorEntity.h"
+#include "ColorMaterialEntity.h"
 class Torus :
-    public SingleColorEntity
+    public ColorMaterialEntity
 {
 public:
     Torus(GLdouble R, GLdouble r, GLuint nPoints = 40, GLuint nSamples = 40);

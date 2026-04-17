@@ -20,5 +20,7 @@ public:
     static IndexMesh* generateByRevolution(const std::vector<glm::vec2>& profile, GLuint nSamples,
         GLfloat angleMax = 2 * std::numbers::pi);
 
+    void buildNormalVectors();
+
 };
 #endif H_IndexMesh_H

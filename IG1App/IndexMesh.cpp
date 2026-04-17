@@ -58,13 +58,47 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	for (int i = 0; i < nSamples; ++i) // caras i a i + 1
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
 			if (profile[j].x != 0.0) // triángulo inferior
-				for (auto [s, t] : { std::pair{i, j}, {i, j + 1}, {i + 1, j} })
+				for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 			if (profile[j + 1].x != 0.0) // triángulo superior
-				for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j + 1}, {i + 1, j} })
+				for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j}, {i + 1, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
 	mesh->mNumVertices = mesh->vVertices.size();
+	mesh->buildNormalVectors();
 	return mesh;
+}
+
+void IndexMesh::buildNormalVectors() {
+
+	vNormals.resize(vVertices.size(), glm::vec3(0.0f));
+
+	for (int i = 0; i < vIndexes.size(); i += 3)
+	{
+		// indices de los 3 vert del triangulo
+		GLuint i0 = vIndexes[i];
+		GLuint i1 = vIndexes[i + 1];
+		GLuint i2 = vIndexes[i + 2];
+		// vertices del triangulo
+		glm::vec3 p0 = vVertices[i0];
+		glm::vec3 p1 = vVertices[i1];
+		glm::vec3 p2 = vVertices[i2];
+
+		// calcular la normal del ttri usando producto vectorial
+		glm::vec3 edge1 = p1 - p0;
+		glm::vec3 edge2 = p2 - p0;
+		glm::vec3 faceNormal = glm::normalize(glm::cross(edge1, edge2));
+
+		// sumar la normal a cada vert del tri
+		vNormals[i0] += faceNormal;
+		vNormals[i1] += faceNormal;
+		vNormals[i2] += faceNormal;
+	}
+	// normalizar  las normales finales
+	for (auto& n : vNormals)
+	{
+		n = glm::normalize(n);
+	}
+
 }
 

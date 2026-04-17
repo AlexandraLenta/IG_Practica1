@@ -1,7 +1,7 @@
 #include "Torus.h"
 #include "IndexMesh.h"
 
-Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): SingleColorEntity(glm::vec4(0, 1, 0, 1))
+Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): ColorMaterialEntity(glm::vec4(0, 1, 0, 1))
 {
     // vector que almacena puntos en el plano xy
     std::vector<glm::vec2> profile;
