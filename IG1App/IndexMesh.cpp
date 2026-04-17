@@ -102,3 +102,28 @@ void IndexMesh::buildNormalVectors() {
 
 }
 
+IndexMesh* IndexMesh::generateIndexedBox8(GLdouble l) {
+
+	IndexMesh* mesh = new IndexMesh;
+	mesh->mPrimitive = GL_TRIANGLES;
+	mesh->mNumVertices = 8;
+
+	GLdouble length = l / 2;
+
+	mesh->vVertices = {
+		{ length,  length, -length}, {length, -length, -length}, {length,  length, length}, {length, -length, length},
+		{-length,  length,  length}, {-length, -length,  length}, { -length,  length, -length}, { -length, -length, -length}
+	};
+
+	mesh->vIndexes = {
+		0, 1, 2, 2, 1, 3, 
+		2, 3, 4, 4, 3, 5,
+		4, 5, 6, 6, 5, 7, 
+		6, 7, 0, 0, 7, 1, 
+		4, 6, 2, 2, 6, 0,
+		1, 7, 3, 3, 7, 5
+	};
+	mesh->buildNormalVectors();
+	return mesh;
+}
+

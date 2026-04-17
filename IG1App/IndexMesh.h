@@ -22,5 +22,7 @@ public:
 
     void buildNormalVectors();
 
+    static IndexMesh* generateIndexedBox8(GLdouble l);
+
 };
 #endif H_IndexMesh_H
