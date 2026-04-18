@@ -90,6 +90,7 @@ IG1App::init()
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene5);
 	mScenes.push_back(new Scene6);
+	mScenes.push_back(new Scene7);
 
 	mCamera->set2D();
 	for (Scene* scene : mScenes) scene->init();

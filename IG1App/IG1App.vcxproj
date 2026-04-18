@@ -73,7 +73,9 @@
     <ClInclude Include="BoxOutline.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ColorMaterialEntity.h" />
+    <ClInclude Include="Cone.h" />
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="Disk.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityWithTexture.h" />
     <ClInclude Include="GlassParapet.h" />
@@ -100,6 +102,7 @@
     <ClInclude Include="Scene8.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SingleColorEntity.h" />
+    <ClInclude Include="Sphere.h" />
     <ClInclude Include="Star3D.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureLoader.h" />
@@ -111,7 +114,9 @@
     <ClCompile Include="BoxOutline.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ColorMaterialEntity.cpp" />
+    <ClCompile Include="Cone.cpp" />
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Disk.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityWithTexture.cpp" />
     <ClCompile Include="GlassParapet.cpp" />
@@ -139,6 +144,7 @@
     <ClCompile Include="Scene8.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SingleColorEntity.cpp" />
+    <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Star3D.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureLoader.cpp" />

@@ -1,5 +1,5 @@
 #ifndef H_Torus_H
-#define H_torus_H
+#define H_Torus_H
 
 #include "ColorMaterialEntity.h"
 class Torus :
