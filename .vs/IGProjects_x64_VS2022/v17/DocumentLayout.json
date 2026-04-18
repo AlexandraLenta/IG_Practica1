@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\ColorMaterialEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Torus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IndexMesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\ColorMaterialEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,20 +31,12 @@
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\ColorMaterialEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\SingleColorEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\IG1App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Torus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -94,24 +90,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 305,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SingleColorEntity.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
-              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
-              "RelativeToolTip": "IG1App\\SingleColorEntity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-16T15:48:15.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ColorMaterialEntity.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.cpp",
               "RelativeDocumentMoniker": "IG1App\\ColorMaterialEntity.cpp",
@@ -124,33 +107,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SingleColorEntity.h",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.h",
-              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.h",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.h",
-              "RelativeToolTip": "IG1App\\SingleColorEntity.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-16T15:49:32.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "IndexMesh.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.cpp",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.cpp*",
-              "RelativeToolTip": "IG1App\\IndexMesh.cpp*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAcwDEAAAAUAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.cpp",
+              "RelativeToolTip": "IG1App\\IndexMesh.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-16T13:27:27.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Camera.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Camera.cpp",
               "RelativeDocumentMoniker": "IG1App\\Camera.cpp",
@@ -163,7 +133,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Torus.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Torus.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp",
+              "RelativeToolTip": "IG1App\\Torus.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-16T13:28:01.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "SingleColorEntity.cpp",
+              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
+              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.cpp",
+              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\SingleColorEntity.cpp",
+              "RelativeToolTip": "IG1App\\SingleColorEntity.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-16T15:48:15.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ColorMaterialEntity.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\ColorMaterialEntity.h",
               "RelativeDocumentMoniker": "IG1App\\ColorMaterialEntity.h",
@@ -202,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "IG1App.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IG1App.h",
               "RelativeDocumentMoniker": "IG1App\\IG1App.h",
@@ -214,19 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Torus.cpp",
-              "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Torus.cpp",
-              "ToolTip": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.cpp",
-              "RelativeToolTip": "IG1App\\Torus.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-16T13:28:01.395Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Scene2.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.h",
               "RelativeDocumentMoniker": "IG1App\\Scene2.h",
@@ -238,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Scene4.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene4.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene4.cpp",
@@ -250,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Scene5.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene5.h",
               "RelativeDocumentMoniker": "IG1App\\Scene5.h",
@@ -262,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "Scene8.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene8.h",
               "RelativeDocumentMoniker": "IG1App\\Scene8.h",
@@ -274,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Scene7.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene7.h",
               "RelativeDocumentMoniker": "IG1App\\Scene7.h",
@@ -286,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "Scene6.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene6.h",
               "RelativeDocumentMoniker": "IG1App\\Scene6.h",
@@ -298,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "Scene3.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene3.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene3.cpp",
@@ -310,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "Scene2.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene2.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene2.cpp",
@@ -322,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "Scene1.cpp",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Scene1.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene1.cpp",
@@ -340,7 +324,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Torus.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\Torus.h",
               "RelativeDocumentMoniker": "IG1App\\Torus.h",
@@ -352,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IndexMesh.h",
               "DocumentMoniker": "C:\\Users\\aaa\\moving\\DesarolloVJ\\2CURSO\\IG\\Practica1\\IG1App\\IndexMesh.h",
               "RelativeDocumentMoniker": "IG1App\\IndexMesh.h",

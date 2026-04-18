@@ -1,6 +1,6 @@
 #include "IndexMesh.h"
 #include <limits>
-
+#include <iostream>
 
 // Placeholder for the pending index of a GPU object
 constexpr GLuint NONE = std::numeric_limits<GLuint>::max();
@@ -53,15 +53,22 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
 	}
 
+	for (auto p : profile) {
+		std::cout << p.x << ' ' << p.y << '\n';
+	}
+
 	for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
 	{
-		int next = (i + 1) % nSamples;
-		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-			if (profile[j].x != 0.0) // triángulo inferior
-				for (auto [s, t] : { std::pair{i, j}, {next, j}, {i, j + 1} })
+		int nextI = (i + 1) % nSamples;
+		for (int j = 0; j < tamPerfil; ++j) {
+			int nextJ = (j + 1) % tamPerfil;
+
+			if (profile[j].x != 0.0)
+				for (auto [s, t] : { std::pair{i, j}, {nextI, j}, {i, nextJ} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
-			if (profile[j + 1].x != 0.0) // triángulo superior
-				for (auto [s, t] : { std::pair{i, j + 1}, {next, j}, {next, j + 1} })
+
+			if (profile[nextJ].x != 0.0)
+				for (auto [s, t] : { std::pair{i, nextJ}, {nextI, j}, {nextI, nextJ} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
 	}

@@ -12,7 +12,7 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): ColorMate
     const float incAngle =glm::radians(360.0f) / nPoints;
 
     // crear la figura
-    for (int i = 0; i <= nPoints; ++i) 
+    for (int i = 0; i < nPoints; ++i) 
     {
         float angle = i * incAngle;
         float x = R + r * cos(angle); //R distancia delcentro del toro al centro del tubo
