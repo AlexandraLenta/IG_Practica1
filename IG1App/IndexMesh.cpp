@@ -64,8 +64,11 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 				for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j}, {i + 1, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
+
 	mesh->mNumVertices = mesh->vVertices.size();
+	
 	mesh->buildNormalVectors();
+	
 	return mesh;
 }
 
@@ -79,12 +82,13 @@ void IndexMesh::buildNormalVectors() {
 		GLuint i0 = vIndexes[i];
 		GLuint i1 = vIndexes[i + 1];
 		GLuint i2 = vIndexes[i + 2];
+
 		// vertices del triangulo
 		glm::vec3 p0 = vVertices[i0];
 		glm::vec3 p1 = vVertices[i1];
 		glm::vec3 p2 = vVertices[i2];
 
-		// calcular la normal del ttri usando producto vectorial
+		// calcular la normal del triangulo usando producto vectorial
 		glm::vec3 edge1 = p1 - p0;
 		glm::vec3 edge2 = p2 - p0;
 		glm::vec3 faceNormal = glm::normalize(glm::cross(edge1, edge2));

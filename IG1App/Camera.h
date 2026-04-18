@@ -92,8 +92,6 @@ protected:
 	void setPM();
 
 	void setAxes();
-
-	void uploadLight() const;
 };
 
 #endif //_H_Camera_H_

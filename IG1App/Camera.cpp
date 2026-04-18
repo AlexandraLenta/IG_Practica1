@@ -135,6 +135,14 @@ void
 Camera::upload() const
 {
 	mViewPort->upload();
+
+	glm::vec4 lightDir = { -1.0, -1.5,-1.25, 0.0};
+
+	Shader* shader = Shader::get("simple_light");
+	shader->use();
+
+	shader->setUniform("lightDir", glm::normalize(mViewMat * lightDir));
+
 	uploadVM();
 	uploadPM();
 }
@@ -223,21 +231,4 @@ void Camera::setCenital() {
 	mAng = 0.0;
 
 	setVM();
-}
-
-void Camera::uploadLight() const {
-
-	Shader* shader = Shader::get("simple_light");
-	shader->use();
-
-	//direccion por donde viene la luz
-	glm::vec4 lightDirWorld = glm::vec4(-1.0, -1.5, -1.25, 0.0);
-
-	//transformar la luz a coordenadas de vista
-	glm::vec4 lightDirView = mViewMat * lightDirWorld;
-	shader->setUniform("lightDir", lightDirView);
-
-	uploadVM();
-	uploadPM();
-
 }
