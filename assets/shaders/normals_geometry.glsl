@@ -1,13 +1,11 @@
-#version 430 core
+#version 330 core
 
 // Based on https://learnopengl.com/Advanced-OpenGL/Geometry-Shader
 
 layout (triangles) in;  // takes triangle primitives (like GL_TRIANGLES)
 layout (line_strip, max_vertices = 6) out;  // procues line primitives
 
-layout (std140, binding = 2) uniform Globals {
-	mat4 projection;  // projection matrix
-};
+uniform mat4 projection; // projection
 
 in vec3 Normal[];
 

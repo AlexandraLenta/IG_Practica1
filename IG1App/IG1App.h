@@ -14,6 +14,7 @@
 #include "Scene5.h"
 #include "Scene6.h"
 #include "Viewport.h"
+#include "ColorMaterialEntity.h"
 
 class IG1App
 {

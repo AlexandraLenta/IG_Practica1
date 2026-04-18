@@ -305,6 +305,9 @@ IG1App::key(unsigned int key)
 			m2Vistas = !m2Vistas;
 			initDisplay2V();
 			break;
+		case 'N':
+			ColorMaterialEntity::toggleShowNormals();
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

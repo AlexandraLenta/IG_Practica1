@@ -12,7 +12,7 @@ public:
 	void setColor(glm::vec4);
 	void render(const glm::mat4& modelViewMat) const override;
 
-private:
+protected:
 	glm::vec4 mColor;
 };
 
