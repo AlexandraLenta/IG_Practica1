@@ -141,3 +141,50 @@ IndexMesh* IndexMesh::generateIndexedBox8(GLdouble l) {
 	return mesh;
 }
 
+IndexMesh* 
+IndexMesh::generateIndexedBox(GLdouble l) {
+	IndexMesh* mesh = new IndexMesh;
+	mesh->mPrimitive = GL_TRIANGLES;
+	mesh->mNumVertices = 24;
+
+	GLdouble length = l / 2;
+
+	mesh->vVertices = {
+		// +X
+		{ length,  length, -length}, { length, -length, -length}, { length,  length,  length}, { length, -length,  length},
+		// -X
+		{-length,  length,  length}, {-length, -length,  length}, {-length,  length, -length}, {-length, -length, -length},
+		// +Y
+		{ length,  length,  length}, {-length,  length,  length}, { length,  length, -length}, {-length,  length, -length},
+		// -Y
+		{ length, -length, -length}, {-length, -length, -length}, { length, -length,  length}, {-length, -length,  length},
+		// +Z
+		{ length,  length,  length}, { length, -length,  length}, {-length,  length,  length}, {-length, -length,  length},
+		// -Z
+		{ length,  length, -length}, { length, -length, -length}, {-length,  length, -length}, {-length, -length, -length},
+	};
+
+	mesh->vIndexes = {
+		// +X (derecha)
+		0, 2, 1,
+		2, 3, 1,
+		// -X (izquierda)
+		4, 6, 5,
+		6, 7, 5,
+		// +Y (arriba)
+		8, 10, 9,
+		10, 11, 9,
+		// -Y (abajo)
+		12, 14, 13,
+		14, 15, 13,
+		// +Z (frente)
+		16, 18, 17,
+		18, 19, 17,
+		// -Z (atrás)
+		20, 22, 21,
+		22, 23, 21
+	};
+
+	mesh->buildNormalVectors();
+	return mesh;
+}
