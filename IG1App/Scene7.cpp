@@ -8,9 +8,9 @@ void Scene7::init() {
 	/*Sphere* s = new Sphere(100, 10, 40);
 	gObjects.push_back(s);*/
 
-	/*Cone* c = new Cone(100, 80, 30, 10,10);
-	gObjects.push_back(c);*/
+	Cone* c = new Cone(100, 80, 40, 5, 20);
+	gObjects.push_back(c);
 
-	Disk* d = new Disk(100, 30, 10, 10);
-	gObjects.push_back(d);
+	//Disk* d = new Disk(100, 30, 10, 10);
+	//gObjects.push_back(d);
 }
