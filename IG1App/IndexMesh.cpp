@@ -42,28 +42,30 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 
 	IndexMesh* mesh = new IndexMesh;
 	mesh->mPrimitive = GL_TRIANGLES;
-
 	int tamPerfil = profile.size();
 	mesh->vVertices.reserve(nSamples * tamPerfil);
 
 	// Genera los vértices de las muestras
-	GLdouble theta1 = angleMax / nSamples;
-
-	for (int i = 0; i <= nSamples; ++i) { // muestra i-ésima
+	GLdouble theta1 = 2 * std::numbers::pi / nSamples;
+	for (int i = 0; i < nSamples; ++i) { // muestra i-ésima
 		GLdouble c = cos(i * theta1), s = sin(i * theta1);
 		for (auto p : profile) // rota el perfil
 			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
 	}
 
-	for (int i = 0; i < nSamples; ++i) // caras i a i + 1
+	for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
+	{
+		int next = (i + 1) % nSamples;
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
 			if (profile[j].x != 0.0) // triángulo inferior
-				for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
+				for (auto [s, t] : { std::pair{i, j}, {next, j}, {i, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 			if (profile[j + 1].x != 0.0) // triángulo superior
-				for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j}, {i + 1, j + 1} })
+				for (auto [s, t] : { std::pair{i, j + 1}, {next, j}, {next, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
+	}
+
 
 	mesh->mNumVertices = mesh->vVertices.size();
 	
