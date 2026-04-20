@@ -16,15 +16,15 @@ Cone::Cone(GLdouble h, GLdouble r, GLdouble R, GLuint nRings, GLuint nSamples) {
 
 
     // 
-    GLdouble y = -h * 0.5;
+    GLdouble y = h * 0.5;
     GLdouble radius = r;
 
     // crear la figura
-    for (int i = 0; i < nRings; ++i)
+    for (int i = 0; i <= nRings; ++i)
     {
         profile.emplace_back(radius, y);
         radius += dr;
-        y += dy;
+        y -= dy;
     }
 
     mMesh = IndexMesh::generateByRevolution(profile, nSamples);

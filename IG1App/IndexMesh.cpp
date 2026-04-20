@@ -20,6 +20,7 @@ void IndexMesh::draw() const{
 
 void IndexMesh::load() {
 	Mesh::load(); 
+
 	glBindVertexArray(mVAO);
 	glGenBuffers(1, &mIBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIBO);
@@ -46,33 +47,38 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	mesh->vVertices.reserve(nSamples * tamPerfil);
 
 	// Genera los vértices de las muestras
-	GLdouble theta1 = 2 * std::numbers::pi / nSamples;
-	for (int i = 0; i < nSamples; ++i) { // muestra i-ésima
+	GLdouble theta1 = angleMax / nSamples;
+	for (int i = 0; i <= nSamples; ++i) { // muestra i-ésima
 		GLdouble c = cos(i * theta1), s = sin(i * theta1);
 		for (auto p : profile) // rota el perfil
 			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
 	}
 
-	for (auto p : profile) {
-		std::cout << p.x << ' ' << p.y << '\n';
-	}
+	//for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
+	//{
+	//	int nextI = (i + 1) % nSamples;
+	//	for (int j = 0; j < tamPerfil; ++j) {
+	//		int nextJ = (j + 1) % tamPerfil;
 
-	for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
-	{
-		int nextI = (i + 1) % nSamples;
-		for (int j = 0; j < tamPerfil; ++j) {
-			int nextJ = (j + 1) % tamPerfil;
+	//		if (profile[j].x != 0.0)
+	//			for (auto [s, t] : { std::pair{i, j}, {nextI, j}, {i, nextJ} })
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
 
-			if (profile[j].x != 0.0)
-				for (auto [s, t] : { std::pair{i, j}, {nextI, j}, {i, nextJ} })
+	//		if (profile[nextJ].x != 0.0)
+	//			for (auto [s, t] : { std::pair{i, nextJ}, {nextI, j}, {nextI, nextJ} })
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
+	//	}
+	//}
+
+	for (int i = 0; i < nSamples; ++i) // caras i a i + 1
+		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
+			if (profile[j].x != 0.0) // triángulo inferior
+				for (auto [s, t] : { std::pair{i, j}, {i, j + 1}, {i + 1, j} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
-
-			if (profile[nextJ].x != 0.0)
-				for (auto [s, t] : { std::pair{i, nextJ}, {nextI, j}, {nextI, nextJ} })
+			if (profile[j + 1].x != 0.0) // triángulo superior
+				for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j + 1}, {i + 1, j} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
-	}
-
 
 	mesh->mNumVertices = mesh->vVertices.size();
 	
@@ -92,15 +98,8 @@ void IndexMesh::buildNormalVectors() {
 		GLuint i1 = vIndexes[i + 1];
 		GLuint i2 = vIndexes[i + 2];
 
-		// vertices del triangulo
-		glm::vec3 p0 = vVertices[i0];
-		glm::vec3 p1 = vVertices[i1];
-		glm::vec3 p2 = vVertices[i2];
-
 		// calcular la normal del triangulo usando producto vectorial
-		glm::vec3 edge1 = p1 - p0;
-		glm::vec3 edge2 = p2 - p0;
-		glm::vec3 faceNormal = glm::normalize(glm::cross(edge1, edge2));
+		glm::vec3 faceNormal = glm::normalize(glm::cross(vVertices[i1] - vVertices[i0], vVertices[i2] - vVertices[i0]));
 
 		// sumar la normal a cada vert del tri
 		vNormals[i0] += faceNormal;

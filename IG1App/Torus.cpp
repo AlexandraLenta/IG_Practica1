@@ -9,17 +9,20 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): ColorMate
     profile.reserve(nPoints + 1);
 
     // aumento del angulo en cada iteracion
-    const float incAngle =glm::radians(360.0f) / nPoints;
+    const float incAngle = glm::radians(360.0f) / nPoints;
+
+    float theta = 2 * std::numbers::pi;
 
     // crear la figura
-    for (int i = 0; i < nPoints; ++i) 
+    for (int i = 0; i <= nPoints; ++i) 
     {
-        float angle = i * incAngle;
-        float x = R + r * cos(angle); //R distancia delcentro del toro al centro del tubo
+        float x = R + r * cos(theta); //R distancia delcentro del toro al centro del tubo
                                       //r *cos es desp dentro del cubo
 
-        float y = r * sin(angle); // r * sin es altura del tubo
+        float y = r * sin(theta); // r * sin es altura del tubo
         profile.emplace_back(x, y);
+
+        theta -= incAngle;
     }
 
     mMesh = IndexMesh::generateByRevolution(profile, nSamples);
