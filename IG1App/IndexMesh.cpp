@@ -61,22 +61,6 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 			
 	}
 
-	//for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
-	//{
-	//	int nextI = (i + 1) % nSamples;
-	//	for (int j = 0; j < tamPerfil; ++j) {
-	//		int nextJ = (j + 1) % tamPerfil;
-
-	//		if (profile[j].x != 0.0)
-	//			for (auto [s, t] : { std::pair{i, j}, {nextI, j}, {i, nextJ} })
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-
-	//		if (profile[nextJ].x != 0.0)
-	//			for (auto [s, t] : { std::pair{i, nextJ}, {nextI, j}, {nextI, nextJ} })
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-	//	}
-	//}
-
 	for (int i = 0; i < nSamples; ++i) // caras i a i + 1
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
 			if (profile[j].x != 0.0) // triángulo inferior
