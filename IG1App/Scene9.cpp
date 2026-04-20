@@ -12,11 +12,11 @@ void Scene9::init()
     GLdouble bodyR = 100.0;
     GLdouble headR = bodyR * 0.7;
 
-    // cuerpo
+    // cuerpo: eesfera inferior
     Sphere* lower = new Sphere(bodyR, 40, 40, { 0.95f, 0.95f, 0.95f, 1 });
     snowMan->addEntity(lower);
 
-    //cabeza
+    //cabeza : esfera superior
     Sphere* upper = new Sphere(headR, 40, 40, { 0.95f, 0.95f, 0.95f, 1 });
     glm::mat4 headMat = glm::translate(glm::mat4(1.0f), { 0, bodyR + headR * 0.8, 0 });
     upper->setModelMat(headMat);
@@ -29,11 +29,12 @@ void Scene9::init()
     nose->setModelMat(nosePos * noseRot);
     snowMan->addEntity(nose);
 
+    //ojos
     GLdouble eyeOffset = headR * 0.25;
     glm::vec4 eyeColor = { 0.0f, 0.5f, 0.5f, 1.0f };
 
-    Cone* eyeL = new Cone(headR * 0.2, 0.0,10,10 ,10, eyeColor);
-    Cone* eyeR = new Cone(headR * 0.3, 0.0, 10, 10, 10, eyeColor);
+    Cone* eyeL = new Cone(headR * 0.2, 0.0,15,10 ,10, eyeColor);
+    Cone* eyeR = new Cone(headR * 0.3, 0.0, 15, 10, 10, eyeColor);
 
     glm::mat4 eyeRot = glm::rotate(glm::mat4(1.0f),glm::radians(-90.0f), glm::vec3(1, 0, 0));
 
@@ -55,13 +56,13 @@ void Scene9::init()
     hat->addEntity(brim);
 
     // cuerpo del gorro
-    Cone* hatBody = new Cone(headR, headR * 0.6, headR * 0.6,20, 40,{ 0.0f, 0.0f, 1.0f, 1.0f });
+    Cone* hatBody = new Cone(headR-15, headR * 0.85, headR * 0.85,20, 40,{ 0.0f, 0.0f, 1.0f, 1.0f });
     hatBody->setModelMat(glm::translate(glm::mat4(1.0f),glm::vec3(0, bodyR + headR * 2.0, 0)));
     hat->addEntity(hatBody);
 
     // tapa del gorro
-    Disk* top = new Disk(headR * 0.6, 0.0, 40, 40,{ 1.0f, 0.0f, 0.0f, 1.0f });
-    top->setModelMat(glm::translate(glm::mat4(1.0f),glm::vec3(0, bodyR + headR * 2.5, 0)));
+    Disk* top = new Disk(headR * 0.85, 0.0, 40, 40,{ 1.0f, 0.0f, 0.0f, 1.0f });
+    top->setModelMat(glm::translate(glm::mat4(1.0f),glm::vec3(0, bodyR + headR * 2.39, 0)));
 
     hat->addEntity(top);
 
