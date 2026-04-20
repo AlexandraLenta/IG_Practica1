@@ -4,6 +4,8 @@ CompoundEntity::~CompoundEntity() {
 	for (auto& e : gObjects) {
 		delete e;
 	}
+
+	gObjects.clear();
 }
 
 void CompoundEntity::addEntity(Abs_Entity* ae) {
@@ -11,8 +13,10 @@ void CompoundEntity::addEntity(Abs_Entity* ae) {
 }
 
 void CompoundEntity::render(const glm::mat4& modelViewMat) const {
+	// tenemos en cuenta transformaciones sobre la entidad entera
+	glm::mat4 aMat = modelViewMat * mModelMat;
 	for (auto& e : gObjects)
-		e->render(modelViewMat);
+		e->render(aMat);
 }
 void CompoundEntity::update() {
 	for (auto& e : gObjects)

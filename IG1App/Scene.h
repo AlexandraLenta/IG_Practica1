@@ -28,6 +28,8 @@ public:
 	virtual void load();
 	virtual void unload();
 
+	TextureLoader* getTextureLoader();
+
 protected:
 	void destroy();
 	void setGL();

@@ -3,20 +3,12 @@
 #include "SphereWithTexture.h"
 #include "Cone.h"
 #include "Disk.h"
+#include "Droid.h"
 
 void Scene7::init() {
 	Scene::init();
-	//Sphere* s = new Sphere(100, 10, 40);
-	//gObjects.push_back(s);
 
-	Texture* sphereTex = texLoader->getTexture("container.jpg");
+	Droid* d = new Droid(100, texLoader->getTexture("container.jpg"));
+	gObjects.push_back(d);
 
-	SphereWithTexture* s = new SphereWithTexture(100, 10, 40, sphereTex);
-	gObjects.push_back(s);
-
-	//Cone* c = new Cone(100, 80, 40, 5, 20);
-	//gObjects.push_back(c);
-
-	//Disk* d = new Disk(100, 30, 10, 10);
-	//gObjects.push_back(d);
 }

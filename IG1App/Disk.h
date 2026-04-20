@@ -6,7 +6,7 @@ class Disk :
     public ColorMaterialEntity
 {
 public:
-    Disk(GLdouble R, GLdouble r, GLuint nRings, GLuint nSamples);
+    Disk(GLdouble R, GLdouble r, GLuint nRings, GLuint nSamples, glm::vec4 color);
 };
 
 #endif H_Disk_H

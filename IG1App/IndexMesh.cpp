@@ -45,6 +45,8 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	mesh->mPrimitive = GL_TRIANGLES;
 	int tamPerfil = profile.size();
 	mesh->vVertices.reserve(nSamples * tamPerfil);
+	mesh->vTextureCords.reserve(mesh->mNumVertices);
+
 
 	// Genera los vértices de las muestras
 	GLdouble theta1 = angleMax / nSamples;
