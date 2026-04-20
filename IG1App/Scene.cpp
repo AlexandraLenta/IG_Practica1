@@ -119,8 +119,3 @@ Scene::update() {
 	for (Abs_Entity* obj : transparentObj)
 		obj->update();
 }
-
-TextureLoader* Scene::getTextureLoader() {
-	assert(texLoader != nullptr && "ERROR: Texture loader not initialized.");
-	return texLoader;
-}

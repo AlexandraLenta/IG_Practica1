@@ -30,8 +30,8 @@ public:
 
 	virtual void setGL();
 
-	TextureLoader* getTextureLoader();
-
+	virtual void rotate() {};
+	virtual void orbit() {};
 
 protected:
 	void destroy();

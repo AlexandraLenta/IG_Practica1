@@ -310,6 +310,12 @@ IG1App::key(unsigned int key)
 		case 'N':
 			ColorMaterialEntity::toggleShowNormals();
 			break;
+		case 'f':
+			mScenes[mCurrentScene]->rotate();
+			break;
+		case 'g':
+			mScenes[mCurrentScene]->orbit();
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
