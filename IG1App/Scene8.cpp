@@ -40,10 +40,19 @@ void
 Scene8::orbit() {
 	// rotacion de droide y del nodo global
 	glm::mat4 globalMat = mFictionalNode->modelMat() * mDroid->modelMat();
-	// coger donde mira
+	// direccion en la que mira
+	// la matriz de posicion tiene esta estructura
+	// | Xx  Yx  Zx  Tx |
+	// | Xy  Yy  Zy  Ty |
+	// | Xz  Yz  Zz  Tz |
+	// |  0   0   0   1 |
+	// cogemos la primera columna, la de X, porque el droid original mira en direccion Z,
+	// por lo tanto queremos rotarlo alrededor del X
 	glm::vec3 facingDir = glm::normalize(glm::vec3(globalMat[0]));
 
-
+	// rotamos alrededor de donde esta mirando ahora
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), facingDir);
+	mFictionalNode->setModelMat(rot * mFictionalNode->modelMat());
 }
 
 void 

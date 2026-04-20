@@ -96,6 +96,7 @@ IG1App::init()
 	mCamera->set2D();
 	for (Scene* scene : mScenes) scene->init();
 	mScenes[mCurrentScene]->load();
+	mScenes[mCurrentScene]->setGL();
 
 	mMouseButt = -1; //ningun mouse culo activo
 	mActiveViewport = -1; //ningun viewport activo
@@ -388,6 +389,8 @@ IG1App::changeScene(size_t sceneNr)
 		mScenes[mCurrentScene]->unload();
 		mCurrentScene = sceneNr;
 		mScenes[mCurrentScene]->load();
+		
+		// ponemos el GL de la nueva escena
 		mScenes[mCurrentScene]->setGL();
 	}
 
