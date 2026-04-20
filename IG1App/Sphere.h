@@ -6,7 +6,7 @@ class Sphere :
     public ColorMaterialEntity
 {
 public:
-    Sphere(GLdouble radius, GLuint nParallels, GLuint nMeridians);
+    Sphere(GLdouble radius, GLuint nParallels, GLuint nMeridians, glm::vec4 color);
 };
 
 #endif H_Sphere_H

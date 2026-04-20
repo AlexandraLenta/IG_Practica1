@@ -28,11 +28,13 @@ public:
 	virtual void load();
 	virtual void unload();
 
+	virtual void setGL();
+
 	TextureLoader* getTextureLoader();
+
 
 protected:
 	void destroy();
-	void setGL();
 	void resetGL();
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene

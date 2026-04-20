@@ -4,7 +4,7 @@
 Cone::Cone(GLdouble h, GLdouble r, GLdouble R, GLuint nRings, GLuint nSamples, glm::vec4 color) : ColorMaterialEntity(color) {
     std::vector<glm::vec2> profile;
 
-    profile.reserve(nRings + 1);
+    profile.reserve(nRings);
 
     // R: radio arriba
     // r: radio abajo

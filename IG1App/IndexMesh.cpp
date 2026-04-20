@@ -201,8 +201,8 @@ IndexMesh* IndexMesh::generateSphere(GLdouble radius,
 	std::vector<glm::vec2> profile;
 	profile.reserve(nParallel + 1);
 
-	float theta = std::numbers::pi / 2;
-	float increment = std::numbers::pi / nParallel;
+	float theta = std::numbers::pi * 0.5f;
+	float increment = std::numbers::pi / (float)nParallel;
 
 	for (int i = 0; i <= nParallel; ++i) {
 		float x = radius * cos(theta);
