@@ -5,7 +5,6 @@ class CompoundEntity :
     public Abs_Entity
 {
 public:
-    CompoundEntity();
     ~CompoundEntity();
 
     void addEntity(Abs_Entity* ae);
