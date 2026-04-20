@@ -38,6 +38,11 @@ void Scene8::setGL()
 
 void
 Scene8::orbit() {
+	// rotacion de droide y del nodo global
+	glm::mat4 globalMat = mFictionalNode->modelMat() * mDroid->modelMat();
+	// coger donde mira
+	glm::vec3 facingDir = glm::normalize(glm::vec3(globalMat[0]));
+
 
 }
 
