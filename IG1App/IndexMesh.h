@@ -24,6 +24,8 @@ public:
 
     static IndexMesh* generateIndexedBox8(GLdouble l);
     static IndexMesh* generateIndexedBox(GLdouble l);
+    static IndexMesh* generateSphere(GLdouble radius,
+        GLuint nParallel, GLuint nMeridians);
 
 };
 #endif H_IndexMesh_H

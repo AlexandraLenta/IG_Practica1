@@ -50,8 +50,13 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	GLdouble theta1 = angleMax / nSamples;
 	for (int i = 0; i <= nSamples; ++i) { // muestra i-ésima
 		GLdouble c = cos(i * theta1), s = sin(i * theta1);
-		for (auto p : profile) // rota el perfil
-			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
+		for (int j = 0; j < tamPerfil; j++) // rota el perfil
+		{
+			mesh->vVertices.emplace_back(profile[j].x * c, profile[j].y, -profile[j].x * s);
+			mesh->vTextureCords.emplace_back(float(i) / nSamples,
+				1.0 - j / (profile.size() - 1.0));
+		}
+			
 	}
 
 	//for (int i = 0; i < nSamples; ++i) // caras i a i + 1 
@@ -185,5 +190,28 @@ IndexMesh::generateIndexedBox(GLdouble l) {
 	};
 
 	mesh->buildNormalVectors();
+	return mesh;
+}
+
+IndexMesh* IndexMesh::generateSphere(GLdouble radius,
+	GLuint nParallel, GLuint nMeridians) {
+    
+	std::vector<glm::vec2> profile;
+	profile.reserve(nParallel + 1);
+
+	float theta = std::numbers::pi / 2;
+	float increment = std::numbers::pi / nParallel;
+
+	for (int i = 0; i <= nParallel; ++i) {
+		float x = radius * cos(theta);
+		float y = radius * sin(theta);
+
+		theta -= increment;
+
+		profile.emplace_back(x, y);
+	}
+
+	IndexMesh* mesh = generateByRevolution(profile, nMeridians);
+
 	return mesh;
 }
