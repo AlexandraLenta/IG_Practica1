@@ -1,4 +1,5 @@
-#pragma once
+#ifndef H_CompoundEntity_H
+#define H_CompoundEntity_H
 #include "Entity.h"
 
 class CompoundEntity :
@@ -18,3 +19,4 @@ protected:
     std::vector<Abs_Entity*> gObjects;
 };
 
+#endif H_CompoundEntity_H

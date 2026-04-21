@@ -1,4 +1,5 @@
-#pragma once
+#ifndef H_Droid_H
+#define H_Droid_H
 #include "CompoundEntity.h"
 
 class Texture;
@@ -10,3 +11,4 @@ public:
     Droid(GLdouble radius, Texture* bodyTex);
 };
 
+#endif H_Droid_H
