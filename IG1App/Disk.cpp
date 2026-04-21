@@ -8,14 +8,14 @@ Disk::Disk(GLdouble R, GLdouble r, GLuint nRings, GLuint nSamples, glm::vec4 col
 	// R: radio exterior
 
 	profile.reserve(nRings + 1);
-	GLdouble radius = R;
+	GLdouble radius = r;
 	// incrementa radio desde interior a exterior
 	GLdouble dr = (R - r) / nRings;
 
 	for (GLuint i = 0; i <= nRings; ++i)
 	{
 		profile.emplace_back(radius, 0.0);
-		radius -= dr;
+		radius += dr;
 	}
 
 	mMesh = IndexMesh::generateByRevolution(profile, nSamples);

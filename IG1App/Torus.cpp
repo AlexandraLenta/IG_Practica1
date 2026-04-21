@@ -11,7 +11,7 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): ColorMate
     // aumento del angulo en cada iteracion
     const float incAngle = glm::radians(360.0f) / nPoints;
 
-    float theta = 2 * std::numbers::pi;
+    float theta = 0;
 
     // crear la figura
     for (int i = 0; i <= nPoints; ++i) 
@@ -22,7 +22,7 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples): ColorMate
         float y = r * sin(theta); // r * sin es altura del tubo
         profile.emplace_back(x, y);
 
-        theta -= incAngle;
+        theta += incAngle;
     }
 
     mMesh = IndexMesh::generateByRevolution(profile, nSamples);
