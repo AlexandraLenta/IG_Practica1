@@ -175,8 +175,8 @@ IndexMesh::generateIndexedBox(GLdouble l) {
 		16, 18, 17,
 		18, 19, 17,
 		// -Z (atrás)
-		20, 22, 21,
-		22, 23, 21
+		20, 21, 22,
+		22, 21, 23
 	};
 
 	mesh->buildNormalVectors();
