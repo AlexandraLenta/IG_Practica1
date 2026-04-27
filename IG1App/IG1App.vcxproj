@@ -79,6 +79,7 @@
     <ClInclude Include="Disk.h" />
     <ClInclude Include="Droid.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityWithMaterial.h" />
     <ClInclude Include="EntityWithTexture.h" />
     <ClInclude Include="GlassParapet.h" />
     <ClInclude Include="Grass.h" />
@@ -86,6 +87,7 @@
     <ClInclude Include="IG1App.h" />
     <ClInclude Include="IndexedBox.h" />
     <ClInclude Include="IndexMesh.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Photo.h" />
@@ -95,6 +97,7 @@
     <ClInclude Include="RGBTriangle.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
+    <ClInclude Include="Scene10.h" />
     <ClInclude Include="Scene2.h" />
     <ClInclude Include="Scene3.h" />
     <ClInclude Include="Scene4.h" />
@@ -124,6 +127,7 @@
     <ClCompile Include="Disk.cpp" />
     <ClCompile Include="Droid.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityWithMaterial.cpp" />
     <ClCompile Include="EntityWithTexture.cpp" />
     <ClCompile Include="GlassParapet.cpp" />
     <ClCompile Include="Grass.cpp" />
@@ -132,6 +136,7 @@
     <ClCompile Include="IndexedBox.cpp" />
     <ClCompile Include="IndexMesh.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Photo.cpp" />
@@ -141,6 +146,7 @@
     <ClCompile Include="RGBTriangle.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Scene1.cpp" />
+    <ClCompile Include="Scene10.cpp" />
     <ClCompile Include="Scene2.cpp" />
     <ClCompile Include="Scene3.cpp" />
     <ClCompile Include="Scene4.cpp" />
