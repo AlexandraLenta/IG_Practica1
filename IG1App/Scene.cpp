@@ -109,6 +109,8 @@ Scene::render(Camera const& cam) const
 
 	glDepthMask(GL_TRUE);
 	glDisable(GL_BLEND);
+
+	uploadLights(cam);
 }
 
 void
@@ -118,4 +120,14 @@ Scene::update() {
 
 	for (Abs_Entity* obj : transparentObj)
 		obj->update();
+}
+
+void 
+Scene::uploadLights(const Camera& cam) const
+{
+	for (Light* light : gLights) 
+	{
+
+		light->upload(*Shader::get("light"), cam.viewMat());
+	}
 }

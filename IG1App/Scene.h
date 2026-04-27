@@ -7,6 +7,7 @@
 #include "Camera.h"
 #include "Entity.h"
 #include "TextureLoader.h"
+#include "Light.h"
 
 #include <vector>
 
@@ -33,6 +34,8 @@ public:
 	virtual void rotate() {};
 	virtual void orbit() {};
 
+	void uploadLights(const Camera& cam) const;
+
 protected:
 	void destroy();
 	void resetGL();
@@ -40,6 +43,8 @@ protected:
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
 	std::vector<Abs_Entity*> transparentObj; // Transparent/Translucent entities of the scene
 	TextureLoader* texLoader;
+
+	std::vector<Light*> gLights;
 };
 
 #endif //_H_Scene_H_
