@@ -10,8 +10,8 @@ void EntityWithMaterial::render(const glm::mat4& modelViewMat) const
 
 	mShader->use();
 	mMaterial.upload(*mShader);
-	glm::mat4 mvMat = modelViewMat * mModelMat;
+	glm::mat4 aMat = modelViewMat * mModelMat;
 
-	upload(mvMat);
+	upload(aMat);
 	mMesh->render();
 }

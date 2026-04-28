@@ -83,7 +83,8 @@ IG1App::init()
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
-	mScenes.push_back(new Scene);
+	mScenes.push_back(new Scene10);
+	//mScenes.push_back(new Scene);
 	mScenes.push_back(new Scene1);
 	mScenes.push_back(new Scene2);
 	mScenes.push_back(new Scene3);
@@ -93,7 +94,7 @@ IG1App::init()
 	mScenes.push_back(new Scene7);
 	mScenes.push_back(new Scene8);
 	mScenes.push_back(new Scene9);
-	mScenes.push_back(new Scene10);
+
 
 	mCamera->set2D();
 	for (Scene* scene : mScenes) scene->init();
@@ -319,6 +320,8 @@ IG1App::key(unsigned int key)
 		case 'g':
 			mScenes[mCurrentScene]->orbit();
 			break;
+		case 'r':
+			mScenes[mCurrentScene]->toggleLights();
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

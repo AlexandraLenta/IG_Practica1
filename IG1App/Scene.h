@@ -35,6 +35,7 @@ public:
 	virtual void orbit() {};
 
 	void uploadLights(const Camera& cam) const;
+	void toggleLights();
 
 protected:
 	void destroy();

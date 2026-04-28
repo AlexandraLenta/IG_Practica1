@@ -4,6 +4,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <map>
 
+
 using namespace glm;
 
 void
@@ -22,8 +23,8 @@ Scene::init()
 
 	dir->setAmb(glm::vec3(0.1f, 0.1f, 0.1f));
 	dir->setDiff(glm::vec3(0.5f, 0.5f, 0.5f));
-	dir->setSpec(glm::vec3(0.5f, 0.5f, 0.5f));
-
+	dir->setSpec(glm::vec3(0, 0.2f, 0));
+	//gLights.push_back(dir);
 	// cargador de texturas
 	texLoader = new TextureLoader();
 }
@@ -75,7 +76,7 @@ Scene::unload()
 		obj->unload();
 
 	for (Light* l : gLights)
-		l->unload(*Shader::get("simple_light"));
+		l->unload(*Shader::get("light"));
 }
 
 void
@@ -146,4 +147,11 @@ Scene::uploadLights(const Camera& cam) const
 	{
 		l->upload(*sh, cam.viewMat());
 	}
+}
+
+void
+Scene::toggleLights()
+{
+	if (!gLights.empty())
+		gLights[0]->setEnabled(!gLights[0]->enabled());
 }

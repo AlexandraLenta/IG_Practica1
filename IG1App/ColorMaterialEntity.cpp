@@ -1,8 +1,12 @@
 #include "ColorMaterialEntity.h"
 
 ColorMaterialEntity::ColorMaterialEntity(glm::vec4 color) : EntityWithMaterial() {
-	mShader = Shader::get("simple_light");
-	mNormalsShader = Shader::get("normals");
+	/*mShader = Shader::get("simple_light");
+	mNormalsShader = Shader::get("normals");*/
+
+    mMaterial.setAmb(color);
+    mMaterial.setDiff(color);
+    mMaterial.setSpec(color);
 }
 
 void
