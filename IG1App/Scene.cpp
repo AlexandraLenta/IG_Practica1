@@ -38,6 +38,11 @@ Scene::destroy()
 	for (Abs_Entity* el : transparentObj)
 		delete el;
 
+	for (Light* l : gLights)
+		delete l;
+
+	gLights.clear();
+
 	gObjects.clear();
 	transparentObj.clear();
 
@@ -62,6 +67,9 @@ Scene::unload()
 
 	for (Abs_Entity* obj : transparentObj)
 		obj->unload();
+
+	for (Light* l : gLights)
+		l->unload(*Shader::get("simple_light"));
 }
 
 void
@@ -82,6 +90,8 @@ void
 Scene::render(Camera const& cam) const
 {
 	cam.upload();
+
+	uploadLights(cam);
 
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
@@ -110,7 +120,6 @@ Scene::render(Camera const& cam) const
 	glDepthMask(GL_TRUE);
 	glDisable(GL_BLEND);
 
-	uploadLights(cam);
 }
 
 void
@@ -125,9 +134,10 @@ Scene::update() {
 void 
 Scene::uploadLights(const Camera& cam) const
 {
-	for (Light* light : gLights) 
-	{
+	Shader* sh = Shader::get("light");
 
-		light->upload(*Shader::get("light"), cam.viewMat());
+	for (auto* l : gLights)
+	{
+		l->upload(*sh, cam.viewMat());
 	}
 }
