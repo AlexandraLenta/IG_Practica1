@@ -23,8 +23,9 @@ Scene::init()
 
 	dir->setAmb(glm::vec3(0.1f, 0.1f, 0.1f));
 	dir->setDiff(glm::vec3(0.5f, 0.5f, 0.5f));
-	dir->setSpec(glm::vec3(0, 0.2f, 0));
-	//gLights.push_back(dir);
+	dir->setSpec(glm::vec3(0.5f, 0.5f, 0.5f));
+	gLights.push_back(dir);
+
 	// cargador de texturas
 	texLoader = new TextureLoader();
 }

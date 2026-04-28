@@ -7,10 +7,13 @@ class EntityWithMaterial :
     public Abs_Entity
 {
 public:
-    Material mMaterial;
 
     EntityWithMaterial();
+    void setMaterial(const Material& m) { mMaterial = m; };
     void render(const glm::mat4& modelViewMat) const override;
+
+protected:
+    Material mMaterial;
 };
 
 #endif
