@@ -18,6 +18,12 @@ Scene::init()
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
 
+	DirLight* dir = new DirLight(0);
+
+	dir->setAmb(glm::vec3(0.1f, 0.1f, 0.1f));
+	dir->setDiff(glm::vec3(0.5f, 0.5f, 0.5f));
+	dir->setSpec(glm::vec3(0.5f, 0.5f, 0.5f));
+
 	// cargador de texturas
 	texLoader = new TextureLoader();
 }
