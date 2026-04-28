@@ -156,3 +156,9 @@ Scene::toggleLights()
 	if (!gLights.empty())
 		gLights[0]->setEnabled(!gLights[0]->enabled());
 }
+
+void Scene::togglePosLight()
+{
+	if (gLights.size() > 1)
+		gLights[1]->setEnabled(!gLights[1]->enabled());
+}

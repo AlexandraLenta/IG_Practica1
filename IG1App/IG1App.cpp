@@ -322,6 +322,8 @@ IG1App::key(unsigned int key)
 			break;
 		case 'r':
 			mScenes[mCurrentScene]->toggleLights();
+		case 't':
+			mScenes[mCurrentScene]->togglePosLight();
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

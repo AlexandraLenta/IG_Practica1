@@ -15,6 +15,7 @@ public:
 
     void orbit() override;
     void rotate() override;
+    void togglePosLight();
 
 private:
     CompoundEntity* mFictionalNode;

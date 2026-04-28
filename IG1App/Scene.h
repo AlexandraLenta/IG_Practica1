@@ -36,6 +36,7 @@ public:
 
 	void uploadLights(const Camera& cam) const;
 	void toggleLights();
+	void togglePosLight();
 
 protected:
 	void destroy();

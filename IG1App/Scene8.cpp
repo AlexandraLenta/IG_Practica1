@@ -28,6 +28,15 @@ Scene8::init() {
 
 	gObjects.push_back(mFictionalNode);
 
+	PosLight* posL = new PosLight(0);
+
+	posL->setPosition(glm::vec3(0, 2*sphereRadius, 0));
+
+	posL->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
+	posL->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
+	posL->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
+	gLights.push_back(posL);
+
 }
 
 void Scene8::setGL()
@@ -59,4 +68,10 @@ void
 Scene8::rotate() {
 	// rotar sobre el eje y
 	mDroid->setModelMat(glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), glm::vec3(0, 1, 0)) * mDroid->modelMat());
+}
+
+void Scene8::togglePosLight()
+{
+	if (gLights.size() > 1)
+		gLights[1]->setEnabled(!gLights[1]->enabled());
 }
