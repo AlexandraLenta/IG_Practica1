@@ -28,14 +28,21 @@ Scene8::init() {
 
 	gObjects.push_back(mFictionalNode);
 
-	PosLight* posL = new PosLight(0);
+	PosLight* posLight = new PosLight(0);
 
-	posL->setPosition(glm::vec3(0, 2*sphereRadius, 0));
+	posLight->setPosition(glm::vec3(0, 2*sphereRadius, 0));
 
-	posL->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
-	posL->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
-	posL->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
-	gLights.push_back(posL);
+	posLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
+	posLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
+	posLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
+	gLights.push_back(posLight);
+
+	SpotLight* spotLight = new SpotLight(glm::vec3(0.0f, sphereRadius, sphereRadius * 2.0f), 0);
+
+	spotLight->setAmb({ 0.25, 0.25, 0.25 });
+	spotLight->setDiff({ 0.6, 0.6, 0.6 });
+	spotLight->setSpec({ 0.0, 0.2, 0.0 });
+	gLights.push_back(spotLight);
 
 }
 
