@@ -143,6 +143,7 @@ void
 Scene::uploadLights(const Camera& cam) const
 {
 	Shader* sh = Shader::get("light");
+	sh->use();
 
 	for (auto* l : gLights)
 	{
