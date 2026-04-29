@@ -76,3 +76,15 @@ Scene8::rotate() {
 	// rotar sobre el eje y
 	mDroid->setModelMat(glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), glm::vec3(0, 1, 0)) * mDroid->modelMat());
 }
+
+void Scene8::togglePosLight()
+{
+	if (gLights.size() > 1)
+		gLights[1]->setEnabled(!gLights[1]->enabled());
+}
+
+void Scene8::toggleSpotLight()
+{
+	if (gLights.size() > 2)
+		gLights[2]->setEnabled(!gLights[2]->enabled());
+}
