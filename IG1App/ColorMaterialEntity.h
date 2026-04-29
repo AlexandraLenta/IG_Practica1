@@ -6,7 +6,7 @@ class ColorMaterialEntity :
     public EntityWithMaterial
 {
 public:
-    ColorMaterialEntity(glm::vec4 color = { 1.0, 1.0, 1.0, 1.0 });
+    ColorMaterialEntity(glm::vec3 color);
     void render(const glm::mat4& modelViewMat) const override;
 
     static void toggleShowNormals();

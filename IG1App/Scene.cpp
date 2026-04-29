@@ -24,6 +24,10 @@ Scene::init()
 	dir->setAmb(glm::vec3(0.1f, 0.1f, 0.1f));
 	dir->setDiff(glm::vec3(0.5f, 0.5f, 0.5f));
 	dir->setSpec(glm::vec3(0.5f, 0.5f, 0.5f));
+
+	dir->setDirection(glm::vec3(-1.0f, -1.0f, -1.0f));
+	dir->setEnabled(true);
+
 	gLights.push_back(dir);
 
 	// cargador de texturas
@@ -40,14 +44,16 @@ void
 Scene::destroy()
 { // release memory and resources
 
+	for (Light* l : gLights)
+		delete l;
+
 	for (Abs_Entity* el : gObjects)
 		delete el;
 
 	for (Abs_Entity* el : transparentObj)
 		delete el;
 
-	for (Light* l : gLights)
-		delete l;
+
 
 	gLights.clear();
 
@@ -70,14 +76,15 @@ Scene::load()
 void
 Scene::unload()
 {
+	for (Light* l : gLights)
+		l->unload(*Shader::get("simple_light"));
 	for (Abs_Entity* obj : gObjects)
 		obj->unload();
 
 	for (Abs_Entity* obj : transparentObj)
 		obj->unload();
 
-	for (Light* l : gLights)
-		l->unload(*Shader::get("light"));
+
 }
 
 void
@@ -97,9 +104,10 @@ Scene::resetGL()
 void
 Scene::render(Camera const& cam) const
 {
-	cam.upload();
 
 	uploadLights(cam);
+	cam.upload();
+
 
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
