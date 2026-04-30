@@ -321,7 +321,7 @@ IG1App::key(unsigned int key)
 			mScenes[mCurrentScene]->orbit();
 			break;
 		case 'r':
-			mScenes[mCurrentScene]->toggleLights();
+			mScenes[mCurrentScene]->toggleDirLight();
 			break;
 		case 't':
 			mScenes[mCurrentScene]->togglePosLight();

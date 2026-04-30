@@ -34,8 +34,8 @@ public:
 	virtual void rotate() {};
 	virtual void orbit() {};
 
-	void uploadLights(const Camera& cam) const;
-	void toggleLights();
+	virtual void uploadLights(const Camera& cam) const;
+	void toggleDirLight();
 	virtual void togglePosLight() {};
 	virtual void toggleSpotLight() {};
 

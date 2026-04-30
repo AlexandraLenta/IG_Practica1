@@ -53,8 +53,6 @@ Scene::destroy()
 	for (Abs_Entity* el : transparentObj)
 		delete el;
 
-
-
 	gLights.clear();
 
 	gObjects.clear();
@@ -77,7 +75,7 @@ void
 Scene::unload()
 {
 	for (Light* l : gLights)
-		l->unload(*Shader::get("simple_light"));
+		l->unload(*Shader::get("light"));
 	for (Abs_Entity* obj : gObjects)
 		obj->unload();
 
@@ -160,7 +158,7 @@ Scene::uploadLights(const Camera& cam) const
 }
 
 void
-Scene::toggleLights()
+Scene::toggleDirLight()
 {
 	if (!gLights.empty())
 		gLights[0]->setEnabled(!gLights[0]->enabled());

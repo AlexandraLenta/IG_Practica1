@@ -2,6 +2,14 @@
 #include "Sphere.h"
 #include "Droid.h"
 
+Scene8::~Scene8() {
+	delete mSpotLight;
+	delete mPosLight;
+
+	mSpotLight = nullptr;
+	mPosLight = nullptr;
+}
+
 void
 Scene8::init() {
 	Scene::init();
@@ -28,22 +36,19 @@ Scene8::init() {
 
 	gObjects.push_back(mFictionalNode);
 
-	PosLight* posLight = new PosLight(0);
+	mPosLight = new PosLight(0);
 
-	posLight->setPosition(glm::vec3(0, 2*sphereRadius, 0));
+	mPosLight->setPosition(glm::vec3(0, 2*sphereRadius, 0));
 
-	posLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
-	posLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
-	posLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
-	gLights.push_back(posLight);
+	mPosLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
+	mPosLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
+	mPosLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
 
-	SpotLight* spotLight = new SpotLight(glm::vec3(0.0f, sphereRadius, sphereRadius * 2.0f), 0);
+	mSpotLight = new SpotLight(glm::vec3(0.0f, sphereRadius, sphereRadius * 2.0f), 0);
 
-	spotLight->setAmb({ 0.25, 0.25, 0.25 });
-	spotLight->setDiff({ 0.6, 0.6, 0.6 });
-	spotLight->setSpec({ 0.0, 0.2, 0.0 });
-	gLights.push_back(spotLight);
-
+	mSpotLight->setAmb({ 0.25, 0.25, 0.25 });
+	mSpotLight->setDiff({ 0.6, 0.6, 0.6 });
+	mSpotLight->setSpec({ 0.0, 0.2, 0.0 });
 }
 
 void Scene8::setGL()
@@ -79,12 +84,29 @@ Scene8::rotate() {
 
 void Scene8::togglePosLight()
 {
-	if (gLights.size() > 1)
-		gLights[1]->setEnabled(!gLights[1]->enabled());
+	if (mPosLight)
+		mPosLight->setEnabled(!mPosLight->enabled());
 }
 
 void Scene8::toggleSpotLight()
 {
-	if (gLights.size() > 2)
-		gLights[2]->setEnabled(!gLights[2]->enabled());
+	if (mSpotLight)
+		mSpotLight->setEnabled(!mSpotLight->enabled());
+}
+
+void Scene8::uploadLights(const Camera& cam) const {
+	Scene::uploadLights(cam);
+
+	Shader* sh = Shader::get("light");
+	sh->use();
+
+	mSpotLight->upload(*sh, cam.viewMat());
+	mPosLight->upload(*sh, cam.viewMat());
+}
+
+void Scene8::unload() {
+	Scene::unload();
+
+	mSpotLight->unload(*Shader::get("light"));
+	mPosLight->unload(*Shader::get("light"));
 }
