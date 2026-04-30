@@ -1,6 +1,7 @@
 #ifndef H_Droid_H
 #define H_Droid_H
 #include "CompoundEntity.h"
+#include "Light.h"
 
 class Texture;
 
@@ -9,6 +10,16 @@ class Droid :
 {
 public:
     Droid(GLdouble radius, Texture* bodyTex);
+    ~Droid();
+    void toggleLight();
+    
+
+private:
+    SpotLight* mSpotLight;
+
+    void createHat();
+    void createHead();
+    void createLight(GLfloat radius);
 };
 
 #endif H_Droid_H

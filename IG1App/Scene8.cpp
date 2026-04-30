@@ -119,6 +119,8 @@ void Scene8::handleKey(unsigned int key) {
 	case 'y':
 		toggleSpotLight();
 		break;
+	case 'h':
+		toggleDroidLight();
 	case 'f':
 		rotate();
 		break;
@@ -128,4 +130,8 @@ void Scene8::handleKey(unsigned int key) {
 	default:
 		break;
 	}
+}
+
+void Scene8::toggleDroidLight() {
+	mDroid->toggleLight();
 }

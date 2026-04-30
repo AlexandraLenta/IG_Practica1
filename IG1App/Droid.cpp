@@ -47,3 +47,31 @@ Droid::Droid(GLdouble radius, Texture* bodyTex) {
 	addEntity(eyeL);
 	addEntity(eyeR);
 }
+
+Droid::~Droid() {
+	delete mSpotLight;
+}
+
+void 
+Droid::toggleLight() {
+	mSpotLight->setEnabled(mSpotLight->enabled());
+}
+
+void
+Droid::createHat() {
+
+}
+
+void
+Droid::createHead() {
+
+}
+
+void
+Droid::createLight(GLfloat radius) {
+	// Light
+	mSpotLight = new SpotLight(glm::vec3(0, -radius, 0), 1);
+	mSpotLight->setAmb({ 0.25, 0.25, 0.25 });
+	mSpotLight->setDiff({ 0.6, 0.6, 0.6 });
+	mSpotLight->setSpec({ 0.0, 0.2, 0.0 });
+}

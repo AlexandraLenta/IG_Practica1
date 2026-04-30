@@ -19,6 +19,7 @@ public:
 
     void togglePosLight();
     void toggleSpotLight();
+    void toggleDroidLight();
 
     void uploadLights(const Camera& cam) const override;
 
