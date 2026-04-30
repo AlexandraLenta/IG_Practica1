@@ -44,7 +44,7 @@ Scene8::init() {
 	mPosLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
 	mPosLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
 
-	mSpotLight = new SpotLight(glm::vec3(0.0f, sphereRadius, sphereRadius * 2.0f), 0);
+	mSpotLight = new SpotLight(glm::vec3(0.0f, 0.0f, sphereRadius * 1.2f), 0);
 
 	mSpotLight->setAmb({ 0.25, 0.25, 0.25 });
 	mSpotLight->setDiff({ 0.6, 0.6, 0.6 });
