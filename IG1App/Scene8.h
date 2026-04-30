@@ -14,15 +14,17 @@ public:
     void init() override;
     void setGL() override;
 
-    void orbit() override;
-    void rotate() override;
+    void orbit();
+    void rotate();
 
-    void togglePosLight() override;
-    void toggleSpotLight() override;
+    void togglePosLight();
+    void toggleSpotLight();
 
     void uploadLights(const Camera& cam) const override;
 
     void unload() override;
+
+    void handleKey(unsigned int key) override;
 
 private:
     CompoundEntity* mFictionalNode;

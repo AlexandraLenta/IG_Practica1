@@ -31,13 +31,10 @@ public:
 
 	virtual void setGL();
 
-	virtual void rotate() {};
-	virtual void orbit() {};
-
 	virtual void uploadLights(const Camera& cam) const;
 	void toggleDirLight();
-	virtual void togglePosLight() {};
-	virtual void toggleSpotLight() {};
+
+	virtual void handleKey(unsigned int key) {}
 
 protected:
 	void destroy();

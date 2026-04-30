@@ -38,7 +38,7 @@ Scene8::init() {
 
 	mPosLight = new PosLight(0);
 
-	mPosLight->setPosition(glm::vec3(0, 2*sphereRadius, 0));
+	mPosLight->setPosition(glm::vec3(0, sphereRadius * 1.5f, 0));
 
 	mPosLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
 	mPosLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
@@ -109,4 +109,23 @@ void Scene8::unload() {
 
 	mSpotLight->unload(*Shader::get("light"));
 	mPosLight->unload(*Shader::get("light"));
+}
+
+void Scene8::handleKey(unsigned int key) {
+	switch (key) {
+	case 't':
+		togglePosLight();
+		break;
+	case 'y':
+		toggleSpotLight();
+		break;
+	case 'f':
+		rotate();
+		break;
+	case 'g':
+		orbit();
+		break;
+	default:
+		break;
+	}
 }
