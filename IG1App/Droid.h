@@ -12,7 +12,7 @@ public:
     Droid(GLdouble radius, Texture* bodyTex);
     ~Droid();
     void toggleLight();
-    
+    void render(const glm::mat4& modelViewMat) const override;
 
 private:
     SpotLight* mSpotLight;
@@ -20,6 +20,8 @@ private:
     void createHat();
     void createHead(GLfloat radius);
     void createLight(GLfloat radius);
+
+
 };
 
 #endif H_Droid_H

@@ -121,6 +121,7 @@ void Scene8::handleKey(unsigned int key) {
 		break;
 	case 'h':
 		toggleDroidLight();
+		break;
 	case 'f':
 		rotate();
 		break;

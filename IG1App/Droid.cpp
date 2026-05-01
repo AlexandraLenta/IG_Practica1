@@ -9,7 +9,7 @@ Droid::Droid(GLdouble radius, Texture* bodyTex) {
 	addEntity(new SphereWithTexture(radius, 40, 40, bodyTex));
 
 	createHead(radius);
-
+	createLight(radius);
 }
 
 Droid::~Droid() {
@@ -18,7 +18,7 @@ Droid::~Droid() {
 
 void 
 Droid::toggleLight() {
-	mSpotLight->setEnabled(mSpotLight->enabled());
+	mSpotLight->setEnabled(!mSpotLight->enabled());
 }
 
 void
@@ -77,8 +77,20 @@ Droid::createHead(GLfloat radius) {
 void
 Droid::createLight(GLfloat radius) {
 	// Light
-	mSpotLight = new SpotLight(glm::vec3(0, -radius, 0), 1);
+	mSpotLight = new SpotLight(glm::vec3(0, -radius*0.3f, 0), 1);
 	mSpotLight->setAmb({ 0.25, 0.25, 0.25 });
 	mSpotLight->setDiff({ 0.6, 0.6, 0.6 });
 	mSpotLight->setSpec({ 0.0, 0.2, 0.0 });
+	mSpotLight->setDirection(glm::vec3(0, -1, 0));
+	mSpotLight->setEnabled(false);
+}
+
+void Droid::render(const glm::mat4& modelViewMat) const
+{
+	CompoundEntity::render(modelViewMat);
+	Shader* sh = Shader::get("light");
+
+	sh->use();
+
+	mSpotLight->upload(*sh, modelViewMat * mModelMat);
 }
