@@ -18,7 +18,7 @@ private:
     SpotLight* mSpotLight;
 
     void createHat();
-    void createHead();
+    void createHead(GLfloat radius);
     void createLight(GLfloat radius);
 };
 
