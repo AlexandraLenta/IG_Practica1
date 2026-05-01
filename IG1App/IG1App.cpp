@@ -166,7 +166,6 @@ IG1App::destroy()
 	mCameraLeft = nullptr;
 	mCameraRight = nullptr;
 
-
 	delete mViewportLeft;
 	delete mViewportRight;
 	mViewportLeft = nullptr;
@@ -315,7 +314,7 @@ IG1App::key(unsigned int key)
 			ColorMaterialEntity::toggleShowNormals();
 			break;
 		case 'r':
-			mScenes[mCurrentScene]->toggleDirLight();
+			mScenes[mCurrentScene]->toggleLight(Scene::LightType::DIR_LIGHT, 0);
 			break;
 		default:
 			if (key >= '0' && key <= '9') {

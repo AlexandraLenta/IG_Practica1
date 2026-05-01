@@ -14,6 +14,12 @@
 class Scene
 {
 public:
+	enum class LightType {
+		DIR_LIGHT,
+		POS_LIGHT,
+		SPOT_LIGHT
+	};
+
 	Scene() = default;
 	virtual ~Scene();
 
@@ -32,13 +38,17 @@ public:
 	virtual void setGL();
 
 	virtual void uploadLights(const Camera& cam) const;
-	void toggleDirLight();
+	void toggleLight(LightType lightType, int id);
+	void toggleLight(std::string lightID);
 
 	virtual void handleKey(unsigned int key) {}
 
 protected:
 	void destroy();
 	void resetGL();
+
+	// metodo que busca la luz del tipo dado con el id dado
+	Light* findLight(std::string lightID);
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
 	std::vector<Abs_Entity*> transparentObj; // Transparent/Translucent entities of the scene

@@ -158,9 +158,42 @@ Scene::uploadLights(const Camera& cam) const
 }
 
 void
-Scene::toggleDirLight()
+Scene::toggleLight(LightType lightType, int id)
 {
-	if (!gLights.empty())
-		gLights[0]->setEnabled(!gLights[0]->enabled());
+	if (!gLights.empty()) {
+		std::string lightID;
+
+		switch (lightType) {
+		case LightType::DIR_LIGHT:
+			lightID = "dirLights[" + std::to_string(id) + "]";
+			break;
+		case LightType::POS_LIGHT:
+			lightID = "posLights[" + std::to_string(id) + "]";
+			break;
+		case LightType::SPOT_LIGHT:
+			lightID = "spotLights[" + std::to_string(id) + "]";
+			break;
+		default:
+			return;
+			break;
+		}
+
+		toggleLight(lightID);
+	}
 }
 
+void
+Scene::toggleLight(std::string lightID) {
+	Light* light = findLight(lightID);
+	light->setEnabled(!light->enabled());
+}
+
+Light* Scene::findLight(std::string lightID) {
+	for (auto& l : gLights) {
+		if (l->getID() == lightID) {
+			return l;
+		}
+	}
+
+	return nullptr;
+}

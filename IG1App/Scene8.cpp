@@ -2,29 +2,24 @@
 #include "Sphere.h"
 #include "Droid.h"
 
-Scene8::~Scene8() {
-	delete mSpotLight;
-	delete mPosLight;
-
-	mSpotLight = nullptr;
-	mPosLight = nullptr;
-}
-
 void
 Scene8::init() {
 	Scene::init();
-
+ 
 	// variables
 	GLfloat sphereRadius = 300;
 	GLfloat droidRadius = sphereRadius/12;
 	glm::vec4 colorGranate = { 0.67, 0.13, 0.28, 1.0 };
 
+	
 	// textura para el droid
 	Texture* droidTex = texLoader->getTexture("container.jpg");
 
+	
 	// planeta
 	Sphere* planet = new Sphere(sphereRadius, 40, 40, colorGranate);
 	gObjects.push_back(planet);
+
 
 	// nodo ficticio para el movimiento del droid
 	mFictionalNode = new CompoundEntity();
@@ -36,19 +31,24 @@ Scene8::init() {
 
 	gObjects.push_back(mFictionalNode);
 
-	mPosLight = new PosLight(0);
+	
+	// crear luces
+	PosLight* posLight = new PosLight(0);
 
-	mPosLight->setPosition(glm::vec3(0, sphereRadius * 1.5f, 0));
+	posLight->setPosition(glm::vec3(0, sphereRadius * 1.5f, 0));
 
-	mPosLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
-	mPosLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
-	mPosLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
+	posLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
+	posLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
+	posLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
 
-	mSpotLight = new SpotLight(glm::vec3(0.0f, 0.0f, sphereRadius * 1.2f), 0);
+	SpotLight* spotLight = new SpotLight(glm::vec3(0.0f, 0.0f, sphereRadius * 1.2f), 0);
 
-	mSpotLight->setAmb({ 0.25, 0.25, 0.25 });
-	mSpotLight->setDiff({ 0.6, 0.6, 0.6 });
-	mSpotLight->setSpec({ 0.0, 0.2, 0.0 });
+	spotLight->setAmb({ 0.25, 0.25, 0.25 });
+	spotLight->setDiff({ 0.6, 0.6, 0.6 });
+	spotLight->setSpec({ 0.0, 0.2, 0.0 });
+
+	gLights.push_back(posLight);
+	gLights.push_back(spotLight);
 }
 
 void Scene8::setGL()
@@ -82,42 +82,13 @@ Scene8::rotate() {
 	mDroid->setModelMat(glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), glm::vec3(0, 1, 0)) * mDroid->modelMat());
 }
 
-void Scene8::togglePosLight()
-{
-	if (mPosLight)
-		mPosLight->setEnabled(!mPosLight->enabled());
-}
-
-void Scene8::toggleSpotLight()
-{
-	if (mSpotLight)
-		mSpotLight->setEnabled(!mSpotLight->enabled());
-}
-
-void Scene8::uploadLights(const Camera& cam) const {
-	Scene::uploadLights(cam);
-
-	Shader* sh = Shader::get("light");
-	sh->use();
-
-	mSpotLight->upload(*sh, cam.viewMat());
-	mPosLight->upload(*sh, cam.viewMat());
-}
-
-void Scene8::unload() {
-	Scene::unload();
-
-	mSpotLight->unload(*Shader::get("light"));
-	mPosLight->unload(*Shader::get("light"));
-}
-
 void Scene8::handleKey(unsigned int key) {
 	switch (key) {
 	case 't':
-		togglePosLight();
+		toggleLight(LightType::POS_LIGHT, 0);
 		break;
 	case 'y':
-		toggleSpotLight();
+		toggleLight(LightType::SPOT_LIGHT, 0);
 		break;
 	case 'h':
 		toggleDroidLight();

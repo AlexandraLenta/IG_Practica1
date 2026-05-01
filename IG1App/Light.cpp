@@ -49,6 +49,11 @@ Light::setSpec(const glm::vec3& ind)
 	specular = ind;
 }
 
+std::string
+Light::getID() {
+	return lightID;
+}
+
 DirLight::DirLight(int id)
  : Light("dirLights", id)
 {
