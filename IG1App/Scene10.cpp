@@ -8,13 +8,13 @@ void Scene10::init() {
     Sphere* yellowPlanet = new Sphere(r, 15, 15, { 1.0f, 1.0f, 0.0f});
 
     gObjects.push_back(yellowPlanet);
-    yellowPlanet->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, r*2)));
+    yellowPlanet->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(r * 2, 0, 0)));
 
 
     Sphere* goldPlanet = new Sphere(r, 15, 15, { 1.0f, 1.0f, 0.0f});
 
     gObjects.push_back(goldPlanet);
-    goldPlanet->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(2 * r, 0, 0)));
+    goldPlanet->setModelMat(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 2 * r)));
 
     Material m;
     m.setAmb(glm::vec3(0.2f, 0.2f, 0.0f));
