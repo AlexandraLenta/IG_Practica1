@@ -1,4 +1,4 @@
-#ifndef _H_IG1App_H_
+﻿#ifndef _H_IG1App_H_
 #define _H_IG1App_H_
 
 #include <GL/glew.h>     // OpenGL Extension Wrangler
@@ -104,7 +104,7 @@ protected:
 	Viewport* mViewportLeft = nullptr;
 	Viewport* mViewportRight = nullptr;
 
-	// C�maras para las dos vistas
+	// Cámaras para las dos vistas
 	Camera* mCameraLeft = nullptr;
 	Camera* mCameraRight = nullptr;
 

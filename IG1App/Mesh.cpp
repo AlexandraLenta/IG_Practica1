@@ -1,4 +1,4 @@
-#include "Mesh.h"
+ï»¿#include "Mesh.h"
 #include<iostream>
 
 using namespace std;
@@ -411,7 +411,7 @@ Mesh::generateBoxOutlineTexCor(GLdouble length) {
 Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) {
 	Mesh* mesh = new Mesh();
 
-	// puntas * 2 (radio mayor y radio menor) + 1 (origen) + 1 (conexión con la primera punta)
+	// puntas * 2 (radio mayor y radio menor) + 1 (origen) + 1 (conexiÃ³n con la primera punta)
 	mesh->mNumVertices = np * 2 + 2;
 
 	mesh->vVertices.reserve(mesh->mNumVertices);
@@ -425,7 +425,7 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) {
 	float angleInRadians = radians(angleToSum);
 	float currentAngle = radians(90.0);
 
-	// crear vértices
+	// crear vÃ©rtices
 	for (int i = 0; i < np; i++) {
 		float x = re * cos(currentAngle);
 		float y = re * sin(currentAngle);

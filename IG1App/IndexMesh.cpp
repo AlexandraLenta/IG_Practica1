@@ -1,4 +1,4 @@
-#include "IndexMesh.h"
+ï»¿#include "IndexMesh.h"
 #include <limits>
 #include <iostream>
 
@@ -12,9 +12,9 @@ IndexMesh::IndexMesh() :Mesh(), mIBO(NONE) {
 void IndexMesh::draw() const{
 	glDrawElements(
 		mPrimitive, // primitiva (GL_TRIANGLES, etc.)
-		vIndexes.size(), // número de índices
-		GL_UNSIGNED_INT, // tipo de los índices
-		nullptr // offset en el VBO de índices
+		vIndexes.size(), // nÃºmero de Ã­ndices
+		GL_UNSIGNED_INT, // tipo de los Ã­ndices
+		nullptr // offset en el VBO de Ã­ndices
 	);
 }
 
@@ -48,9 +48,9 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	mesh->vTextureCords.reserve(mesh->mNumVertices);
 
 
-	// Genera los vértices de las muestras
+	// Genera los vÃ©rtices de las muestras
 	GLdouble theta1 = angleMax / nSamples;
-	for (int i = 0; i <= nSamples; ++i) { // muestra i-ésima
+	for (int i = 0; i <= nSamples; ++i) { // muestra i-Ã©sima
 		GLdouble c = cos(i * theta1), s = sin(i * theta1);
 		for (int j = 0; j < tamPerfil; j++) // rota el perfil
 		{
@@ -68,10 +68,10 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 			nextI = (i + 1) % nSamples;
 		}
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-			if (profile[j].x != 0.0) // triángulo inferior
+			if (profile[j].x != 0.0) // triÃ¡ngulo inferior
 				for (auto [s, t] : { std::pair{i, j}, {nextI, j}, {i, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
-			if (profile[j + 1].x != 0.0) // triángulo superior
+			if (profile[j + 1].x != 0.0) // triÃ¡ngulo superior
 				for (auto [s, t] : { std::pair{i, j + 1}, {nextI, j}, {nextI, j + 1} })
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
@@ -177,7 +177,7 @@ IndexMesh::generateIndexedBox(GLdouble l) {
 		// +Z (frente)
 		16, 18, 17,
 		18, 19, 17,
-		// -Z (atrás)
+		// -Z (atrÃ¡s)
 		20, 21, 22,
 		22, 21, 23
 	};
