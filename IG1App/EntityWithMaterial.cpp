@@ -27,5 +27,4 @@ EntityWithMaterial::toggleShowNormals() {
 	mShowNormals = !mShowNormals;
 }
 
-
 bool EntityWithMaterial::mShowNormals = false;

@@ -7,8 +7,6 @@ class ColorMaterialEntity :
 {
 public:
     ColorMaterialEntity(glm::vec3 color);
-
-    static void toggleShowNormals();
 };
 
 #endif H_ColorMaterialEntity_H
