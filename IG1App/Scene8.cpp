@@ -16,12 +16,6 @@ Scene8::init() {
 	// textura para el droid
 	Texture* droidTex = texLoader->getTexture("container.jpg");
 
-	
-	// planeta
-	Sphere* planet = new Sphere(sphereRadius, 40, 40, colorGranate);
-	gObjects.push_back(planet);
-
-
 	// nodo ficticio para el movimiento del droid
 	mFictionalNode = new CompoundEntity();
 	
@@ -31,6 +25,11 @@ Scene8::init() {
 	mFictionalNode->addEntity(mDroid);
 
 	gObjects.push_back(mFictionalNode);
+
+
+	// planeta
+	Sphere* planet = new Sphere(sphereRadius, 40, 40, colorGranate);
+	gObjects.push_back(planet);
 
 	
 	// crear luces
