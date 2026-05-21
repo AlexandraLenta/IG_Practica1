@@ -313,9 +313,6 @@ IG1App::key(unsigned int key)
 		case 'N':
 			ColorMaterialEntity::toggleShowNormals();
 			break;
-		case 'r':
-			mScenes[mCurrentScene]->toggleLight(Scene::LightType::DIR_LIGHT, 0);
-			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

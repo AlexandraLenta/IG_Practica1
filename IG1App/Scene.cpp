@@ -197,3 +197,11 @@ Light* Scene::findLight(std::string lightID) {
 
 	return nullptr;
 }
+
+void Scene::handleKey(unsigned int key) {
+	switch (key) {
+	case 'r':
+		toggleLight(Scene::LightType::DIR_LIGHT, 0);
+		break;
+	}
+}

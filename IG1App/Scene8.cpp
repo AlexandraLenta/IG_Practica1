@@ -100,6 +100,7 @@ void Scene8::handleKey(unsigned int key) {
 		orbit();
 		break;
 	default:
+		Scene::handleKey(key);
 		break;
 	}
 }

@@ -41,7 +41,7 @@ public:
 	void toggleLight(LightType lightType, int id);
 	void toggleLight(std::string lightID);
 
-	virtual void handleKey(unsigned int key) {}
+	virtual void handleKey(unsigned int key);
 
 protected:
 	void destroy();
