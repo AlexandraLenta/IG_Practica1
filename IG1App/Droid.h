@@ -14,6 +14,8 @@ public:
     void toggleLight();
     void render(const glm::mat4& modelViewMat) const override;
 
+    SpotLight* spotlight();
+
 private:
     SpotLight* mSpotLight;
 

@@ -45,6 +45,8 @@ public:
 	void saveImage();
 	bool m2Vistas = false;
 
+	void setNeedsRedisplay(bool value);
+
 protected:
 	IG1App() = default;
 	~IG1App() { close(); };

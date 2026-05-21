@@ -321,7 +321,6 @@ IG1App::key(unsigned int key)
 			}
 			else {
 				mScenes[mCurrentScene]->handleKey(key);
-				need_redisplay = true;
 			}
 			break;
 	} // switch
@@ -533,4 +532,9 @@ IG1App::initDisplay2V() {
 		mCameraLeft = nullptr;
 		mCameraRight = nullptr;
 	}
+}
+
+
+void IG1App::setNeedsRedisplay(bool value) {
+	mNeedsRedisplay = value;
 }

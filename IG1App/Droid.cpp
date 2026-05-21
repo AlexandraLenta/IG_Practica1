@@ -80,12 +80,19 @@ Droid::createLight(GLfloat radius) {
 	mSpotLight->setEnabled(false);
 }
 
-void Droid::render(const glm::mat4& modelViewMat) const
+void 
+Droid::render(const glm::mat4& modelViewMat) const
 {
-	CompoundEntity::render(modelViewMat);
 	Shader* sh = Shader::get("light");
 
 	sh->use();
 
 	mSpotLight->upload(*sh, modelViewMat * mModelMat);
+
+	CompoundEntity::render(modelViewMat);
+}
+
+SpotLight* 
+Droid::spotlight() {
+	return mSpotLight;
 }

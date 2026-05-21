@@ -1,6 +1,7 @@
 #include "Scene8.h"
 #include "Sphere.h"
 #include "Droid.h"
+#include "IG1App.h"
 
 void
 Scene8::init() {
@@ -103,6 +104,7 @@ void Scene8::handleKey(unsigned int key) {
 		Scene::handleKey(key);
 		break;
 	}
+	IG1App::s_ig1app.setNeedsRedisplay(true);
 }
 
 void Scene8::toggleDroidLight() {

@@ -3,7 +3,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <map>
-
+#include "IG1App.h"
 
 using namespace glm;
 
@@ -202,6 +202,7 @@ void Scene::handleKey(unsigned int key) {
 	switch (key) {
 	case 'r':
 		toggleLight(Scene::LightType::DIR_LIGHT, 0);
+		IG1App::s_ig1app.setNeedsRedisplay(true);
 		break;
 	}
 }
