@@ -26,7 +26,6 @@ Scene8::init() {
 
 	gObjects.push_back(mFictionalNode);
 
-
 	// planeta
 	Sphere* planet = new Sphere(sphereRadius, 40, 40, colorGranate);
 	gObjects.push_back(planet);
@@ -37,9 +36,9 @@ Scene8::init() {
 
 	posLight->setPosition(glm::vec3(0, sphereRadius * 1.5f, 0));
 
-	posLight->setAmb(glm::vec3(0.2f, 0.2f, 0.2f));
-	posLight->setDiff(glm::vec3(0.7f, 0.7f, 0.7f));
-	posLight->setSpec(glm::vec3(0.1f, 0.1f, 0.1f));
+	posLight->setAmb(glm::vec3(.25, .25, .25));
+	posLight->setDiff(glm::vec3(.6, .6, .6));
+	posLight->setSpec(glm::vec3(0, 0.2, 0));
 
 	SpotLight* spotLight = new SpotLight(glm::vec3(0.0f, 0.0f, sphereRadius * 1.2f), 0);
 

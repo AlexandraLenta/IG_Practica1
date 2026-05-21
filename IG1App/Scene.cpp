@@ -21,9 +21,9 @@ Scene::init()
 
 	DirLight* dir = new DirLight(0);
 
-	dir->setAmb(glm::vec3(0.1f, 0.1f, 0.1f));
-	dir->setDiff(glm::vec3(0.5f, 0.5f, 0.5f));
-	dir->setSpec(glm::vec3(0.5f, 0.5f, 0.5f));
+	dir->setAmb(glm::vec3(.25, .25, .25));
+	dir->setDiff(glm::vec3(.6, .6, .6));
+	dir->setSpec(glm::vec3(0, 0.2, 0));
 
 	dir->setDirection(glm::vec3(-1.0f, -1.0f, -1.0f));
 	dir->setEnabled(true);
