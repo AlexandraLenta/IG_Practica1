@@ -14,6 +14,9 @@ public:
 
 protected:
     Material mMaterial;
+
+    Shader* mNormalsShader = nullptr;
+    static bool mShowNormals;
 };
 
 #endif
