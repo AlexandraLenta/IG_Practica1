@@ -6,6 +6,7 @@
 class Scene2 : public Scene
 {
 public:
+	Scene2(Camera* c) : Scene(c) {}
 	void init() override;
 };
 

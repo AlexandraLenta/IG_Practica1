@@ -83,17 +83,17 @@ IG1App::init()
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
-	mScenes.push_back(new Scene10);
+	mScenes.push_back(new Scene10(mCamera));
 	//mScenes.push_back(new Scene);
-	mScenes.push_back(new Scene1);
-	mScenes.push_back(new Scene2);
-	mScenes.push_back(new Scene3);
-	mScenes.push_back(new Scene4);
-	mScenes.push_back(new Scene5);
-	mScenes.push_back(new Scene6);
-	mScenes.push_back(new Scene7);
-	mScenes.push_back(new Scene8);
-	mScenes.push_back(new Scene9);
+	mScenes.push_back(new Scene1(mCamera));
+	mScenes.push_back(new Scene2(mCamera));
+	mScenes.push_back(new Scene3(mCamera));
+	mScenes.push_back(new Scene4(mCamera));
+	mScenes.push_back(new Scene5(mCamera));
+	mScenes.push_back(new Scene6(mCamera));
+	mScenes.push_back(new Scene7(mCamera));
+	mScenes.push_back(new Scene8(mCamera));
+	mScenes.push_back(new Scene9(mCamera));
 
 
 	mCamera->set2D();
@@ -312,6 +312,9 @@ IG1App::key(unsigned int key)
 			break;
 		case 'N':
 			ColorMaterialEntity::toggleShowNormals();
+			break;
+		case 'c':
+			cam->setCenital();
 			break;
 		default:
 			if (key >= '0' && key <= '9') {

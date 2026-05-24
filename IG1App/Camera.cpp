@@ -40,6 +40,7 @@ Camera::setVM()
 void
 Camera::set2D()
 {
+	_isCenital = false;
 	mEye = {0, 0, 500};
 	mLook = {0, 0, 0};
 	mUp = {0, 1, 0};
@@ -51,6 +52,7 @@ Camera::set2D()
 void
 Camera::set3D()
 {
+	_isCenital = false;
 	mEye = {500, 500, 500};
 	mLook = {0, 10, 0};
 	mUp = {0, 1, 0}; 
@@ -213,15 +215,39 @@ Camera::orbit(GLdouble incAng, GLdouble incY) {
 	setVM();
 }
 
-void Camera::setCenital() {
-	// camara arriba
-	mEye = { 0, 500, 0 };
-	mLook = { 0, 0, 0 };	// mira centro
-	mUp = { 0, 0, -1 };
+void Camera::setCenital(glm::mat4 posToChange) {
+	_isCenital = true;
+	//// camara arriba
+	//mEye = { 0, 500, 0 };
+	//mLook = { 0, 0, 0 };	// mira centro
+	//mUp = { 0, 0, -1 };
 
-	mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),
-		glm::vec3(mLook.x, 0, mLook.z));
-	mAng = 0.0;
+	//mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),
+	//	glm::vec3(mLook.x, 0, mLook.z));
+	//mAng = 0.0;
+
+	// pos droide
+	glm::vec3 pos = glm::vec3(posToChange[3]);
+	mLook = pos;
+
+	mRadio = length(mEye - mLook); // dist cam->obj
+
+	glm::vec3 localOffset = glm::vec3(0.0f, mRadio, 0.0f);
+
+	glm::vec3 worldOffset = glm::vec3(posToChange * glm::vec4(localOffset, 0.0f));
+
+	if (posToChange != glm::mat4()) {
+		mEye = pos + worldOffset;
+		mUp = glm::normalize(glm::vec3(posToChange * glm::vec4(0, 0, -1, 0)));
+	}
+	else {
+		mEye = { 0, mRadio, 0 };
+		mUp = { 0, 0, -1 };
+	}
 
 	setVM();
+}
+
+bool Camera::getCenital() {
+	return _isCenital;
 }

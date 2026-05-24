@@ -5,8 +5,10 @@
 class Scene10 :
     public Scene
 {
+public:
+    Scene10(Camera* c) : Scene(c) {}
+
     void init() override;
 };
 
 #endif
-

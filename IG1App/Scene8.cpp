@@ -73,12 +73,22 @@ Scene8::orbit() {
 	// rotamos alrededor de donde esta mirando ahora
 	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), facingDir);
 	mFictionalNode->setModelMat(rot * mFictionalNode->modelMat());
+
+	if (mCam->getCenital()) {
+		glm::mat4 worldMat = mFictionalNode->modelMat() * mDroid->modelMat();
+		mCam->setCenital(worldMat);
+	}
 }
 
 void 
 Scene8::rotate() {
 	// rotar sobre el eje y
 	mDroid->setModelMat(glm::rotate(glm::mat4(1.0f), glm::radians(2.0f), glm::vec3(0, 1, 0)) * mDroid->modelMat());
+
+	if (mCam->getCenital()) {
+		glm::mat4 worldMat = mFictionalNode->modelMat() * mDroid->modelMat();
+		mCam->setCenital(worldMat);
+	}
 }
 
 void Scene8::handleKey(unsigned int key) {

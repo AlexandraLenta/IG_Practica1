@@ -10,6 +10,7 @@ class Scene8 :
     public Scene
 {
 public:
+    Scene8(Camera* c) : Scene(c) {}
     void init() override;
     void setGL() override;
 

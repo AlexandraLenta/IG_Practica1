@@ -60,7 +60,8 @@ public:
 	// orbit
 	void orbit(GLdouble incAng, GLdouble incY);
 
-	void setCenital();
+	void setCenital(glm::mat4 posToChange = glm::mat4(0));
+	bool getCenital();
 
 	glm::vec3 getEye() const { return mEye; }
 
@@ -87,6 +88,8 @@ protected:
 	glm::vec3 mFront;
 
 	GLdouble mRadio = 1000.0, mAng = -45;
+
+	bool _isCenital;
 
 	void setVM();
 	void setPM();

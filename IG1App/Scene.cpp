@@ -7,6 +7,8 @@
 
 using namespace glm;
 
+Scene::Scene(Camera* cam) : mCam(cam), texLoader(nullptr) {}
+
 void
 Scene::init()
 {

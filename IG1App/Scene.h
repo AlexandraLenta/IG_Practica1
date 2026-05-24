@@ -20,7 +20,7 @@ public:
 		SPOT_LIGHT
 	};
 
-	Scene() = default;
+	Scene(Camera* cam);
 	virtual ~Scene();
 
 	Scene(const Scene& s) = delete;            // no copy constructor
@@ -55,6 +55,8 @@ protected:
 	TextureLoader* texLoader;
 
 	std::vector<Light*> gLights;
+
+	Camera* mCam;
 };
 
 #endif //_H_Scene_H_
