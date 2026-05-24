@@ -93,7 +93,7 @@ IG1App::init()
 	mScenes.push_back(new Scene6(mCamera));
 	mScenes.push_back(new Scene7(mCamera));
 	mScenes.push_back(new Scene8(mCamera));
-	mScenes.push_back(new Scene9(mCamera));
+	mScenes.push_back(new Scene11(mCamera));
 
 
 	mCamera->set2D();

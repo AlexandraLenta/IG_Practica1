@@ -217,14 +217,6 @@ Camera::orbit(GLdouble incAng, GLdouble incY) {
 
 void Camera::setCenital(glm::mat4 posToChange) {
 	_isCenital = true;
-	//// camara arriba
-	//mEye = { 0, 500, 0 };
-	//mLook = { 0, 0, 0 };	// mira centro
-	//mUp = { 0, 0, -1 };
-
-	//mRadio = glm::distance(glm::vec3(mEye.x, 0, mEye.z),
-	//	glm::vec3(mLook.x, 0, mLook.z));
-	//mAng = 0.0;
 
 	// pos droide
 	glm::vec3 pos = glm::vec3(posToChange[3]);

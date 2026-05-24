@@ -92,7 +92,8 @@ Shader::use()
 void
 Shader::setUniform(const string& name, bool value)
 {
-	glUniform1i(glGetUniformLocation(mProgram, name.c_str()), value);
+	auto loc = glGetUniformLocation(mProgram, name.c_str());
+	glUniform1i(loc, value);
 }
 
 void
